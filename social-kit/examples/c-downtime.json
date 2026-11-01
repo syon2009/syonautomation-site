@@ -1,0 +1,35 @@
+{
+ "slug": "2026-11-02-cost-of-downtime",
+ "scenes": [
+  {
+   "id": "s1",
+   "say": "Unplanned downtime costs the world's five hundred biggest companies about one point four trillion dollars a year.",
+   "html": "<div class=\"kick\">The cost of downtime</div><div class=\"big\" style=\"color:#ffc53d\">$1.4T</div><div class=\"lbl\">a year in unplanned downtime for the world's 500 biggest companies</div><div class=\"src\">Source: Siemens, The True Cost of Downtime 2024</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s2",
+   "say": "That's eleven percent of their revenue. In 2019 it was eight percent.",
+   "html": "<div class=\"kick\">The cost of downtime</div><div class=\"big\" style=\"font-size:200px;white-space:nowrap\"><span style=\"color:#8f9aa6\">8%</span> <span style=\"color:#ffc53d\">\u2192 11%</span></div><div class=\"lbl\">of revenue lost to unplanned downtime</div><div class=\"sub\">2019 \u2192 2024</div><div class=\"src\">Source: Siemens, The True Cost of Downtime 2024</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s3",
+   "say": "In automotive, one hour of a stopped line can cost two point three million dollars.",
+   "html": "<div class=\"kick\">One hour, one line</div><div class=\"big\" style=\"color:#2fa4ff;font-size:220px\">$2.3M</div><div class=\"lbl\">per hour of downtime in automotive</div><div class=\"sub\">about $600 every second</div><div class=\"src\">Source: Siemens, The True Cost of Downtime 2024</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s4",
+   "say": "The fastest fix is the one somebody already found. If it isn't written down, the next shift starts from zero.",
+   "html": "<div class=\"kick\">Tip</div><div class=\"hl\" style=\"font-size:100px\">The fastest fix is the one somebody already found.</div><div class=\"sub\" style=\"font-size:50px;color:#f5f7fa;font-weight:700\">Write it down.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s5",
+   "say": "Datumline keeps a time-stamped journal for every machine, with photos, so the next tech starts from the answer.",
+   "html": "<div class=\"kick\">Datumline</div><img class=\"shot\" style=\"width:940px\" src=\"{IMG}/dl/journal.webp\"><div class=\"cap\" style=\"color:#2fa4ff;font-size:54px;margin-top:46px;max-width:900px\">A time-stamped journal for every machine</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s9",
+   "say": "Sigh-yawn Automation. Free thirty-day trial at sigh-yawn automation dot com.",
+   "html": "<div id=\"wmslot\" style=\"width:720px;height:240px\"></div><div class=\"hl\" style=\"font-size:84px;margin-top:70px\">Less downtime. More uptime.</div><div class=\"sub\" style=\"color:#2fa4ff;font-weight:700\">syonautomation.com</div><div class=\"foot\">Developed by Syon Automation LLC</div>"
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+{
+ "slug": "2026-11-02-idea-lockout-tagout",
+ "scenes": [
+  {
+   "id": "s1",
+   "say": "Lockout tagout is number three on OSHA's preliminary list of most-cited standards for 2026.",
+   "html": "<div class=\"kick\">Software idea</div><div class=\"big\" style=\"color:#ffc53d\">#3</div><div class=\"lbl\">Lockout/tagout on OSHA's most-cited standards list</div><div class=\"sub\">29 CFR 1910.147 \u00b7 FY 2026, preliminary</div><div class=\"src\">Source: OSHA, Top 10 Most Frequently Cited Standards</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s2",
+   "say": "The rule asks for a written energy control procedure for each machine, and an inspection of those procedures at least once a year.",
+   "html": "<div class=\"kick\">What the rule asks for</div><div class=\"lbl\" style=\"font-size:66px;text-align:left;line-height:1.3\">\u2713 Written energy-control procedures<br>\u2713 Training for the people who use them<br>\u2713 An inspection at least once a year</div><div class=\"src\">Source: OSHA 29 CFR 1910.147</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s3",
+   "say": "So here's an idea for our next app. A QR code on every machine. Scan it, and see each energy source, with photos, step by step.",
+   "html": "<div class=\"kick\">The idea</div><div class=\"hl\" style=\"font-size:96px\">Scan the machine.<br>See every energy source.</div><div class=\"sub\">Photos and steps for each isolation point, on your phone</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s4",
+   "say": "See who's locked on right now, and sign off the yearly inspection, with a time stamp.",
+   "html": "<div class=\"kick\">The idea</div><div class=\"hl\" style=\"font-size:96px\">Who's locked on.<br>Signed and time-stamped.</div><div class=\"sub\">Yearly inspections tracked, not forgotten</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s5",
+   "say": "Would your plant use it? Tell us in the comments. The best ideas become the next Sigh-yawn Automation app.",
+   "html": "<div class=\"kick\">Your turn</div><div class=\"hl\">Would your plant use it?</div><div class=\"sub\" style=\"font-size:50px;color:#36cfc9;font-weight:700\">Tell us in the comments.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s9",
+   "say": "Sigh-yawn Automation. Software built for the plant floor.",
+   "html": "<div id=\"wmslot\" style=\"width:720px;height:240px\"></div><div class=\"hl\" style=\"font-size:84px;margin-top:70px\">Your idea could be our next app.</div><div class=\"sub\" style=\"color:#2fa4ff;font-weight:700\">syonautomation.com</div><div class=\"foot\">Developed by Syon Automation LLC</div>"
+  }
+ ]
+}

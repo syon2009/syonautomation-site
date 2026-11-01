@@ -1,0 +1,35 @@
+{
+ "slug": "2026-11-02-aoi-foundry-tip",
+ "scenes": [
+  {
+   "id": "s1",
+   "say": "Building a Rockwell Add-On Instruction? Don't start from a blank page.",
+   "html": "<div class=\"kick\">AOI Foundry tip</div><div class=\"hl\">Don't start your next AOI from a blank page.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s2",
+   "say": "AOI Foundry comes with forty-three ready-made AOIs. Motors, drives, valves, analog inputs and outputs, alarms, interlocks, PID loops and more.",
+   "html": "<div class=\"kick\">AOI Foundry tip</div><div class=\"big\" style=\"color:#2fa4ff\">43</div><div class=\"lbl\">ready-made AOIs</div><div class=\"sub\">Motors \u00b7 VFDs \u00b7 valves \u00b7 analog in &amp; out \u00b7 alarms \u00b7 interlocks \u00b7 PID \u00b7 dosing</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s3",
+   "say": "Every Rockwell AOI rule is checked live as you type, and Auto-Fix corrects most problems in one click.",
+   "html": "<div class=\"kick\">Live rule checking</div><img class=\"shot\" style=\"width:940px\" src=\"{IMG}/aoi/rules.webp\"><div class=\"cap\" style=\"color:#2fa4ff;font-size:54px;margin-top:46px;max-width:900px\">Every AOI rule, checked as you type</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s4",
+   "say": "Then test it in the simulator, with live power flow, trends and fault simulation, before it ever touches a controller.",
+   "html": "<div class=\"kick\">Test before you download</div><img class=\"shot\" style=\"width:940px\" src=\"{IMG}/aoi/simulate.webp\"><div class=\"cap\" style=\"color:#36cfc9;font-size:54px;margin-top:46px;max-width:900px\">Simulate it, fault it, prove it</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s5",
+   "say": "Finish with one install file. In Studio 5000, right-click, Import Rungs, and it's in your project.",
+   "html": "<div class=\"kick\">Install in one step</div><img class=\"shot\" style=\"width:940px\" src=\"{IMG}/aoi/guide.webp\"><div class=\"cap\" style=\"color:#4fd39a;font-size:54px;margin-top:46px;max-width:900px\">One install file \u00b7 Import Rungs \u00b7 done</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s9",
+   "say": "AOI Foundry, from Sigh-yawn Automation. Try it free for fourteen days.",
+   "html": "<div id=\"wmslot\" style=\"width:720px;height:240px\"></div><div class=\"hl\" style=\"font-size:84px;margin-top:70px\">Build any AOI, the Rockwell way.</div><div class=\"sub\" style=\"color:#2fa4ff;font-weight:700\">14-day free trial \u00b7 syonautomation.com</div><div class=\"foot\">Developed by Syon Automation LLC</div>"
+  }
+ ]
+}

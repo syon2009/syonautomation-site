@@ -1,0 +1,65 @@
+# Daily social shorts — Syon Automation LLC
+
+The kit and the step-by-step routine for the 4 short videos a day posted to the Syon Automation LLC
+Facebook page, YouTube channel and LinkedIn company page. This folder is NOT part of the website
+(only `public/` is deployed). Developed by Syon Automation LLC.
+
+## The owner's rules (do not change without asking him)
+- **4 posts a day**, every day, at **8:07 AM, 11:52 AM, 3:37 PM and 7:22 PM** (America/Toronto, Eastern).
+- **Nothing is posted without his approval.** Each afternoon: build the NEXT day's 4 videos, send all 4
+  (video + caption) to him in one message, and wait for "approved". Only then host and schedule them.
+  If he asks for a change, change it and send it again.
+- Each post different, **factual**, and either about the software (product, tip, benefit, short
+  explainer) or an **idea for a next app** (a real plant-floor problem + the app idea + "Would your
+  plant use it? Tell us in the comments").
+- Daily mix: 1 product tip or benefit, 1 workforce / industry statistic (untrained or uninformed
+  workers, the rise of the blue-collar workforce, the aging workforce, transfer of tribal knowledge and
+  its key pillars), 1 short explainer, 1 next-app idea. Don't repeat a topic from the last 2 weeks
+  (check `public/social/` and CHANGELOG.md).
+- **Every statistic must be checked at its original source the same day** (WebSearch + WebFetch) and
+  named on screen and in the caption ("Source: …"). If a number can't be verified, don't use it.
+- Product facts come from the product pages in `public/*.html` (prices, trial length, features). Never
+  invent features or numbers. Current product line-up: AOI Foundry, PlantProof, Datumline, DatumLab
+  (+ Academy), LinkScout, SiteWatch, DataCast, RungWise PLC Academy, WO Mailer, DepthForge (hobby).
+- Brand: "Syon Automation LLC"; the new wordmark logo (logo_*.png), never the old SY smiley face;
+  dark theme; no purple or pink anywhere; say "Google Chrome", never Edge.
+- Voice-over: Kokoro **af_heart, speed 1.05** (upbeat female; never am_michael, never Onyx).
+  Write "Syon" as **"Sigh-yawn"** and "SCADA" as **"Skayda"** in the spoken text so they are said right.
+- Videos: 1080x1920, under 10 MB (gen.py takes care of it), smooth transitions, no ambiguous visuals.
+
+## Build (in a fresh cloud session)
+```bash
+pip install --break-system-packages kokoro-onnx soundfile
+mkdir -p ~/kokoro && cd ~/kokoro
+curl -LO https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx
+curl -LO https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
+# per post: a folder with post.json (see examples/), then
+python3 social-kit/gen.py /path/to/post-folder     # -> <slug>.mp4 + <slug>.jpg
+```
+post.json: `{"slug": "YYYY-MM-DD-topic", "scenes": [{"id": "s1", "say": "spoken text", "html": "card html"}, …]}`.
+Card classes come from base.css: `kick` (teal eyebrow), `big` (huge number), `lbl`, `sub`, `hl` (headline),
+`src` (source line), `foot` ("Syon Automation LLC"), `shot` (app screenshot; use `{IMG}/…` for
+`public/img/…`). The LAST scene is the end card and must contain
+`<div id="wmslot" style="width:720px;height:240px"></div>` (the big animated logo is placed there).
+Look at 3-4 frames of every finished video before sending it for approval.
+
+## After he approves
+1. Copy each `<slug>.mp4` and `<slug>.jpg` to `public/social/`, add a CHANGELOG.md line, commit, push
+   (git pull --rebase first; other chats push to this repo too). The files are live at
+   `https://syonautomation.com/social/<slug>.mp4` about a minute after the push.
+2. **Facebook + YouTube** — Metricool tool `createScheduledPost`, blogId `7796520`, timezone
+   `America/Toronto`, providers facebook + youtube, `media: ["https://syonautomation.com/social/<slug>.mp4"]`,
+   `facebookData: {"type":"REEL","title":"<title>"}`,
+   `youtubeData: {"title":"<title> #shorts","type":"short","privacy":"public","tags":[…],"category":"SCIENCE_TECHNOLOGY","madeForKids":false,"isAiGeneratedContent":false}`.
+   If it answers "Failed to normalize media", the site hasn't deployed yet: wait a minute and retry.
+3. **LinkedIn** (Metricool's LinkedIn needs a paid plan, so use Claude in Chrome) at
+   `https://www.linkedin.com/company/146908454/admin/page-posts/published/?share=true`:
+   type the caption in the composer; if a link-preview card appears, close it with its X; then capture the
+   hidden file input: patch `HTMLInputElement.prototype.click` (and `showPicker`) to store the file input
+   instead of opening the picker, click the composer's **Add media** button, give the captured input an
+   aria-label, append it to `document.body`, restore the patched methods, find it and `file_upload`
+   `/home/claude/syonautomation-site/public/social/<slug>.mp4` (path must be inside this repo; < 10 MB).
+   Click **Next** in the media editor → clock icon (**Schedule post**) → pick the date in the calendar
+   pop-up, type the time (e.g. `3:37 PM`), Tab → check the header reads the right day and time → **Next**
+   → **Schedule**. Verify under clock → **View all scheduled posts**, then navigate away (no stray drafts).
+4. Tell him in one short message what is scheduled where and when.

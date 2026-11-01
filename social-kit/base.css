@@ -1,0 +1,17 @@
+
+@font-face{font-family:M;src:url(manrope-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:M;src:url(manrope-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:M;src:url(manrope-latin-800-normal.woff2);font-weight:800}
+html,body{margin:0;width:1080px;height:1920px;background:#04070b;font-family:M,sans-serif;color:#f5f7fa;overflow:hidden}
+.c{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 90px;box-sizing:border-box;
+ background:radial-gradient(900px 700px at 50% 38%,rgba(47,164,255,.13),transparent 70%),linear-gradient(rgba(120,190,255,.05) 1px,transparent 1px) 0 0/60px 60px,linear-gradient(90deg,rgba(120,190,255,.05) 1px,transparent 1px) 0 0/60px 60px,#04070b}
+.c.on{display:flex}
+.big{font-weight:800;font-size:250px;line-height:1;letter-spacing:-.05em}
+.lbl{font-weight:700;font-size:64px;line-height:1.15;letter-spacing:-.02em;margin-top:34px;max-width:900px}
+.sub{font-weight:400;font-size:42px;line-height:1.35;color:#b8c2cc;margin-top:30px;max-width:880px}
+.src{position:absolute;bottom:300px;left:90px;right:90px;font-size:28px;color:#8f9aa6}
+.kick{font-weight:700;font-size:40px;color:#36cfc9;margin-bottom:34px;letter-spacing:.02em}
+.foot{position:absolute;bottom:150px;left:0;right:0;font-size:32px;color:#9aa6b2;font-weight:700}
+.hl{font-weight:800;font-size:110px;line-height:1.02;letter-spacing:-.04em}
+.shot{width:800px;border-radius:22px;border:2px solid #1f2a36;box-shadow:0 20px 80px rgba(47,164,255,.25);display:block}
+.cap{font-weight:800;font-size:48px;margin:22px 0 46px}

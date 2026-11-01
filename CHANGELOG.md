@@ -12,3 +12,4 @@
 - 2026-11-01 · Downloads owner page (/downloads-admin): Delete button on each row (with confirm) removes a test/unwanted entry and takes it off the counts (DELETE /api/downloads?id=, owner key required). src/worker.js only.
 - 2026-11-01 · Downloads owner page: products with 0 downloads no longer show an empty count card.
 - 2026-11-01 · public/social: added the three approved-pending shorts for Mon Nov 2 (aoi-foundry-tip, cost-of-downtime, idea-lockout-tagout) + thumbnails.
+- 2026-11-01 · Added social-kit/ (NOT deployed): video generator, logos, fonts, music, example posts and README with the daily 4-post routine (approval first, Metricool for Facebook/YouTube, Chrome for LinkedIn). A daily scheduled task uses it.
