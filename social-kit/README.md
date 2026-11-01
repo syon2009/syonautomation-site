@@ -6,9 +6,11 @@ Facebook page, YouTube channel and LinkedIn company page. This folder is NOT par
 
 ## The owner's rules (do not change without asking him)
 - **4 posts a day**, every day, at **8:07 AM, 11:52 AM, 3:37 PM and 7:22 PM** (America/Toronto, Eastern).
-- **Nothing is posted without his approval.** Each afternoon: build the NEXT day's 4 videos, send all 4
-  (video + caption) to him in one message, and wait for "approved". Only then host and schedule them.
-  If he asks for a change, change it and send it again.
+- **No approval step (owner's instruction, Nov 1 2026: "turn off the daily approval and just do it").**
+  Each afternoon: build the 4 videos for the first upcoming day that has nothing scheduled at 8:07 AM
+  (check Metricool `getScheduledPosts` first, so nothing is doubled), check them carefully, then host
+  and schedule them yourself. Send him one short message afterwards with the 4 videos, captions,
+  sources and times, so he can ask for a change.
 - Each post different, **factual**, and either about the software (product, tip, benefit, short
   explainer) or an **idea for a next app** (a real plant-floor problem + the app idea + "Would your
   plant use it? Tell us in the comments").
@@ -43,7 +45,7 @@ Card classes come from base.css: `kick` (teal eyebrow), `big` (huge number), `lb
 `<div id="wmslot" style="width:720px;height:240px"></div>` (the big animated logo is placed there).
 Look at 3-4 frames of every finished video before sending it for approval.
 
-## After he approves
+## Host and schedule (no approval wait)
 1. Copy each `<slug>.mp4` and `<slug>.jpg` to `public/social/`, add a CHANGELOG.md line, commit, push
    (git pull --rebase first; other chats push to this repo too). The files are live at
    `https://syonautomation.com/social/<slug>.mp4` about a minute after the push.

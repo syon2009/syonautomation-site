@@ -22,3 +22,4 @@
 - 2026-11-01 · YouTube channel picture and banner replaced with the new Syon Automation wordmark (old SY smiley removed); source images in social-kit/youtube-channel-picture.png and social-kit/youtube-banner.jpg (not deployed).
 - 2026-11-01 · ControlDraft: download switched to the code-signed ControlDraft-Setup-1.17.0.exe (trial watermark, stricter post-trial lock, light/dark switch, EULA and privacy in the installer); controldraft.html, home card and Industrial page; FAQ "What happens after the trial?" updated; 1.16.0 file removed.
 - 2026-11-01 · public/social: Tuesday Nov 3 shorts added (maintenance-jobs-growing [BLS OOH], sitewatch-gas-tip, opc-ua-explained [OPC Foundation], idea-spare-parts-finder) + thumbnails.
+- 2026-11-01 · social-kit/README.md: daily approval step removed at the owner's request; routine now builds for the first day with no 8:07 post and schedules directly. Old fresh-session scheduled task turned off; the daily run lives in one chat.
