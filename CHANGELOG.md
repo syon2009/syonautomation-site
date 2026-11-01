@@ -20,3 +20,4 @@
 - 2026-11-01 · public/social: approved ControlDraft launch posts for Mon Nov 2 — 2026-11-02-controldraft-product.mp4 (1:49, 1080p, YouTube video + Facebook + LinkedIn) and 2026-11-02-controldraft-launch.mp4 (0:29 vertical Short/Reel) + thumbnails.
 - 2026-11-01 · WO Mailer: download switched from the unsigned 2.2.0 installer to the code-signed WO_Mailer_Setup_2.3.0.exe (wo-mailer.html, home card, Industrial page); 2.2.0 file removed.
 - 2026-11-01 · YouTube channel picture and banner replaced with the new Syon Automation wordmark (old SY smiley removed); source images in social-kit/youtube-channel-picture.png and social-kit/youtube-banner.jpg (not deployed).
+- 2026-11-01 · ControlDraft: download switched to the code-signed ControlDraft-Setup-1.17.0.exe (trial watermark, stricter post-trial lock, light/dark switch, EULA and privacy in the installer); controldraft.html, home card and Industrial page; FAQ "What happens after the trial?" updated; 1.16.0 file removed.
