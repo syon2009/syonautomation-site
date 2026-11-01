@@ -38,7 +38,7 @@
       url: "datacast.html", watch: "", from: "Free trial · from $79",
       img: "img/dc/tvplay.webp", w: 1600, hgt: 900, alt: "DataCast playing on a TV" },
     { name: "RungWise", kicker: "RungWise PLC Academy", h: "PLC skills,<br>rung by rung.",
-      lead: "Studio 5000-style ladder training with live simulations, auto-graded labs and a quiz after every module.",
+      lead: "Ladder training for Studio 5000, Siemens TIA Portal, Micro800, CLICK and SLC 500 / PLC-5, with live simulations, auto-graded labs and a quiz after every module.",
       url: "rungwise.html", watch: "rungwise.html#watch", from: "Free 14-day trial · from $249",
       img: "img/rw/sealin.webp", w: 1290, hgt: 684, alt: "RungWise seal-in circuit lesson" },
     { name: "WO Mailer", kicker: "WO Mailer", h: "The work order,<br>in the subject line.",
