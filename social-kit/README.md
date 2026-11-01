@@ -49,11 +49,20 @@ Look at 3-4 frames of every finished video before sending it for approval.
 1. Copy each `<slug>.mp4` and `<slug>.jpg` to `public/social/`, add a CHANGELOG.md line, commit, push
    (git pull --rebase first; other chats push to this repo too). The files are live at
    `https://syonautomation.com/social/<slug>.mp4` about a minute after the push.
-2. **Facebook + YouTube** — Metricool tool `createScheduledPost`, blogId `7796520`, timezone
-   `America/Toronto`, providers facebook + youtube, `media: ["https://syonautomation.com/social/<slug>.mp4"]`,
-   `facebookData: {"type":"REEL","title":"<title>"}`,
-   `youtubeData: {"title":"<title> #shorts","type":"short","privacy":"public","tags":[…],"category":"SCIENCE_TECHNOLOGY","madeForKids":false,"isAiGeneratedContent":false}`.
-   If it answers "Failed to normalize media", the site hasn't deployed yet: wait a minute and retry.
+2. **No Metricool (owner, Nov 1 2026: no paid services; its free plan allows only 20 posts a month).**
+   Everything is posted through Claude in Chrome in the owner's own browser (he stays signed in):
+   - **Facebook Reel**: `https://business.facebook.com/latest/reels_composer?asset_id=1448802374976313`.
+     Patch `HTMLInputElement.prototype.click` to capture the file input, click **Add Video**, label the
+     captured input and `file_upload` the mp4 → type the caption in the Description box → wait for
+     "Your video is safe to publish" → **Next** → **Next** → **Schedule** (scheduling option) → date
+     field → pick the day button ("Wednesday, 4 November 2026") → type into the `hours`, `minutes`,
+     `meridiem` spinbuttons → check it reads the right day and time → **Schedule** → confirm "Your reel
+     is scheduled". Check the Planner at `https://business.facebook.com/latest/content_calendar`.
+   - **YouTube Short**: YouTube Studio (`https://studio.youtube.com/channel/UC8526L36mS7v1WMLkoH4w8A`)
+     → Create → Upload videos → same file-input capture → title "<title> #shorts", description = caption,
+     Not made for kids, altered content **No** → Visibility **Schedule** with the date and time.
+     YouTube has a daily upload cap on this channel (hit on Nov 1 after ~10 uploads in one evening):
+     upload no more than ~6 a day, and spread big batches over several days.
 3. **LinkedIn** (Metricool's LinkedIn needs a paid plan, so use Claude in Chrome) at
    `https://www.linkedin.com/company/146908454/admin/page-posts/published/?share=true`:
    type the caption in the composer; if a link-preview card appears, close it with its X; then capture the
