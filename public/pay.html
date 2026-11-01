@@ -78,4 +78,5 @@ $("ppay").addEventListener("click",async()=>{if(!cur)return;$("ppay").disabled=t
 if(q.get("n"))$("pn").value=q.get("n");if(q.get("c")){const c=q.get("c").toUpperCase().replace(/[^A-Z0-9]/g,"");$("pc").value=c.length===6?c.slice(0,3)+"-"+c.slice(3):c}
 if(q.get("n")&&q.get("c"))find();})();
 </script>
+<script src="js/dlgate.js?v=1" defer></script>
 </body></html>

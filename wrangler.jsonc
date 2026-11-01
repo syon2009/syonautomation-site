@@ -1,9 +1,15 @@
 {
-  // Cloudflare Worker that serves syonautomation.com (static assets only).
+  // Cloudflare Worker that serves syonautomation.com.
+  // Static pages come from ./public; src/worker.js only handles /api/download, /api/downloads and /downloads-admin.
   // Cloudflare Workers Builds runs `npx wrangler deploy` on every push to main.
   "name": "black-disk-056a",
   "compatibility_date": "2026-10-01",
+  "main": "src/worker.js",
   "assets": {
-    "directory": "./public"
-  }
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  "kv_namespaces": [
+    { "binding": "DL", "id": "9579c70b53b04d98ba996f344dcaf2a4" }
+  ]
 }
