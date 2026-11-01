@@ -64,7 +64,7 @@ async function list(request, env, url) {
   const limit = Math.min(1000, parseInt(url.searchParams.get("limit"), 10) || 300);
   const rows = []; cur = undefined;
   do { const p = await env.DL.list({ prefix: "dl:", cursor: cur, limit: Math.min(1000, limit - rows.length) }); for (const x of p.keys) { const v = await env.DL.get(x.name); if (v) rows.push(Object.assign(JSON.parse(v), { id: x.name })); } cur = p.list_complete || rows.length >= limit ? null : p.cursor; } while (cur);
-  return json({ ok: true, total: parseInt(await env.DL.get("count-total"), 10) || 0, counts: counts.sort((a, b) => b.count - a.count), rows });
+  return json({ ok: true, total: parseInt(await env.DL.get("count-total"), 10) || 0, counts: counts.filter((c) => c.count > 0).sort((a, b) => b.count - a.count), rows });
 }
 
 const ADMIN_PAGE = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
