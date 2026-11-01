@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1000" viewBox="0 0 1920 1000">
+<g fill="none" stroke="#8CC8FF" stroke-opacity=".26" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<path d="M400 26 H1520 M400 18 V34 M1520 18 V34 M960 20 V32"/>
+<path d="M400 26 l14 -6 v12 z M1520 26 l-14 -6 v12 z"/>
+<rect x="120" y="190" width="150" height="400"/>
+<path d="M120 590 L195 690 L270 590 M120 190 Q195 140 270 190"/>
+<path d="M134 590 V770 M256 590 V770 M134 700 L256 640 M256 700 L134 640"/>
+<rect x="176" y="690" width="38" height="32"/>
+<path d="M195 722 V800 H330"/>
+<rect x="250" y="800" width="120" height="80" rx="4"/>
+<path d="M195 120 V900" stroke-dasharray="24 6 4 6" stroke-width="1.3"/>
+<path d="M70 190 V770 M60 190 H80 M60 770 H80"/>
+<path d="M70 190 l-6 14 h12 z M70 770 l-6 -14 h12 z"/>
+<path d="M1600 560 L1680 514 L1760 560 L1680 606 Z M1600 560 V596 L1680 642 L1760 596 V560 M1680 606 V642"/>
+<path d="M1680 514 V470"/>
+<circle cx="1680" cy="450" r="20"/>
+<path d="M1666 436 L1590 350"/>
+<circle cx="1580" cy="338" r="16"/>
+<path d="M1570 350 L1550 420 M1540 412 L1534 440 M1560 424 L1552 448"/>
+<path d="M1680 450 m-140 0 a140 140 0 0 1 140 -140" stroke-dasharray="5 8"/>
+<path d="M1560 760 L1760 645 L1900 726 L1700 841 Z M1560 760 V792 L1700 873 V841 M1700 873 L1900 758 V726"/>
+<path d="M1600 737 L1800 622 M1640 714 L1840 599" stroke-dasharray="8 8" stroke-width="1.2"/>
+<path d="M1640 760 L1676 739 L1712 760 L1676 781 Z M1640 760 V778 L1676 799 V781 M1676 799 L1712 778 V760"/>
+</g>
+<g fill="#8CC8FF" fill-opacity=".28" font-family="IBM Plex Mono, Consolas, monospace" font-size="14">
+<text x="890" y="16">LINE 1 · OVERALL 94'-0"</text>
+<text x="40" y="500" transform="rotate(-90 40 500)">48'-0" SILO HT</text>
+<text x="140" y="130">SILO 1 · Ø 12'-0"</text>
+<text x="258" y="846">BATCHER</text>
+<text x="1704" y="470">J2</text>
+<text x="1490" y="330">J3 · EOAT</text>
+<text x="1560" y="290">±170°</text>
+<text x="1640" y="900">CV-2 · 60 FPM</text>
+</g>
+</svg>

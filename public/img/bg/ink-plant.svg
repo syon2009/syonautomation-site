@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="300" viewBox="0 0 1920 300">
+<g fill="none" stroke="#8CC8FF" stroke-opacity=".26" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<path d="M40 270 H1880" stroke-width="2.4"/>
+<path d="M40 277 H1880" stroke-width="1" stroke-dasharray="3 6"/>
+<rect x="420" y="40" width="100" height="170"/><path d="M420 210 L470 260 L520 210 M420 40 Q470 14 520 40 M430 210 V270 M510 210 V270"/>
+<rect x="540" y="64" width="100" height="146"/><path d="M540 210 L590 260 L640 210 M540 64 Q590 38 640 64 M550 210 V270 M630 210 V270"/>
+<rect x="660" y="88" width="100" height="122"/><path d="M660 210 L710 260 L760 210 M660 88 Q710 62 760 88 M670 210 V270 M750 210 V270"/>
+<path d="M470 14 V6 H860 V60 M590 38 V6 M710 62 V6" stroke-width="1.6"/>
+<rect x="810" y="60" width="110" height="80" rx="4"/>
+<path d="M865 140 V180 M830 180 H900 V206 H830 Z"/>
+<path d="M900 194 H980 L1030 166 H1260"/>
+<circle cx="980" cy="210" r="12"/><circle cx="1050" cy="180" r="12"/><circle cx="1150" cy="180" r="12"/><circle cx="1250" cy="180" r="12"/>
+<path d="M980 222 L1050 192 H1250"/>
+<rect x="1070" y="126" width="40" height="40"/><rect x="1170" y="126" width="40" height="40"/>
+<path d="M980 222 V270 M1110 192 V270 M1230 192 V270"/>
+<rect x="1300" y="60" width="120" height="210" rx="3"/>
+<path d="M1360 60 V270"/>
+<circle cx="1328" cy="96" r="8"/><circle cx="1328" cy="122" r="8"/>
+<rect x="1376" y="84" width="32" height="24"/>
+<path d="M1312 170 H1346 M1312 188 H1346 M1374 170 H1408 M1374 188 H1408"/>
+<path d="M1260 166 Q1280 130 1300 116" stroke-dasharray="5 6"/>
+<circle cx="200" cy="170" r="70" stroke-width="14" stroke-dasharray="11 10"/><circle cx="200" cy="170" r="50"/><circle cx="200" cy="170" r="14"/>
+<path d="M120 170 H340" stroke-dasharray="24 6 4 6" stroke-width="1.2"/>
+<circle cx="1640" cy="160" r="50"/><path d="M1600 100 V128 M1640 100 V110 M1680 100 V128"/>
+</g>
+<g fill="#8CC8FF" fill-opacity=".28" font-family="IBM Plex Mono, Consolas, monospace" font-size="13">
+<text x="428" y="30">SILO 1</text><text x="548" y="54">SILO 2</text><text x="668" y="78">SILO 3</text>
+<text x="816" y="52">BATCHER</text><text x="1060" y="116">OVEN CARTS</text><text x="1306" y="50">MCC / PLC</text>
+<text x="1628" y="166">M</text><text x="1700" y="166">10 HP · 480V 3Ø</text>
+<text x="120" y="262">GEAR A · 36T</text>
+<text x="800" y="296">PLANT ELEVATION · NOT TO SCALE</text>
+</g>
+</svg>

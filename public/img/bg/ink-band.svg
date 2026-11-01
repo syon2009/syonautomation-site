@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="600" viewBox="0 0 1920 600">
+<g fill="none" stroke="#8CC8FF" stroke-opacity=".2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<path d="M60 120 V520 M380 120 V520"/>
+<path d="M60 200 H120 M120 182 V218 M136 182 V218 M136 200 H220 M220 182 V218 M236 182 V218 M226 218 L230 182 M236 200 H300 M380 200 H340 M306 182 Q296 200 306 218 M334 182 Q344 200 334 218"/>
+<path d="M90 200 V280 H120 M120 262 V298 M136 262 V298 M136 280 H170 V200"/>
+<path d="M60 380 H140 M140 362 V398 M156 362 V398 M156 380 H300 M306 362 Q296 380 306 398 M334 362 Q344 380 334 398 M340 380 H380"/>
+<circle cx="1700" cy="300" r="140" stroke-width="26" stroke-dasharray="20 18"/>
+<circle cx="1700" cy="300" r="116"/><circle cx="1700" cy="300" r="40"/><circle cx="1700" cy="300" r="14"/>
+<path d="M1700 130 V470 M1530 300 H1880" stroke-dasharray="24 6 4 6" stroke-width="1.2"/>
+<circle cx="1530" cy="470" r="70" stroke-width="16" stroke-dasharray="12 11"/><circle cx="1530" cy="470" r="52"/><circle cx="1530" cy="470" r="12"/>
+</g>
+<g fill="#8CC8FF" fill-opacity=".24" font-family="IBM Plex Mono, Consolas, monospace" font-size="13">
+<text x="96" y="172">START_PB</text><text x="200" y="172">ESTOP_OK</text><text x="300" y="172">M1</text>
+<text x="136" y="352">FAULT</text><text x="290" y="352">ALARM</text>
+<text x="1740" y="150">GEAR A · 36T · M6</text><text x="1420" y="570">GEAR B · 24T</text>
+</g>
+</svg>
