@@ -5,6 +5,10 @@
 (function () {
   var MINUTES = 15;
   var P = [
+    { name: "ControlDraft", kicker: "New · ControlDraft", h: "Plan the panel.<br>Then build it.",
+      lead: "I/O lists, panel layout to scale, wiring numbered end to end, drawings, HMI and a priced quote. Scan old ladder printouts with the free built-in OCR.",
+      url: "controldraft.html", watch: "controldraft.html#watch", from: "Free 14-day trial · from $495 · Pro, Team and Site editions",
+      img: "img/cd/panel.webp", w: 1440, hgt: 872, alt: "ControlDraft back-panel layout" },
     { name: "AOI Foundry", kicker: "New · AOI Foundry", h: "Write the AOI.<br>Skip the week.",
       lead: "Describe it in plain English. Get tested ladder logic, a guide and an L5X ready for Studio 5000.",
       url: "aoifoundry.html", watch: "aoifoundry.html#watch", from: "Free 14-day trial · from $99 · Personal, Pro and Site editions",
