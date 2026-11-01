@@ -7,7 +7,7 @@
   var P = [
     { name: "AOI Foundry", kicker: "New · AOI Foundry", h: "Write the AOI.<br>Skip the week.",
       lead: "Describe it in plain English. Get tested ladder logic, a guide and an L5X ready for Studio 5000.",
-      url: "aoifoundry.html", watch: "aoifoundry.html#watch", from: "Launching soon · from $99 · Personal, Pro and Site editions",
+      url: "aoifoundry.html", watch: "aoifoundry.html#watch", from: "Free 14-day trial · from $99 · Personal, Pro and Site editions",
       img: "img/aoi/home.webp", w: 1440, hgt: 864, alt: "AOI Foundry start screen" },
     { name: "PlantProof", kicker: "PlantProof", h: "Run it.<br>Prove it.",
       lead: "SCADA, historian, alarms, OEE and maintenance in one install, on your own network.",
