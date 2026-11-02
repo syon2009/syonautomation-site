@@ -19,7 +19,7 @@
     bJe6oH8Qb31Va8bggjgQE0v: 'rungwise.personal', '7sY8wPgiD7ib0xBc03gQE0u': 'rungwise.team', bJefZh3vR9qj3JN9RVgQE0t: 'rungwise.site',
     dRm00jc2neKDgwz1lpgQE0s: 'sitewatch.starter', cNifZh2rN9qja8bggjgQE0r: 'sitewatch.plant', '5kQ5kDaYj6e7cgj6FJgQE0q': 'sitewatch.site'
   };
-  var SELL = { techproof: 1, womailer: 1, controldraft: 1 };
+  var SELL = { techproof: 1, womailer: 1, controldraft: 1, portproof: 1 };
 
   function load() { try { var a = JSON.parse(localStorage.getItem(KEY) || '[]'); return Array.isArray(a) ? a.filter(function (x) { return typeof x === 'string'; }).slice(0, MAX) : []; } catch (e) { return mem; } }
   var mem = [];
