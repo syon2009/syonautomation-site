@@ -18,7 +18,7 @@
 <img src="img/cs/silo-refill.png" alt="Project summary: 8+ powder stalls per shift down to 0, worst-case batch time from 12 minutes to under 3, one shared blower replaced by three refill loops" loading="lazy" style="width:100%;border-radius:12px;border:1px solid var(--line)">
 <h4>The problem</h4><p class="muted">A powder batching line was fed by three silos sharing a single pneumatic conveying blower. Only one silo could refill at a time, so the batcher kept starving: more than 8 powder stalls per shift, and batches dragging out to 12 minutes.</p>
 <h4>What we changed</h4><ul class="checks"><li>Split the system into three independent refill loops</li><li>A dedicated PLC per silo, linked over Modbus</li><li>A dedicated blower per silo</li><li>A VFD-driven rotary airlock per silo</li><li>Radar level transmitters over 4-20 mA</li></ul>
-<h4>The result</h4><ul class="checks"><li>Zero powder stalls</li><li>300 lb batches in under 3 minutes</li><li>Silo refills in under 1 minute</li></ul>
+<h4>The result</h4><ul class="checks"><li>Zero powder stalls</li><li>300 lb batches in under 3 minutes</li><li>Refills from a silo in under 1 minute</li></ul>
 <div class="btns"><a class="btn" href="services.html#plc">PLC programming</a></div></article>
 <article class="scard reveal" id="ot"><span class="eyebrow">OT integration</span><h3>Every PLC. One network. Every data point recorded.</h3>
 <img src="img/cs/ot-integration.png" alt="Architecture: CompactLogix, CLICK PLUS, multi-brand PLCs and VFDs on one OT network feeding HMIs, a historian, Excel charts and PlantProof with LineProof MES and ERP connectors" loading="lazy" style="width:100%;border-radius:12px;border:1px solid var(--line)">
