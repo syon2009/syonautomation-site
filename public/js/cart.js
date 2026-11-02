@@ -53,9 +53,9 @@
       link = el('a', 'cartlink'); link.href = 'cart.html';
       link.innerHTML = CART_SVG + '<span>Cart</span><b class="cartn"></b>';
       var soc = wrap.querySelector('.socials'); wrap.insertBefore(link, soc || null);
-      if (/\/cart\.html$/.test(location.pathname)) link.setAttribute('aria-current', 'page');
+      if (/\/cart(\.html)?$/.test(location.pathname)) link.setAttribute('aria-current', 'page');
     }
-    link.hidden = !n && !/\/cart\.html$/.test(location.pathname);
+    link.hidden = !n && !/\/cart(\.html)?$/.test(location.pathname);
     link.querySelector('.cartn').textContent = n ? String(n) : '';
     link.setAttribute('aria-label', 'Cart, ' + n + ' item' + (n === 1 ? '' : 's'));
   }
