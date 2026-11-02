@@ -24,7 +24,7 @@ export default {
 async function record(request, env) {
   let b; try { b = await request.json(); } catch (e) { return json({ ok: false, error: "bad_json" }, 400); }
   const r = {}; for (const k of Object.keys(MAX)) r[k] = clip(b[k], MAX[k]);
-  if (!r.name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(r.email) || !r.address) return json({ ok: false, error: "missing" }, 400);
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(r.email)) return json({ ok: false, error: "missing" }, 400);
   if (!r.product) r.product = "Unknown";
   const cf = request.cf || {}; const h = request.headers;
   const now = Date.now();

@@ -1,4 +1,4 @@
-/* Download sign-in: asks for name, email, address and an optional comment before any software download,
+/* Download sign-in: asks for an email (name, address and a comment are optional) before any software download,
    records it (POST /api/download) and then starts the download. Developed by Syon Automation LLC. */
 (function () {
   'use strict';
@@ -26,10 +26,10 @@
     const back = document.createElement('div'); back.className = 'dlg-back';
     back.innerHTML = `<form class="dlg" role="dialog" aria-modal="true" aria-labelledby="dlg-t" novalidate>
       <h2 id="dlg-t">Download ${esc(product)}</h2>
-      <p>Tell us who you are and your download starts right away. We use this to support you and to send important updates. We never sell it.</p>
-      <label for="dlg-n">Name <i>*</i></label><input id="dlg-n" name="name" autocomplete="name" required value="${esc(saved.name)}">
+      <p>Just your email and your download starts right away. We use it to support you and to send important updates. We never sell it.</p>
       <label for="dlg-e">Email <i>*</i></label><input id="dlg-e" name="email" type="email" autocomplete="email" required value="${esc(saved.email)}">
-      <label for="dlg-a">Address <i>*</i></label><input id="dlg-a" name="address" autocomplete="street-address" placeholder="Street, city, state or province, ZIP, country" required value="${esc(saved.address)}">
+      <label for="dlg-n">Name <span style="color:#8a9bb0;font-weight:400">(optional)</span></label><input id="dlg-n" name="name" autocomplete="name" value="${esc(saved.name)}">
+      <label for="dlg-a">Company or city <span style="color:#8a9bb0;font-weight:400">(optional)</span></label><input id="dlg-a" name="address" autocomplete="organization" placeholder="Plant, company or city" value="${esc(saved.address)}">
       <label for="dlg-c">Comments</label><textarea id="dlg-c" name="comment" placeholder="Your experience, what you'll use it for, or a question (optional)"></textarea>
       <div class="err" id="dlg-err" aria-live="polite"></div>
       <div class="row"><button type="button" class="no">Cancel</button><button type="submit" class="go">Continue to download</button></div>
@@ -41,14 +41,12 @@
     document.addEventListener('keydown', onKey);
     back.addEventListener('mousedown', (e) => { if (e.target === back) close(); });
     f.querySelector('.no').onclick = close;
-    setTimeout(() => (f.querySelector(saved.name ? '#dlg-c' : '#dlg-n')).focus(), 30);
+    setTimeout(() => (f.querySelector(saved.email ? '#dlg-c' : '#dlg-e')).focus(), 30);
     f.onsubmit = async (e) => {
       e.preventDefault();
       const q = (id) => f.querySelector('#' + id); const d = { name: q('dlg-n').value.trim(), email: q('dlg-e').value.trim(), address: q('dlg-a').value.trim(), comment: q('dlg-c').value.trim() };
       const err = f.querySelector('#dlg-err');
-      if (!d.name) { err.textContent = 'Please enter your name.'; q('dlg-n').focus(); return; }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) { err.textContent = 'Please enter a valid email address.'; q('dlg-e').focus(); return; }
-      if (!d.address) { err.textContent = 'Please enter your address.'; q('dlg-a').focus(); return; }
       try { localStorage.setItem('syon.dl', JSON.stringify({ name: d.name, email: d.email, address: d.address })); saved = d; } catch (x) { }
       const btn = f.querySelector('.go'); btn.disabled = true; btn.textContent = 'Starting download…';
       try {
