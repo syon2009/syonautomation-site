@@ -28,7 +28,7 @@ Facebook page, YouTube channel and LinkedIn company page. This folder is NOT par
 - Voice-over: Kokoro **af_heart, speed 1.05** (upbeat female; never am_michael, never Onyx).
   Write "Syon" as **"Sigh-yawn"** and "SCADA" as **"Skayda"** in the spoken text so they are said right.
 - Videos: 1080x1920, under 10 MB (gen.py takes care of it), smooth transitions, no ambiguous visuals.
-- **Music: only the original Syon Automation LLC library in `music/`** (14 tracks, © 2026 Syon Automation LLC, made
+- **Music: only the original Syon Automation LLC library in `music/`** (12 tracks, © 2026 Syon Automation LLC, made
   from scratch by PostProof's `tools/music/compose.py`; `music/catalog.json` lists title, style, BPM, moods, length,
   loudness and licence). Never use music from anywhere else. `music.m4a` is now a copy of track 1 (Forward Motion).
 
