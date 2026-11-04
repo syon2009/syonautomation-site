@@ -23,36 +23,61 @@
   },
   {
    "id": "s5",
+   "say": "It shows up as longer downtime, repeat failures, and new hires learning the hard way, one breakdown at a time.",
+   "html": "<div class=\"kick\">What it costs</div><div class=\"hl\" style=\"font-size:92px;color:#ff6b5a\">Longer downtime.<br>Repeat failures.</div><div class=\"lbl\" style=\"font-size:58px;color:#f5f7fa\">New hires learning the hard way.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s6",
    "say": "Four pillars keep that knowledge in the building.",
    "html": "<div class=\"kick\">Keep it in the building</div><div class=\"hl\" style=\"font-size:140px;color:#36cfc9\">4 pillars</div><div class=\"foot\">Syon Automation LLC</div>"
   },
   {
-   "id": "s6",
+   "id": "s7",
    "say": "One. Write the fix down where the next person will look, at the machine, by the asset, with photos.",
    "html": "<div class=\"kick\">Pillar 1</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">1</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Write the fix down at the machine, by the asset, with photos.</div></div><div class=\"foot\">Syon Automation LLC</div>"
   },
   {
-   "id": "s7",
+   "id": "s8",
+   "say": "Keep it short: the symptom, the cause, the fix, and a photo of the part. A two-line note at the machine beats a perfect manual nobody opens.",
+   "html": "<div class=\"kick\">Keep it short</div><div class=\"hl\" style=\"font-size:100px;color:#2fa4ff\">Symptom.<br>Cause.<br>Fix.<br>Photo.</div><div class=\"sub\" style=\"color:#b8c2cc\">A two-line note at the machine beats a perfect manual nobody opens.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s9",
    "say": "Two. Pair people up. Shadowing an experienced tech teaches what no binder can.",
    "html": "<div class=\"kick\">Pillar 2</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">2</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Pair people up. Shadowing teaches what a binder can't.</div></div><div class=\"foot\">Syon Automation LLC</div>"
   },
   {
-   "id": "s8",
+   "id": "s10",
+   "say": "Send a newer technician on the next call with your most experienced one, and let the newer tech hold the meter.",
+   "html": "<div class=\"kick\">Make it hands-on</div><div class=\"hl\" style=\"font-size:100px;color:#f5f7fa\">Let the new tech<br>hold the meter.</div><div class=\"sub\" style=\"color:#b8c2cc\">The experienced tech talks them through it.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s11",
    "say": "Three. Teach the why, not just the steps, so the next person can handle the problem nobody wrote down.",
    "html": "<div class=\"kick\">Pillar 3</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">3</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Teach the why, not just the steps.</div></div><div class=\"foot\">Syon Automation LLC</div>"
   },
   {
-   "id": "s9",
+   "id": "s12",
+   "say": "If a tech knows why a fix works, they can handle the next problem that looks a little different. Steps alone only fix the problem you wrote down.",
+   "html": "<div class=\"kick\">Why the why matters</div><div class=\"hl\" style=\"font-size:84px;color:#2fa4ff\">Steps fix one problem.<br>The why fixes the next one.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s13",
    "say": "Four. Check that it moved. A quick sign-off or checkoff shows the knowledge actually landed.",
    "html": "<div class=\"kick\">Pillar 4</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">4</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Check that it moved: a sign-off or checkoff.</div></div><div class=\"foot\">Syon Automation LLC</div>"
   },
   {
-   "id": "s10",
-   "say": "Datumline keeps a time-stamped journal for every machine, with photos. TechProof trains technicians with forty-eight courses, forms and checkoffs.",
-   "html": "<div class=\"kick\">Tools for all four</div><img class=\"shot\" style=\"width:880px\" src=\"{IMG}/dl/journal.webp\"><div class=\"lbl\" style=\"font-size:52px;color:#2fa4ff\">Datumline: a journal for every machine</div><div class=\"lbl\" style=\"font-size:52px;color:#36cfc9\">TechProof: 48 courses, forms and checkoffs</div><div class=\"foot\">Syon Automation LLC</div>"
+   "id": "s14",
+   "say": "Where to start? Your ten most frequent breakdowns. That's where captured knowledge pays back first.",
+   "html": "<div class=\"kick\">Where to start</div><div class=\"big\" style=\"color:#36cfc9\">10</div><div class=\"lbl\" style=\"font-size:62px;color:#f5f7fa\">most frequent breakdowns</div><div class=\"sub\" style=\"color:#b8c2cc\">That's where captured knowledge pays back first.</div><div class=\"foot\">Syon Automation LLC</div>"
   },
   {
-   "id": "s11",
+   "id": "s15",
+   "say": "Datumline keeps a time-stamped journal for every machine, with photos. TechProof trains technicians with forty-eight courses, forms and checkoffs.",
+   "html": "<div class=\"kick\">Tools for all four</div><img class=\"shot\" style=\"width:900px\" src=\"{IMG}/tp/catalog.webp\"><div class=\"lbl\" style=\"font-size:52px;color:#2fa4ff\">Datumline: a journal for every machine</div><div class=\"lbl\" style=\"font-size:52px;color:#36cfc9\">TechProof: 48 courses, forms and checkoffs</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s16",
    "say": "Sigh-yawn Automation. Keep what your plant knows, at sigh-yawn automation dot com.",
    "html": "<div id=\"wmslot\" style=\"width:720px;height:240px\"></div><div class=\"hl\" style=\"font-size:80px;color:#f5f7fa\">Keep what your plant knows.</div><div class=\"sub\" style=\"color:#2fa4ff;font-weight:700;margin-top:40px\">syonautomation.com</div><div class=\"foot\">Developed by Syon Automation LLC</div>"
   }

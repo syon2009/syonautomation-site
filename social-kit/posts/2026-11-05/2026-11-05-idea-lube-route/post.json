@@ -13,36 +13,76 @@
   },
   {
    "id": "s3",
+   "say": "And bearings are everywhere in a plant: motors, pumps, fans, conveyors and gearboxes.",
+   "html": "<div class=\"kick\">Everywhere</div><div class=\"hl\" style=\"font-size:88px;color:#f5f7fa\">Motors \u00b7 Pumps \u00b7 Fans<br>Conveyors \u00b7 Gearboxes</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s4",
+   "say": "Too much grease is a problem too. It can make a bearing run hot and push past the seals.",
+   "html": "<div class=\"kick\">More isn't better</div><div class=\"hl\" style=\"font-size:116px;color:#ff6b5a\">Over-greasing</div><div class=\"sub\" style=\"color:#b8c2cc\">can make a bearing run hot and push past the seals</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s5",
+   "say": "In a lot of plants the lube route lives on a paper list, or in one person's head. When that person is out, points get skipped.",
+   "html": "<div class=\"kick\">Today</div><div class=\"hl\" style=\"font-size:96px;color:#f5f7fa\">A paper list.<br>Or one person's head.</div><div class=\"lbl\" style=\"font-size:56px;color:#ffc53d\">When they're out, points get skipped.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s6",
+   "say": "A missed lube point doesn't fail today. It fails weeks later, usually in the middle of a run, and nobody connects it back to the grease.",
+   "html": "<div class=\"kick\">The slow failure</div><div class=\"hl\" style=\"font-size:100px;color:#ff6b5a\">Missed today.<br>Fails weeks later.</div><div class=\"sub\" style=\"color:#b8c2cc\">Usually mid-run. Rarely traced back to the grease.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s7",
    "say": "An idea for our next app.",
    "html": "<div class=\"kick\">Software idea</div><div class=\"hl\" style=\"font-size:120px;color:#36cfc9\">A lube route<br>in your pocket</div><div class=\"foot\">Syon Automation LLC</div>"
   },
   {
-   "id": "s4",
+   "id": "s8",
    "say": "Every grease point on a plant map, with its grease type, amount and interval.",
    "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">1</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Every grease point on a plant map: grease type, amount, interval.</div></div><div class=\"foot\">Syon Automation LLC</div>"
   },
   {
-   "id": "s5",
+   "id": "s9",
+   "say": "The route builds itself from that map, in walking order, so nobody doubles back across the plant.",
+   "html": "<div class=\"kick\">The idea</div><div class=\"hl\" style=\"font-size:110px;color:#2fa4ff\">A route in<br>walking order</div><div class=\"sub\" style=\"color:#b8c2cc\">No doubling back across the plant.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s10",
    "say": "Scan a QR tag at the point, log it from your phone, and the next due date sets itself.",
    "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">2</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Scan the QR tag, log it, next due date sets itself.</div></div><div class=\"foot\">Syon Automation LLC</div>"
   },
   {
-   "id": "s6",
+   "id": "s11",
    "say": "Missed points turn red, and the supervisor gets the list.",
    "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">3</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Missed points turn red. The supervisor gets the list.</div></div><div class=\"foot\">Syon Automation LLC</div>"
   },
   {
-   "id": "s7",
+   "id": "s12",
    "say": "And every bearing keeps its history, so when one fails you can see how it was greased.",
    "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">4</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">A history for every bearing.</div></div><div class=\"foot\">Syon Automation LLC</div>"
   },
   {
-   "id": "s8",
+   "id": "s13",
+   "say": "A photo at every point, so a new technician greases the right fitting with the right grease gun.",
+   "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">5</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">A photo at every point: right fitting, right gun.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s14",
+   "say": "And a report for audits: what was greased, when, by whom, and how much.",
+   "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">6</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Audit report: what, when, who, how much.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s15",
+   "say": "It would run on your own plant network, with no monthly subscription.",
+   "html": "<div class=\"kick\">The idea</div><div class=\"hl\" style=\"font-size:104px;color:#36cfc9\">Your network.<br>No subscription.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s16",
    "say": "Would your plant use it? Tell us in the comments. The best ideas become the next Sigh-yawn Automation app.",
    "html": "<div class=\"kick\">Your turn</div><div class=\"hl\" style=\"font-size:116px;color:#f5f7fa\">Would your plant<br>use it?</div><div class=\"lbl\" style=\"font-size:58px;color:#36cfc9\">Tell us in the comments.</div><div class=\"foot\">Syon Automation LLC</div>"
   },
   {
-   "id": "s9",
+   "id": "s17",
    "say": "Sigh-yawn Automation, at sigh-yawn automation dot com.",
    "html": "<div id=\"wmslot\" style=\"width:720px;height:240px\"></div><div class=\"hl\" style=\"font-size:80px;color:#f5f7fa\">Built from real plant-floor problems.</div><div class=\"sub\" style=\"color:#2fa4ff;font-weight:700;margin-top:40px\">syonautomation.com</div><div class=\"foot\">Developed by Syon Automation LLC</div>"
   }
