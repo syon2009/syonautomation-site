@@ -3,14 +3,14 @@ node_modules/
 .DS_Store
 Thumbs.db
 # social-kit build outputs (the source is post.json / make.py; finished videos go to public/social when posted)
-social-kit/posts/*/*.mp4
-social-kit/posts/*/*.jpg
-social-kit/posts/*/*.png
-social-kit/posts/*/*.wav
-social-kit/posts/*/cards.html
-social-kit/posts/*/rcards.js
-social-kit/posts/*/durs.json
-social-kit/posts/*/vo/
-social-kit/posts/*/photos/
+social-kit/posts/**/*.mp4
+social-kit/posts/**/*.jpg
+social-kit/posts/**/*.png
+social-kit/posts/**/*.wav
+social-kit/posts/**/cards.html
+social-kit/posts/**/rcards.js
+social-kit/posts/**/durs.json
+social-kit/posts/**/vo/
+social-kit/posts/**/photos/
 social-kit/music/.recent.json
 social-kit/__pycache__/
