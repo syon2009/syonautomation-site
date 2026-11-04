@@ -52,7 +52,12 @@ for i, x in zip(ids, dur):
     cmd += ['-i', f'clip_{i}.mp4']
 cmd += ['-loop', '1', '-i', f'{KIT}/logo_sm.png', '-loop', '1', '-i', f'{KIT}/logo_big.png']
 for i in ids: cmd += ['-i', f'vo/{i}.wav']
-cmd += ['-i', f'{KIT}/music.m4a']
+# background music: original Syon Automation LLC library (music/), picked by mood with an 8-post rotation (music_pick.py)
+sys.path.insert(0, KIT)
+from music_pick import pick, chain
+music, track = pick(post, KIT)
+if music:
+    cmd += ['-i', music]
 f = []
 for kk, x in enumerate(dur):
     f.append(f"[{kk}:v]setsar=1,format=yuv420p,fps={FPS}[v{kk}]")
@@ -67,15 +72,18 @@ f.append(f"[{prev}][ls]overlay=x=(W-w)/2:y=150:enable='lt(t,{se + 0.2:.2f})'[o1]
 f.append(f"[o1][lb]overlay=x=180:y=676:enable='gte(t,{se:.2f})',format=yuv420p[vout]")
 for kk in range(n):
     ms = int((starts[kk] + 0.25) * 1000); f.append(f"[{n + 2 + kk}:a]aresample=48000,adelay={ms}|{ms}[a{kk}]")
-f.append(''.join(f'[a{kk}]' for kk in range(n)) + f"amix=inputs={n}:normalize=0[vo]")
-f.append(f"[{2 * n + 2}:a]aresample=48000,atrim=0:{total:.2f},volume=0.35,afade=t=out:st={total - 2:.2f}:d=2[mu]")
-f.append("[vo]asplit=2[vo1][vo2]")
-f.append("[mu][vo1]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=400[mud]")
-f.append("[vo2][mud]amix=inputs=2:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11[aout]")
+f.append(''.join(f'[a{kk}]' for kk in range(n)) + f"amix=inputs={n}:normalize=0,apad=whole_dur={total:.3f},atrim=0:{total:.3f}[vo]")
+if music:   # loop the bed, cut it to the exact video length, fade in and out, duck it under the voice
+    f.append(f"[{2 * n + 2}:a]" + chain(total, track) + "[mu]")
+    f.append("[vo]asplit=2[vo1][vo2]")
+    f.append("[mu][vo1]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=400[mud]")
+    f.append("[vo2][mud]amix=inputs=2:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11[aout]")
+else:
+    f.append("[vo]loudnorm=I=-16:TP=-1.5:LRA=11[aout]")
 out = f"{post['slug']}.mp4"
 for crf in (21, 23, 25, 27):
     subprocess.run(cmd + ['-filter_complex', ';'.join(f), '-map', '[vout]', '-map', '[aout]', '-t', f'{total:.2f}', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', str(crf), '-pix_fmt', 'yuv420p', '-r', '30', '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', out], check=True)
     if os.path.getsize(out) < 60e6: break
 # thumbnail from the first card
 subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', '1.5', '-i', out, '-frames:v', '1', '-q:v', '3', f"{post['slug']}.jpg"], check=True)
-print(json.dumps({'out': out, 'seconds': round(total, 1), 'mb': round(os.path.getsize(out) / 1e6, 2)}))
+print(json.dumps({'out': out, 'seconds': round(total, 1), 'mb': round(os.path.getsize(out) / 1e6, 2), 'music': track['id'] if track else None}))

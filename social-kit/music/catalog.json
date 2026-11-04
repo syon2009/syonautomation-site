@@ -1,0 +1,307 @@
+{
+  "version": 1,
+  "generator": "tools/music/compose.py",
+  "owner": "Syon Automation LLC",
+  "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
+  "loudness": "-16 LUFS integrated, true peak <= -1 dBTP",
+  "tracks": [
+    {
+      "id": "01-corporate-upbeat",
+      "file": "01-corporate-upbeat.m4a",
+      "title": "Forward Motion",
+      "style": "Corporate upbeat",
+      "bpm": 118,
+      "mood": [
+        "upbeat",
+        "positive",
+        "corporate",
+        "bright"
+      ],
+      "energy": 4,
+      "seconds": 146.44,
+      "bars": 72,
+      "lufs": -16.1,
+      "truePeak": -1.5,
+      "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
+      "samples": 6458034,
+      "sampleRate": 44100
+    },
+    {
+      "id": "02-lofi-hiphop",
+      "file": "02-lofi-hiphop.m4a",
+      "title": "Night Shift Notes",
+      "style": "Lo-fi hip-hop",
+      "bpm": 85,
+      "mood": [
+        "lofi",
+        "calm",
+        "warm",
+        "explainer"
+      ],
+      "energy": 2,
+      "seconds": 158.12,
+      "bars": 56,
+      "lufs": -16.1,
+      "truePeak": -1.7,
+      "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
+      "samples": 6972988,
+      "sampleRate": 44100
+    },
+    {
+      "id": "03-ambient-tech",
+      "file": "03-ambient-tech.m4a",
+      "title": "Clean Room",
+      "style": "Ambient tech pad",
+      "bpm": 90,
+      "mood": [
+        "ambient",
+        "calm",
+        "tech",
+        "cinematic"
+      ],
+      "energy": 1,
+      "seconds": 149.33,
+      "bars": 56,
+      "lufs": -16.0,
+      "truePeak": -4.0,
+      "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
+      "samples": 6585600,
+      "sampleRate": 44100
+    },
+    {
+      "id": "04-synthwave-drive",
+      "file": "04-synthwave-drive.m4a",
+      "title": "Neon Interlock",
+      "style": "Synthwave drive",
+      "bpm": 110,
+      "mood": [
+        "synthwave",
+        "driving",
+        "retro",
+        "upbeat"
+      ],
+      "energy": 4,
+      "seconds": 157.09,
+      "bars": 72,
+      "lufs": -16.0,
+      "truePeak": -1.6,
+      "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
+      "samples": 6927709,
+      "sampleRate": 44100
+    },
+    {
+      "id": "05-minimal-deep-house",
+      "file": "05-minimal-deep-house.m4a",
+      "title": "Steady State",
+      "style": "Minimal deep house",
+      "bpm": 122,
+      "mood": [
+        "house",
+        "groove",
+        "smooth",
+        "upbeat"
+      ],
+      "energy": 3,
+      "seconds": 157.38,
+      "bars": 80,
+      "lufs": -16.1,
+      "truePeak": -1.6,
+      "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
+      "samples": 6940328,
+      "sampleRate": 44100
+    },
+    {
+      "id": "06-bright-pluck-pop",
+      "file": "06-bright-pluck-pop.m4a",
+      "title": "Green Light",
+      "style": "Bright pluck pop",
+      "bpm": 124,
+      "mood": [
+        "bright",
+        "pluck",
+        "pop",
+        "upbeat",
+        "happy"
+      ],
+      "energy": 4,
+      "seconds": 154.84,
+      "bars": 80,
+      "lufs": -16.1,
+      "truePeak": -1.2,
+      "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
+      "samples": 6828387,
+      "sampleRate": 44100
+    },
+    {
+      "id": "07-cinematic-pulse",
+      "file": "07-cinematic-pulse.m4a",
+      "title": "Rising Setpoint",
+      "style": "Cinematic pulse / build",
+      "bpm": 100,
+      "mood": [
+        "cinematic",
+        "build",
+        "serious",
+        "statistic"
+      ],
+      "energy": 3,
+      "seconds": 153.6,
+      "bars": 64,
+      "lufs": -16.0,
+      "truePeak": -1.6,
+      "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
+      "samples": 6773760,
+      "sampleRate": 44100
+    },
+    {
+      "id": "08-chill-trap",
+      "file": "08-chill-trap.m4a",
+      "title": "Low Torque",
+      "style": "Chill trap (half-time)",
+      "bpm": 140,
+      "mood": [
+        "chill",
+        "trap",
+        "modern",
+        "calm"
+      ],
+      "energy": 3,
+      "seconds": 150.86,
+      "bars": 88,
+      "lufs": -16.0,
+      "truePeak": -1.7,
+      "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
+      "samples": 6652800,
+      "sampleRate": 44100
+    },
+    {
+      "id": "09-funk-groove",
+      "file": "09-funk-groove.m4a",
+      "title": "Feedback Loop Funk",
+      "style": "Funk groove",
+      "bpm": 104,
+      "mood": [
+        "funk",
+        "groove",
+        "playful",
+        "upbeat"
+      ],
+      "energy": 4,
+      "seconds": 147.69,
+      "bars": 64,
+      "lufs": -16.2,
+      "truePeak": -3.1,
+      "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
+      "samples": 6513231,
+      "sampleRate": 44100
+    },
+    {
+      "id": "10-industrial-techno",
+      "file": "10-industrial-techno.m4a",
+      "title": "Line Speed",
+      "style": "Light industrial techno",
+      "bpm": 126,
+      "mood": [
+        "techno",
+        "industrial",
+        "driving",
+        "tech"
+      ],
+      "energy": 4,
+      "seconds": 152.38,
+      "bars": 80,
+      "lufs": -16.0,
+      "truePeak": -1.1,
+      "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
+      "samples": 6720000,
+      "sampleRate": 44100
+    },
+    {
+      "id": "11-soft-piano",
+      "file": "11-soft-piano.m4a",
+      "title": "First Light",
+      "style": "Soft piano + pad",
+      "bpm": 75,
+      "mood": [
+        "piano",
+        "calm",
+        "warm",
+        "ambient",
+        "cinematic"
+      ],
+      "energy": 1,
+      "seconds": 153.6,
+      "bars": 48,
+      "lufs": -16.0,
+      "truePeak": -1.7,
+      "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
+      "samples": 6773760,
+      "sampleRate": 44100
+    },
+    {
+      "id": "12-liquid-dnb",
+      "file": "12-liquid-dnb.m4a",
+      "title": "Flow Rate",
+      "style": "Light liquid drum & bass",
+      "bpm": 172,
+      "mood": [
+        "dnb",
+        "liquid",
+        "flowing",
+        "upbeat"
+      ],
+      "energy": 4,
+      "seconds": 145.12,
+      "bars": 104,
+      "lufs": -16.1,
+      "truePeak": -2.6,
+      "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
+      "samples": 6399628,
+      "sampleRate": 44100
+    },
+    {
+      "id": "13-acoustic-folk",
+      "file": "13-acoustic-folk.m4a",
+      "title": "Open Road",
+      "style": "Acoustic-style folk strum",
+      "bpm": 96,
+      "mood": [
+        "acoustic",
+        "folk",
+        "warm",
+        "upbeat",
+        "friendly"
+      ],
+      "energy": 3,
+      "seconds": 160.0,
+      "bars": 64,
+      "lufs": -16.2,
+      "truePeak": -1.4,
+      "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
+      "samples": 7056000,
+      "sampleRate": 44100
+    },
+    {
+      "id": "14-factory-percussion",
+      "file": "14-factory-percussion.m4a",
+      "title": "Shop Floor",
+      "style": "Factory-floor percussion groove",
+      "bpm": 112,
+      "mood": [
+        "industrial",
+        "percussion",
+        "groove",
+        "tech",
+        "upbeat"
+      ],
+      "energy": 4,
+      "seconds": 154.29,
+      "bars": 72,
+      "lufs": -16.0,
+      "truePeak": -2.0,
+      "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
+      "samples": 6804000,
+      "sampleRate": 44100
+    }
+  ]
+}

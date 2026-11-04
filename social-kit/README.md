@@ -28,6 +28,9 @@ Facebook page, YouTube channel and LinkedIn company page. This folder is NOT par
 - Voice-over: Kokoro **af_heart, speed 1.05** (upbeat female; never am_michael, never Onyx).
   Write "Syon" as **"Sigh-yawn"** and "SCADA" as **"Skayda"** in the spoken text so they are said right.
 - Videos: 1080x1920, under 10 MB (gen.py takes care of it), smooth transitions, no ambiguous visuals.
+- **Music: only the original Syon Automation LLC library in `music/`** (14 tracks, © 2026 Syon Automation LLC, made
+  from scratch by PostProof's `tools/music/compose.py`; `music/catalog.json` lists title, style, BPM, moods, length,
+  loudness and licence). Never use music from anywhere else. `music.m4a` is now a copy of track 1 (Forward Motion).
 
 ## Build (in a fresh cloud session)
 ```bash
@@ -39,6 +42,12 @@ curl -LO https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-fil
 python3 social-kit/gen.py /path/to/post-folder     # -> <slug>.mp4 + <slug>.jpg
 ```
 post.json: `{"slug": "YYYY-MM-DD-topic", "scenes": [{"id": "s1", "say": "spoken text", "html": "card html"}, …]}`.
+Optional in post.json: `"type": "product" | "statistic" | "explainer" | "idea"` (sets the music mood; guessed from the
+slug when missing: `…-idea-…` → idea, otherwise product) and `"music": "auto" | "none" | "<track id>"` (for example
+`"04-synthwave-drive"`). Automatic music (`music_pick.py`, same rules as PostProof): product tip → upbeat, statistic →
+cinematic/ambient, explainer → lo-fi/ambient, app idea → bright/pluck/funk, and never one of the last 8 tracks used
+(remembered in `music/.recent.json`, local only). The bed is looped gap-free, cut to the video length with a 0.6 s
+fade-in and 2 s fade-out, and ducked under the voice. gen.py / genstory.py print which track they used.
 Card classes come from base.css: `kick` (teal eyebrow), `big` (huge number), `lbl`, `sub`, `hl` (headline),
 `src` (source line), `foot` ("Syon Automation LLC"), `shot` (app screenshot; use `{IMG}/…` for
 `public/img/…`). The LAST scene is the end card and must contain
