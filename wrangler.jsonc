@@ -9,6 +9,10 @@
     "directory": "./public",
     "binding": "ASSETS"
   },
+  // Service binding to the license service, used only to check the License console password on /downloads-admin.
+  "services": [
+    { "binding": "LICSVC", "service": "depthforge-licenses" }
+  ],
   "kv_namespaces": [
     { "binding": "DL", "id": "9579c70b53b04d98ba996f344dcaf2a4" }
   ]

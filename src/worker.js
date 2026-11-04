@@ -91,7 +91,7 @@ async function event(request, env) {
   return json({ ok: true });
 }
 async function events(request, env, url) {
-  if (!(await isOwner(request))) return json({ ok: false, error: "key" }, 403);
+  if (!(await isOwner(request, env))) return json({ ok: false, error: "key" }, 403);
   const days = Math.max(1, Math.min(400, parseInt(url.searchParams.get("days"), 10) || 30));
   const since = Date.now() - days * 86400000;
   const tot = {}; const recent = []; let cur, n = 0, done = false, calls = 0;
@@ -111,12 +111,13 @@ async function events(request, env, url) {
 // The owner can sign in with this page's own key OR the License console password (ADMIN_TOKEN of licenses.syonautomation.com).
 // The console password is never stored here: it is checked by asking the license service, which answers 401 when it is wrong.
 const OK_KEYS = new Map(); // sha256(key) -> time it was confirmed (kept 10 minutes per Worker instance)
-const isOwner = async (request) => {
+const isOwner = async (request, env) => {
   const k = (request.headers.get("x-admin-key") || "").trim(); if (k.length < 8) return false;
   const h = await sha256(k); if (h === ADMIN_HASH) return true;
   const t = OK_KEYS.get(h); if (t && Date.now() - t < 600000) return true;
   try {
-    const r = await fetch("https://licenses.syonautomation.com/admin/api/owner-check", { headers: { Authorization: "Bearer " + k } });
+    const req = new Request("https://licenses.syonautomation.com/admin/api/owner-check", { headers: { Authorization: "Bearer " + k } });
+    const r = env && env.LICSVC ? await env.LICSVC.fetch(req) : await fetch(req);
     if (r.status === 401) return false;
     const j = await r.json().catch(() => ({}));
     if (j.error === "unknown_action") { OK_KEYS.set(h, Date.now()); return true; }
@@ -126,7 +127,7 @@ const isOwner = async (request) => {
 
 // Delete one download record (test entries) and take it off the counts.
 async function remove(request, env, url) {
-  if (!(await isOwner(request))) return json({ ok: false, error: "key" }, 403);
+  if (!(await isOwner(request, env))) return json({ ok: false, error: "key" }, 403);
   const id = url.searchParams.get("id") || "";
   if (/^(ld|rv):[0-9]{13}-[0-9a-f]{8}$/.test(id)) { await env.DL.delete(id); return json({ ok: true }); }
   if (!/^dl:[0-9]{13}-[0-9a-f]{8}$/.test(id)) return json({ ok: false, error: "id" }, 400);
@@ -141,7 +142,7 @@ async function remove(request, env, url) {
 }
 
 async function list(request, env, url) {
-  if (!(await isOwner(request))) return json({ ok: false, error: "key" }, 403);
+  if (!(await isOwner(request, env))) return json({ ok: false, error: "key" }, 403);
   const counts = []; let cur;
   do { const p = await env.DL.list({ prefix: "count:", cursor: cur }); for (const x of p.keys) counts.push({ product: (x.metadata && x.metadata.product) || x.name.slice(6), count: parseInt(await env.DL.get(x.name), 10) || 0 }); cur = p.list_complete ? null : p.cursor; } while (cur);
   const limit = Math.min(1000, parseInt(url.searchParams.get("limit"), 10) || 300);
