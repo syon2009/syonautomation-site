@@ -8,7 +8,7 @@ Facebook page, YouTube channel and LinkedIn company page. This folder is NOT par
 - **4 posts a day**, every day, at **8:07 AM, 11:52 AM, 3:37 PM and 7:22 PM** (America/Toronto, Eastern).
 - **No approval step (owner's instruction, Nov 1 2026: "turn off the daily approval and just do it").**
   Each afternoon: build the 4 videos for the first upcoming day that has nothing scheduled at 8:07 AM
-  (check Metricool `getScheduledPosts` first, so nothing is doubled), check them carefully, then host
+  (check the Facebook Planner, YouTube Studio's Shorts list and LinkedIn's "View all scheduled posts" first, so nothing is doubled), check them carefully, then host
   and schedule them yourself. Send him one short message afterwards with the 4 videos, captions,
   sources and times, so he can ask for a change.
 - Each post different, **factual**, and either about the software (product, tip, benefit, short
@@ -49,7 +49,7 @@ Look at 3-4 frames of every finished video before sending it for approval.
 1. Copy each `<slug>.mp4` and `<slug>.jpg` to `public/social/`, add a CHANGELOG.md line, commit, push
    (git pull --rebase first; other chats push to this repo too). The files are live at
    `https://syonautomation.com/social/<slug>.mp4` about a minute after the push.
-2. **No Metricool (owner, Nov 1 2026: no paid services; its free plan allows only 20 posts a month).**
+2. **Never use Metricool (owner, Nov 1 and Nov 3 2026: stop using it completely; post directly until our own posting app replaces this routine).**
    Everything is posted through Claude in Chrome in the owner's own browser (he stays signed in):
    - **Facebook Reel**: `https://business.facebook.com/latest/reels_composer?asset_id=1448802374976313`.
      Patch `HTMLInputElement.prototype.click` to capture the file input, click **Add Video**, label the
@@ -62,8 +62,8 @@ Look at 3-4 frames of every finished video before sending it for approval.
      → Create → Upload videos → same file-input capture → title "<title> #shorts", description = caption,
      Not made for kids, altered content **No** → Visibility **Schedule** with the date and time.
      YouTube has a daily upload cap on this channel (hit on Nov 1 after ~10 uploads in one evening):
-     upload no more than ~6 a day, and spread big batches over several days.
-3. **LinkedIn** (Metricool's LinkedIn needs a paid plan, so use Claude in Chrome) at
+     upload no more than 5 in any 24 hours (the 6th was refused on Nov 3), and spread big batches over several days.
+3. **LinkedIn** (through Claude in Chrome) at
    `https://www.linkedin.com/company/146908454/admin/page-posts/published/?share=true`:
    type the caption in the composer; if a link-preview card appears, close it with its X; then capture the
    hidden file input: patch `HTMLInputElement.prototype.click` (and `showPicker`) to store the file input
