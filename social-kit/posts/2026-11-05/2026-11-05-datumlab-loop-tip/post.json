@@ -1,0 +1,60 @@
+{
+ "slug": "2026-11-05-datumlab-loop-tip",
+ "scenes": [
+  {
+   "id": "s1",
+   "say": "Is that control loop really tuned, or does it just look fine on the HMI?",
+   "html": "<div class=\"kick\">DatumLab tip</div><div class=\"hl\" style=\"font-size:104px;color:#f5f7fa\">Is that loop really tuned?</div><div class=\"sub\" style=\"color:#b8c2cc\">Or does it just look fine on the HMI?</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s2",
+   "say": "DatumLab connects to any OPC UA server: Kepware, FactoryTalk Linx Gateway, Ignition, Siemens S7-1500 or Beckhoff.",
+   "html": "<div class=\"kick\">Live tags, straight off the PLC</div><img class=\"shot\" style=\"width:960px\" src=\"{IMG}/lab/trend.webp\"><div class=\"lbl\" style=\"font-size:44px;color:#b8c2cc\">Kepware \u00b7 FactoryTalk Linx Gateway \u00b7 Ignition \u00b7 S7-1500 \u00b7 Beckhoff</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s3",
+   "say": "Double-click the tags you want and they stream into a live trend at a fixed rate.",
+   "html": "<div class=\"kick\">Fixed-rate sampling</div><div class=\"hl\" style=\"font-size:96px;color:#f5f7fa\">Double-click a tag.<br>It streams live.</div><div class=\"sub\" style=\"color:#b8c2cc\">A fixed rate keeps FFTs and filters valid.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s4",
+   "say": "Pick the process variable and the setpoint, then run control-loop performance.",
+   "html": "<div class=\"kick\">Control-loop performance</div><img class=\"shot\" style=\"width:960px\" src=\"{IMG}/lab/loop.webp\"><div class=\"lbl\" style=\"font-size:56px;color:#2fa4ff\">Pick PV and SP. One click.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s5",
+   "say": "You get the error scores, I A E, I S E and I T A E, plus time in band, with the error plotted underneath.",
+   "html": "<div class=\"kick\">Error scores</div><div class=\"hl\" style=\"font-size:110px;color:#36cfc9\">IAE \u00b7 ISE \u00b7 ITAE</div><div class=\"sub\" style=\"color:#b8c2cc\">plus time in band, with the error plotted</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s6",
+   "say": "It flags oscillation, output saturation and valve reversals, the trouble that wastes energy and wears out valves.",
+   "html": "<div class=\"kick\">What it flags</div><div class=\"hl\" style=\"font-size:92px;color:#ffc53d\">Oscillation<br>Output saturation<br>Valve reversals</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s7",
+   "say": "Step-response metrics give a first-order-plus-dead-time estimate and a SIMC P I tuning starting point.",
+   "html": "<div class=\"kick\">A place to start tuning</div><div class=\"hl\" style=\"font-size:96px;color:#f5f7fa\">FOPDT estimate</div><div class=\"lbl\" style=\"font-size:58px;color:#2fa4ff\">+ SIMC PI tuning starting point</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s8",
+   "say": "Cross-correlation between tags finds the lag and the dead time.",
+   "html": "<div class=\"kick\">Lag and dead time</div><div class=\"hl\" style=\"font-size:104px;color:#36cfc9\">Cross-correlation</div><div class=\"sub\" style=\"color:#b8c2cc\">between any two tags</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s9",
+   "say": "Then run an FFT for vibration and ripple, or SPC with Cp and Cpk, on the same live data.",
+   "html": "<div class=\"kick\">Same data, more answers</div><img class=\"shot\" style=\"width:960px\" src=\"{IMG}/lab/fft.webp\"><div class=\"lbl\" style=\"font-size:60px;color:#2fa4ff\">FFT \u00b7 SPC \u00b7 Cp/Cpk</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s10",
+   "say": "Record every sample to CSV. It runs on your own network, with a one-time price from four hundred ninety-five dollars.",
+   "html": "<div class=\"kick\">Yours to keep</div><div class=\"big\" style=\"color:#2fa4ff;font-size:220px\">$495</div><div class=\"lbl\" style=\"font-size:62px;color:#f5f7fa\">one-time price \u00b7 no subscription</div><div class=\"sub\" style=\"color:#b8c2cc\">Runs on your own network</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s11",
+   "say": "DatumLab from Sigh-yawn Automation. Free fourteen-day trial at sigh-yawn automation dot com.",
+   "html": "<div id=\"wmslot\" style=\"width:720px;height:240px\"></div><div class=\"hl\" style=\"font-size:80px;color:#f5f7fa\">DatumLab: free 14-day trial</div><div class=\"sub\" style=\"color:#2fa4ff;font-weight:700;margin-top:40px\">syonautomation.com/datumlab</div><div class=\"foot\">Developed by Syon Automation LLC</div>"
+  }
+ ]
+}

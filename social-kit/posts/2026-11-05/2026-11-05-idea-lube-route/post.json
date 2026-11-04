@@ -1,0 +1,50 @@
+{
+ "slug": "2026-11-05-idea-lube-route",
+ "scenes": [
+  {
+   "id": "s1",
+   "say": "SKF says poor lubrication accounts for over 36 percent of premature bearing failures.",
+   "html": "<div class=\"kick\">Bearings</div><div class=\"big\" style=\"color:#ffc53d\">36%+</div><div class=\"lbl\" style=\"font-size:62px;color:#f5f7fa\">of premature bearing failures come from poor lubrication</div><div class=\"src\">Source: SKF, Lubricants technical data (2022)</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s2",
+   "say": "Too little grease, too much grease, the wrong grease, or a point nobody remembered.",
+   "html": "<div class=\"kick\">How it goes wrong</div><div class=\"hl\" style=\"font-size:84px;color:#f5f7fa\">Too little. Too much.<br>The wrong grease.<br>The point nobody remembered.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s3",
+   "say": "An idea for our next app.",
+   "html": "<div class=\"kick\">Software idea</div><div class=\"hl\" style=\"font-size:120px;color:#36cfc9\">A lube route<br>in your pocket</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s4",
+   "say": "Every grease point on a plant map, with its grease type, amount and interval.",
+   "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">1</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Every grease point on a plant map: grease type, amount, interval.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s5",
+   "say": "Scan a QR tag at the point, log it from your phone, and the next due date sets itself.",
+   "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">2</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Scan the QR tag, log it, next due date sets itself.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s6",
+   "say": "Missed points turn red, and the supervisor gets the list.",
+   "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">3</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Missed points turn red. The supervisor gets the list.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s7",
+   "say": "And every bearing keeps its history, so when one fails you can see how it was greased.",
+   "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">4</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">A history for every bearing.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s8",
+   "say": "Would your plant use it? Tell us in the comments. The best ideas become the next Sigh-yawn Automation app.",
+   "html": "<div class=\"kick\">Your turn</div><div class=\"hl\" style=\"font-size:116px;color:#f5f7fa\">Would your plant<br>use it?</div><div class=\"lbl\" style=\"font-size:58px;color:#36cfc9\">Tell us in the comments.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s9",
+   "say": "Sigh-yawn Automation, at sigh-yawn automation dot com.",
+   "html": "<div id=\"wmslot\" style=\"width:720px;height:240px\"></div><div class=\"hl\" style=\"font-size:80px;color:#f5f7fa\">Built from real plant-floor problems.</div><div class=\"sub\" style=\"color:#2fa4ff;font-weight:700;margin-top:40px\">syonautomation.com</div><div class=\"foot\">Developed by Syon Automation LLC</div>"
+  }
+ ]
+}

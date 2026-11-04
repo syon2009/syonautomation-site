@@ -1,0 +1,55 @@
+{
+ "slug": "2026-11-05-why-4-20ma",
+ "scenes": [
+  {
+   "id": "s1",
+   "say": "Why does a 4 to 20 milliamp signal start at 4, and not at zero?",
+   "html": "<div class=\"kick\">Explainer</div><div class=\"hl\" style=\"font-size:110px;color:#f5f7fa\">Why does 4\u201320 mA<br>start at 4?</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s2",
+   "say": "Because zero has to mean something is wrong.",
+   "html": "<div class=\"kick\">The short answer</div><div class=\"hl\" style=\"font-size:100px;color:#ffc53d\">Zero has to mean<br>something is wrong.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s3",
+   "say": "Four milliamps is the bottom of the range, zero percent. Twenty milliamps is the top, one hundred percent.",
+   "html": "<div class=\"kick\">The range</div><svg width=\"900\" height=\"300\" viewBox=\"0 0 900 300\" fill=\"none\" style=\"display:block;margin:30px auto\">\n<rect x=\"60\" y=\"120\" width=\"780\" height=\"40\" rx=\"20\" fill=\"#0d1a26\" stroke=\"#22303f\" stroke-width=\"4\"/><rect x=\"60\" y=\"120\" width=\"390\" height=\"40\" rx=\"20\" fill=\"#2fa4ff\"/>\n<text x=\"60\" y=\"95\" font-family=\"M,sans-serif\" font-weight=\"800\" font-size=\"40\" fill=\"#f5f7fa\">4 mA</text><text x=\"450\" y=\"95\" text-anchor=\"middle\" font-family=\"M,sans-serif\" font-weight=\"800\" font-size=\"40\" fill=\"#2fa4ff\">12 mA</text><text x=\"840\" y=\"95\" text-anchor=\"end\" font-family=\"M,sans-serif\" font-weight=\"800\" font-size=\"40\" fill=\"#f5f7fa\">20 mA</text>\n<text x=\"60\" y=\"215\" font-family=\"M,sans-serif\" font-size=\"34\" fill=\"#8f9aa6\">0%</text><text x=\"450\" y=\"215\" text-anchor=\"middle\" font-family=\"M,sans-serif\" font-weight=\"700\" font-size=\"34\" fill=\"#2fa4ff\">50%</text><text x=\"840\" y=\"215\" text-anchor=\"end\" font-family=\"M,sans-serif\" font-size=\"34\" fill=\"#8f9aa6\">100%</text></svg><div class=\"sub\" style=\"color:#b8c2cc\">4 mA = 0% \u00b7 20 mA = 100%</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s4",
+   "say": "If a wire breaks or the transmitter loses power, the current falls toward zero. The PLC sees less than 4 milliamps and knows it's a fault, not a real reading. That's called a live zero.",
+   "html": "<div class=\"kick\">A live zero</div><div class=\"hl\" style=\"font-size:92px;color:#ff6b5a\">Broken wire \u2192 near 0 mA</div><div class=\"lbl\" style=\"font-size:56px;color:#f5f7fa\">The PLC knows it's a fault, not a reading.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s5",
+   "say": "Those 4 milliamps can also power the transmitter itself, so a two-wire loop carries power and signal on the same pair.",
+   "html": "<div class=\"kick\">Power and signal on one pair</div><svg width=\"900\" height=\"520\" viewBox=\"0 0 900 520\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"display:block;margin:20px auto\">\n<rect x=\"40\" y=\"170\" width=\"230\" height=\"180\" rx=\"16\" stroke=\"#2fa4ff\" stroke-width=\"6\"/><text x=\"155\" y=\"250\" text-anchor=\"middle\" font-family=\"M,sans-serif\" font-weight=\"800\" font-size=\"34\" fill=\"#f5f7fa\">24 V DC</text><text x=\"155\" y=\"295\" text-anchor=\"middle\" font-family=\"M,sans-serif\" font-size=\"26\" fill=\"#8f9aa6\">supply</text>\n<rect x=\"630\" y=\"170\" width=\"230\" height=\"180\" rx=\"16\" stroke=\"#36cfc9\" stroke-width=\"6\"/><text x=\"745\" y=\"250\" text-anchor=\"middle\" font-family=\"M,sans-serif\" font-weight=\"800\" font-size=\"32\" fill=\"#f5f7fa\">Transmitter</text><text x=\"745\" y=\"295\" text-anchor=\"middle\" font-family=\"M,sans-serif\" font-size=\"26\" fill=\"#8f9aa6\">2-wire</text>\n<rect x=\"335\" y=\"380\" width=\"230\" height=\"120\" rx=\"16\" stroke=\"#ffc53d\" stroke-width=\"6\"/><text x=\"450\" y=\"450\" text-anchor=\"middle\" font-family=\"M,sans-serif\" font-weight=\"800\" font-size=\"32\" fill=\"#f5f7fa\">PLC input</text>\n<path d=\"M270 210 H630\" stroke=\"#4fd39a\" stroke-width=\"7\"/><path d=\"M745 350 V440 H565\" stroke=\"#4fd39a\" stroke-width=\"7\"/><path d=\"M335 440 H155 V350\" stroke=\"#4fd39a\" stroke-width=\"7\"/>\n<path d=\"M430 190 l30 20 l-30 20\" stroke=\"#4fd39a\" stroke-width=\"6\"/>\n<text x=\"450\" y=\"160\" text-anchor=\"middle\" font-family=\"M,sans-serif\" font-weight=\"700\" font-size=\"34\" fill=\"#4fd39a\">same current everywhere in the loop</text></svg><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s6",
+   "say": "Why current and not voltage? In a series loop the current is the same everywhere, so long wire runs don't change the reading, and it holds up better against electrical noise.",
+   "html": "<div class=\"kick\">Why current, not voltage</div><div class=\"hl\" style=\"font-size:100px;color:#4fd39a\">Same current<br>at every point</div><div class=\"sub\" style=\"color:#b8c2cc\">Long runs don't change the reading. Better noise immunity.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s7",
+   "say": "Many instruments follow NAMUR N E 43. Readings from 3.8 to 20.5 milliamps are measurements. At or below 3.6, or at or above 21, the transmitter is signaling a failure.",
+   "html": "<div class=\"kick\">NAMUR NE 43</div><div class=\"hl\" style=\"font-size:110px;color:#2fa4ff\">3.8 \u2013 20.5 mA</div><div class=\"lbl\" style=\"font-size:52px;color:#b8c2cc\">measurement</div><div class=\"hl\" style=\"font-size:100px;color:#ff6b5a\">\u2264 3.6 or \u2265 21 mA</div><div class=\"lbl\" style=\"font-size:52px;color:#b8c2cc\">failure signal</div><div class=\"src\">Source: NAMUR NE 43 signal levels</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s8",
+   "say": "Scaling is a straight line. Percent equals the reading minus 4, divided by 16, times 100. So 12 milliamps is 50 percent.",
+   "html": "<div class=\"kick\">Scaling</div><div class=\"hl\" style=\"font-size:84px;color:#f5f7fa\">% = (mA \u2212 4) \u00f7 16 \u00d7 100</div><div class=\"lbl\" style=\"font-size:76px;color:#2fa4ff\">12 mA \u2192 50%</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s9",
+   "say": "TechProof's course T P two-oh-two, 4 to 20 milliamp Loop Calibrator, walks technicians through it step by step.",
+   "html": "<div class=\"kick\">Learn it hands-on</div><div class=\"hl\" style=\"font-size:104px;color:#36cfc9\">TechProof TP-202</div><div class=\"lbl\" style=\"font-size:64px;color:#f5f7fa\">4\u201320 mA Loop Calibrator</div><div class=\"sub\" style=\"color:#b8c2cc\">48 maintenance technician courses</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s10",
+   "say": "TechProof from Sigh-yawn Automation, at sigh-yawn automation dot com.",
+   "html": "<div id=\"wmslot\" style=\"width:720px;height:240px\"></div><div class=\"hl\" style=\"font-size:80px;color:#f5f7fa\">Train the tech who checks the loop.</div><div class=\"sub\" style=\"color:#2fa4ff;font-weight:700;margin-top:40px\">syonautomation.com/techproof</div><div class=\"foot\">Developed by Syon Automation LLC</div>"
+  }
+ ]
+}

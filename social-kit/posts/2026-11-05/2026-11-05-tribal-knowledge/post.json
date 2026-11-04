@@ -1,0 +1,60 @@
+{
+ "slug": "2026-11-05-tribal-knowledge",
+ "scenes": [
+  {
+   "id": "s1",
+   "say": "Forty-two percent of what people know at work is known only by them.",
+   "html": "<div class=\"kick\">Tribal knowledge</div><div class=\"big\" style=\"color:#ffc53d\">42%</div><div class=\"lbl\" style=\"font-size:62px;color:#f5f7fa\">of workplace knowledge is unique to the individual</div><div class=\"src\">Source: Panopto with YouGov, Workplace Knowledge and Productivity Report (2018), 1,001 U.S. workers</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s2",
+   "say": "That's from a 2018 survey of one thousand and one U.S. workers by Panopto and YouGov.",
+   "html": "<div class=\"kick\">Who said it</div><div class=\"hl\" style=\"font-size:96px;color:#f5f7fa\">1,001 U.S. workers</div><div class=\"sub\" style=\"color:#b8c2cc\">surveyed online by Panopto with YouGov, 2018</div><div class=\"src\">Source: Panopto with YouGov, Workplace Knowledge and Productivity Report (2018), 1,001 U.S. workers</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s3",
+   "say": "When that person retires, changes shifts, or simply goes on vacation, nearly half of what they know leaves with them.",
+   "html": "<div class=\"kick\">What walks out the door</div><div class=\"hl\" style=\"font-size:88px;color:#f5f7fa\">Retires. Changes shifts.<br>Goes on vacation.</div><div class=\"lbl\" style=\"font-size:56px;color:#ffc53d\">Nearly half of what they know leaves with them.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s4",
+   "say": "On a plant floor, that's the trick that restarts the line, the sensor that reads wrong when it's cold, the breaker that was never relabeled.",
+   "html": "<div class=\"kick\">On the plant floor</div><div class=\"hl\" style=\"font-size:82px;color:#f5f7fa\">The restart trick.<br>The sensor that lies<br>when it's cold.<br>The unlabeled breaker.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s5",
+   "say": "Four pillars keep that knowledge in the building.",
+   "html": "<div class=\"kick\">Keep it in the building</div><div class=\"hl\" style=\"font-size:140px;color:#36cfc9\">4 pillars</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s6",
+   "say": "One. Write the fix down where the next person will look, at the machine, by the asset, with photos.",
+   "html": "<div class=\"kick\">Pillar 1</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">1</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Write the fix down at the machine, by the asset, with photos.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s7",
+   "say": "Two. Pair people up. Shadowing an experienced tech teaches what no binder can.",
+   "html": "<div class=\"kick\">Pillar 2</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">2</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Pair people up. Shadowing teaches what a binder can't.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s8",
+   "say": "Three. Teach the why, not just the steps, so the next person can handle the problem nobody wrote down.",
+   "html": "<div class=\"kick\">Pillar 3</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">3</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Teach the why, not just the steps.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s9",
+   "say": "Four. Check that it moved. A quick sign-off or checkoff shows the knowledge actually landed.",
+   "html": "<div class=\"kick\">Pillar 4</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">4</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Check that it moved: a sign-off or checkoff.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s10",
+   "say": "Datumline keeps a time-stamped journal for every machine, with photos. TechProof trains technicians with forty-eight courses, forms and checkoffs.",
+   "html": "<div class=\"kick\">Tools for all four</div><img class=\"shot\" style=\"width:880px\" src=\"{IMG}/dl/journal.webp\"><div class=\"lbl\" style=\"font-size:52px;color:#2fa4ff\">Datumline: a journal for every machine</div><div class=\"lbl\" style=\"font-size:52px;color:#36cfc9\">TechProof: 48 courses, forms and checkoffs</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s11",
+   "say": "Sigh-yawn Automation. Keep what your plant knows, at sigh-yawn automation dot com.",
+   "html": "<div id=\"wmslot\" style=\"width:720px;height:240px\"></div><div class=\"hl\" style=\"font-size:80px;color:#f5f7fa\">Keep what your plant knows.</div><div class=\"sub\" style=\"color:#2fa4ff;font-weight:700;margin-top:40px\">syonautomation.com</div><div class=\"foot\">Developed by Syon Automation LLC</div>"
+  }
+ ]
+}
