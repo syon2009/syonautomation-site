@@ -838,3 +838,16 @@ h2{letter-spacing:-.03em}
 @media (max-width:860px){.cartgrid{grid-template-columns:1fr}.cartsum{position:static}}
 @media (max-width:560px){.cartlist li{grid-template-columns:minmax(0,1fr) auto}.cartrm{grid-column:1/-1;justify-self:start}.top .cartlink span{display:none}}
 @media (prefers-reduced-motion:reduce){.carttoast{transition:none}}
+/* App preview box (js/apps.js): pops out when the mouse rests on an app card */
+.apppop{position:absolute;z-index:60;width:360px;max-width:calc(100vw - 20px);background:#0b1220;border:1px solid #2a3d57;border-radius:16px;padding:16px 18px;box-shadow:0 22px 60px rgba(0,0,0,.6),0 0 0 1px rgba(47,164,255,.08);color:#e6edf4;font:14px/1.5 var(--body);pointer-events:none;opacity:0;transform:translateY(6px);transition:opacity .16s ease,transform .16s ease}
+.apppop.on{opacity:1;transform:none}
+.apppop[hidden]{display:none}
+.apppop .aph{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.apppop .aph img{width:44px;height:44px;border-radius:10px;flex:none}
+.apppop .aph b{display:block;font-size:17px;color:#fff}
+.apppop .apb{display:inline-block;margin-top:2px;font-size:11.5px;font-weight:700;color:#4fd39a}
+.apppop .apk{display:block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#36cfc9;margin-bottom:4px}
+.apppop p{margin:0 0 10px;color:#c9d2dc}
+.apppop .apf{font-weight:700;color:#2fa4ff;font-size:13.5px}
+.apppop .apn{margin-top:6px;font-size:12.5px;color:#8a9bb0}
+@media (prefers-reduced-motion:reduce){.apppop{transition:none;transform:none}}

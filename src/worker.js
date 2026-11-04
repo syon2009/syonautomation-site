@@ -5,6 +5,8 @@
 //   GET  /api/downloads       data for that page (header X-Admin-Key): downloads, guide sign-ups, reviews
 //   POST /api/lead            free-guide sign-up (email, optional name/company) -> KV "ld:"
 //   POST /api/review          customer review (kept private until the owner chooses to publish it) -> KV "rv:"
+//   POST /api/event           app interest from js/apps.js: product page view, hover preview, click to an app page, Buy / Add to cart click -> KV "ev:"
+//   GET  /api/events          owner: app-interest totals for the last N days and the recent activity list (header X-Admin-Key)
 // The owner key itself is NOT in this public repo; only its SHA-256 hash is.
 const ADMIN_HASH = "041b1b7792067d26196a244920c80fe2b40e44d337fce8f1b001bc7788bc0578";
 const MAX = { product: 60, file: 200, url: 400, name: 120, address: 300, email: 160, comment: 2000, page: 300 };
@@ -18,6 +20,8 @@ export default {
     if (url.pathname === "/api/download" && request.method === "POST") return record(request, env);
     if (url.pathname === "/api/lead" && request.method === "POST") return lead(request, env);
     if (url.pathname === "/api/review" && request.method === "POST") return review(request, env);
+    if (url.pathname === "/api/event" && request.method === "POST") return event(request, env);
+    if (url.pathname === "/api/events" && request.method === "GET") return events(request, env, url);
     if (url.pathname === "/api/downloads" && request.method === "GET") return list(request, env, url);
     if (url.pathname === "/api/downloads" && request.method === "DELETE") return remove(request, env, url);
     if (url.pathname === "/downloads-admin") return new Response(ADMIN_PAGE, { headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store", "x-robots-tag": "noindex" } });
@@ -71,6 +75,39 @@ async function review(request, env) {
   return json({ ok: true });
 }
 
+// App interest. One KV key per action; everything lives in the key's metadata so the owner page can read it from a listing.
+// No IP address is stored, only the approximate place and network name Cloudflare reports. Kept about 13 months.
+const APPS = ["plantproof", "datumline", "datumlab", "techproof", "linkscout", "sitewatch", "datacast", "rungwise", "wo-mailer", "controldraft", "portproof", "aoifoundry", "depthforge"];
+const EV_TYPES = ["view", "preview", "click", "buy"];
+async function event(request, env) {
+  let b; try { b = JSON.parse(await request.text()); } catch (e) { return json({ ok: false }, 400); }
+  const ua = request.headers.get("user-agent") || "";
+  if (/bot|crawl|spider|slurp|headless|lighthouse/i.test(ua)) return json({ ok: true });
+  const t = clip(b.t, 10), p = clip(b.p, 30);
+  if (!EV_TYPES.includes(t) || !APPS.includes(p)) return json({ ok: false }, 400);
+  const cf = request.cf || {}; const now = Date.now();
+  const m = { at: now, t, p, s: clip(b.s, 60), ref: clip(b.ref, 80), d: clip(b.d, 20), c: cf.country || "", r: clip(cf.region, 40), ci: clip(cf.city, 40), o: clip(cf.asOrganization, 80) };
+  await env.DL.put("ev:" + newId(now), "1", { metadata: m, expirationTtl: 34300000 }); // about 13 months
+  return json({ ok: true });
+}
+async function events(request, env, url) {
+  if (!(await isOwner(request))) return json({ ok: false, error: "key" }, 403);
+  const days = Math.max(1, Math.min(400, parseInt(url.searchParams.get("days"), 10) || 30));
+  const since = Date.now() - days * 86400000;
+  const tot = {}; const recent = []; let cur, n = 0, done = false, calls = 0;
+  do {
+    const pg = await env.DL.list({ prefix: "ev:", cursor: cur, limit: 1000 }); calls++;
+    for (const k of pg.keys) {
+      const m = k.metadata; if (!m) continue;
+      if (m.at < since) { done = true; break; }
+      const a = tot[m.p] || (tot[m.p] = { view: 0, preview: 0, click: 0, buy: 0 }); if (m.t in a) a[m.t]++;
+      n++; if (recent.length < 300) recent.push(Object.assign({ id: k.name }, m));
+    }
+    cur = pg.list_complete || done ? null : pg.cursor;
+  } while (cur && calls < 60);
+  return json({ ok: true, days, events: n, totals: tot, recent });
+}
+
 const isOwner = async (request) => { const k = request.headers.get("x-admin-key") || ""; return !!k && (await sha256(k)) === ADMIN_HASH; };
 
 // Delete one download record (test entries) and take it off the counts.
@@ -108,9 +145,13 @@ input{background:#0c1626;color:#e8eef5;border:1px solid #24354f;border-radius:99
 button{background:#2fa4ff;color:#03111f;border:0;border-radius:999px;padding:10px 18px;font:700 14px inherit;cursor:pointer;margin-left:6px}
 .cards{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.c{background:#0b1220;border:1px solid #24354f;border-radius:14px;padding:12px 16px;min-width:150px}.c b{display:block;font-size:26px;color:#36cfc9}
 .tw{overflow:auto;border:1px solid #24354f;border-radius:14px}table{border-collapse:collapse;width:100%;font-size:13px}th,td{padding:8px 10px;border-bottom:1px solid #1b2a40;text-align:left;vertical-align:top}th{background:#0b1220;position:sticky;top:0}
-td.cm{max-width:320px;white-space:pre-wrap}button.del{background:transparent;color:#ff9b9b;border:1px solid #7a2626;margin:0;padding:6px 12px;font-size:12px}button.del:hover{background:#2a0f0f}.err{color:#ff9b9b}
-</style></head><body><div class="w"><h1>Downloads, guide sign-ups and reviews</h1><p class="m">Who downloaded which software, who asked for the free guide, and what customers wrote, all from syonautomation.com. Developed by Syon Automation LLC.</p>
+td.cm{max-width:320px;white-space:pre-wrap}button.del{background:transparent;color:#ff9b9b;border:1px solid #7a2626;margin:0;padding:6px 12px;font-size:12px}button.del:hover{background:#2a0f0f}.err{color:#ff9b9b}select{background:#0c1626;color:#e8eef5;border:1px solid #24354f;border-radius:999px;padding:9px 14px;font:inherit}.bar{height:10px;border-radius:6px;background:linear-gradient(90deg,#2fa4ff,#36cfc9)}td.n{text-align:right;font-variant-numeric:tabular-nums}
+</style></head><body><div class="w"><h1>Website owner page</h1><p class="m">Which apps visitors look at, who downloaded which software, who asked for the free guide, and what customers wrote, all from syonautomation.com. Developed by Syon Automation LLC.</p>
 <p><input id="k" type="password" placeholder="Owner key" autocomplete="current-password"><button id="go">Show</button><button id="csv" style="display:none">Save as CSV</button> <span id="msg" class="err"></span></p>
+<div id="ai" style="display:none"><h2 style="margin:24px 0 6px">What visitors look at</h2><p class="m">Which apps people open, preview and click on syonautomation.com. <b>Page views</b>: the app's own page was opened. <b>Previews</b>: the description box was open on an app card for at least 0.8 s. <b>Clicks</b>: a link to the app's page was clicked from another page. <b>Buy clicks</b>: a Buy, Buy now or Add to cart button for that app. <b>Downloads</b>: free-trial downloads in the same period. Each is counted once per app per visit. Your own browser is not counted once you sign in here.</p>
+<p><select id="days"><option value="1">Last 24 hours</option><option value="7">Last 7 days</option><option value="30" selected>Last 30 days</option><option value="90">Last 90 days</option><option value="365">Last 12 months</option></select> <button id="ecsv" style="font-size:12px;padding:6px 12px">Save activity as CSV</button> <span id="emsg" class="m"></span></p>
+<div class="tw"><table><thead><tr><th>App</th><th>Page views</th><th>Previews</th><th>Clicks</th><th>Buy clicks</th><th>Downloads</th><th style="width:34%">Interest <span class="m" style="font-weight:400">(buy clicks and downloads count 3 times)</span></th></tr></thead><tbody id="eb"></tbody></table></div>
+<h3 style="margin:22px 0 6px">Recent activity</h3><div class="tw" style="max-height:420px"><table><thead><tr><th>When (your time)</th><th>App</th><th>What they did</th><th>On page</th><th>Location (from IP)</th><th>Company network</th><th>Came from</th><th>Device</th></tr></thead><tbody id="er"></tbody></table></div><h2 style="margin:30px 0 6px">Downloads</h2></div>
 <div id="cards" class="cards"></div><div class="tw" id="tw" style="display:none"><table><thead><tr><th>When (your time)</th><th>Product</th><th>Name</th><th>Email</th><th>Address</th><th>Comment</th><th>Location (from IP)</th><th>Company network</th><th>IP</th><th>Device</th><th></th></tr></thead><tbody id="tb"></tbody></table></div>
 <div id="more" style="display:none"><h2 style="margin:30px 0 8px">Reviews</h2><p class="m">Customer reviews stay private. "OK to publish" means the customer gave permission; tell Claude which ones to put on the website.</p><div class="tw"><table><thead><tr><th>When</th><th>Product</th><th>Stars</th><th>Review</th><th>Name</th><th>Role / company</th><th>Email</th><th>OK to publish</th><th></th></tr></thead><tbody id="rb"></tbody></table></div>
 <h2 style="margin:30px 0 8px">Free guide sign-ups <button id="lcsv" style="font-size:12px;padding:6px 12px">Save as CSV</button></h2><p class="m">People who asked for the free troubleshooting guide. Email them about a trial or a new release.</p><div class="tw"><table><thead><tr><th>When</th><th>Email</th><th>Name</th><th>Company</th><th>Location (from IP)</th><th>Company network</th><th></th></tr></thead><tbody id="lb"></tbody></table></div></div></div>
@@ -124,7 +165,20 @@ document.getElementById('tb').innerHTML=j.rows.map(r=>'<tr><td>'+E(new Date(r.at
 document.getElementById('tw').style.display='';document.getElementById('csv').style.display='';
 document.getElementById('rb').innerHTML=(j.reviews||[]).map(r=>'<tr><td>'+E(new Date(r.at).toLocaleString())+'</td><td>'+E(r.product)+'</td><td>'+'★'.repeat(r.rating||0)+'</td><td class="cm">'+E(r.text)+'</td><td>'+E(r.name)+'</td><td>'+E([r.role,r.company].filter(Boolean).join(', '))+'</td><td>'+E(r.email)+'</td><td>'+(r.publish?'Yes':'No')+'</td><td><button class="del" data-id="'+E(r.id)+'">Delete</button></td></tr>').join('')||'<tr><td colspan="9" class="m">No reviews yet.</td></tr>';
 document.getElementById('lb').innerHTML=(j.leads||[]).map(r=>'<tr><td>'+E(new Date(r.at).toLocaleString())+'</td><td><a style="color:#2fa4ff" href="mailto:'+E(r.email)+'">'+E(r.email)+'</a></td><td>'+E(r.name)+'</td><td>'+E(r.company)+'</td><td>'+E([r.city,r.region,r.country].filter(Boolean).join(', '))+'</td><td>'+E(r.org)+'</td><td><button class="del" data-id="'+E(r.id)+'">Delete</button></td></tr>').join('')||'<tr><td colspan="7" class="m">No sign-ups yet.</td></tr>';
-document.getElementById('more').style.display=''}
+document.getElementById('more').style.display='';try{localStorage.setItem('syNoTrack','1')}catch(e){}loadEv()}
+const NAMES={plantproof:'PlantProof',datumline:'Datumline',datumlab:'DatumLab',techproof:'TechProof',linkscout:'LinkScout',sitewatch:'SiteWatch',datacast:'DataCast',rungwise:'RungWise PLC Academy','wo-mailer':'WO Mailer',controldraft:'ControlDraft',portproof:'PortProof',aoifoundry:'AOI Foundry',depthforge:'DepthForge'};
+const ACT={view:'Opened the app page',preview:'Read the preview box',click:'Clicked through to the app',buy:'Clicked Buy / Add to cart'};
+const slugOf=n=>{n=String(n||'').toLowerCase();if(!n)return'';for(const k in NAMES){const v=NAMES[k].toLowerCase();if(n===v||n===k||n.replace(/[^a-z]/g,'')===k.replace(/-/g,'')||v.startsWith(n))return k}return''};let EV=null;
+async function loadEv(){const k=document.getElementById('k').value.trim();const days=+document.getElementById('days').value;document.getElementById('emsg').textContent='Loading…';
+const r=await fetch('/api/events?days='+days,{headers:{'X-Admin-Key':k}});const j=await r.json().catch(()=>({}));if(!j.ok){document.getElementById('emsg').textContent='Could not load app interest.';return}EV=j;
+const since=Date.now()-days*864e5;const dl={};(D&&D.rows||[]).forEach(x=>{if(new Date(x.at).getTime()>=since){const s=slugOf(x.product);if(s)dl[s]=(dl[s]||0)+1}});
+const rows=Object.keys(NAMES).map(s=>{const t=j.totals[s]||{};return{s,v:t.view||0,p:t.preview||0,c:t.click||0,b:t.buy||0,d:dl[s]||0}}).map(x=>Object.assign(x,{score:x.v+x.p+x.c+x.b*3+x.d*3})).sort((a,b)=>b.score-a.score||NAMES[a.s].localeCompare(NAMES[b.s]));
+const mx=Math.max(1,...rows.map(x=>x.score));
+document.getElementById('eb').innerHTML=rows.map(x=>'<tr><td><b>'+E(NAMES[x.s])+'</b></td><td class="n">'+x.v+'</td><td class="n">'+x.p+'</td><td class="n">'+x.c+'</td><td class="n">'+x.b+'</td><td class="n">'+x.d+'</td><td><div class="bar" style="width:'+(x.score?Math.max(2,Math.round(100*x.score/mx)):0)+'%"></div></td></tr>').join('');
+document.getElementById('er').innerHTML=j.recent.map(e=>'<tr><td>'+E(new Date(e.at).toLocaleString())+'</td><td>'+E(NAMES[e.p]||e.p)+'</td><td>'+E(ACT[e.t]||e.t)+'</td><td class="m">'+E(e.s==='index'?'Home':e.s)+'</td><td>'+E([e.ci,e.r,e.c].filter(Boolean).join(', '))+'</td><td>'+E(e.o)+'</td><td class="m">'+E(e.ref||'')+'</td><td class="m">'+E(e.d)+'</td></tr>').join('')||'<tr><td colspan="8" class="m">Nothing yet in this period. Counting started when this page was added.</td></tr>';
+document.getElementById('emsg').textContent=j.events+' actions in this period';document.getElementById('ai').style.display=''}
+document.getElementById('days').onchange=loadEv;
+document.getElementById('ecsv').onclick=()=>{if(!EV)return;const c=['at','p','t','s','ci','r','c','o','ref','d'];const h=['when','app','action','page','city','region','country','company network','came from','device'];const q=v=>'"'+String(v==null?'':v).replace(/"/g,'""')+'"';const t=[h.join(',')].concat(EV.recent.map(e=>c.map(k=>q(k==='at'?new Date(e.at).toISOString():k==='t'?ACT[e.t]:k==='p'?NAMES[e.p]:e[k])).join(','))).join('\\r\\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([t],{type:'text/csv'}));a.download='syon-app-interest.csv';a.click()};
 document.getElementById('go').onclick=load;
 document.querySelector('.w').addEventListener('click',async e=>{const b=e.target.closest('.del');if(!b)return;if(!confirm(b.dataset.id.startsWith('dl:')?'Delete this download entry? It is also taken off the counts. This cannot be undone.':'Delete this entry? This cannot be undone.'))return;b.disabled=true;b.textContent='Deleting…';const r=await fetch('/api/downloads?id='+encodeURIComponent(b.dataset.id),{method:'DELETE',headers:{'X-Admin-Key':document.getElementById('k').value.trim()}});const j=await r.json().catch(()=>({}));if(j.ok)load();else{b.disabled=false;b.textContent='Delete';document.getElementById('msg').textContent='Could not delete ('+(j.error||r.status)+').'}});document.getElementById('k').addEventListener('keydown',e=>{if(e.key==='Enter')load()});if(document.getElementById('k').value)load();
 document.getElementById('csv').onclick=()=>{if(!D)return;const cols=['at','product','file','name','email','address','comment','city','region','postal','country','org','ip','ua','page'];const q=v=>'"'+String(v==null?'':v).replace(/"/g,'""')+'"';
