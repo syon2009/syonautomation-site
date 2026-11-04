@@ -108,7 +108,21 @@ async function events(request, env, url) {
   return json({ ok: true, days, events: n, totals: tot, recent });
 }
 
-const isOwner = async (request) => { const k = request.headers.get("x-admin-key") || ""; return !!k && (await sha256(k)) === ADMIN_HASH; };
+// The owner can sign in with this page's own key OR the License console password (ADMIN_TOKEN of licenses.syonautomation.com).
+// The console password is never stored here: it is checked by asking the license service, which answers 401 when it is wrong.
+const OK_KEYS = new Map(); // sha256(key) -> time it was confirmed (kept 10 minutes per Worker instance)
+const isOwner = async (request) => {
+  const k = (request.headers.get("x-admin-key") || "").trim(); if (k.length < 8) return false;
+  const h = await sha256(k); if (h === ADMIN_HASH) return true;
+  const t = OK_KEYS.get(h); if (t && Date.now() - t < 600000) return true;
+  try {
+    const r = await fetch("https://licenses.syonautomation.com/admin/api/owner-check", { headers: { Authorization: "Bearer " + k } });
+    if (r.status === 401) return false;
+    const j = await r.json().catch(() => ({}));
+    if (j.error === "unknown_action") { OK_KEYS.set(h, Date.now()); return true; }
+  } catch (e) {}
+  return false;
+};
 
 // Delete one download record (test entries) and take it off the counts.
 async function remove(request, env, url) {
@@ -147,7 +161,7 @@ button{background:#2fa4ff;color:#03111f;border:0;border-radius:999px;padding:10p
 .tw{overflow:auto;border:1px solid #24354f;border-radius:14px}table{border-collapse:collapse;width:100%;font-size:13px}th,td{padding:8px 10px;border-bottom:1px solid #1b2a40;text-align:left;vertical-align:top}th{background:#0b1220;position:sticky;top:0}
 td.cm{max-width:320px;white-space:pre-wrap}button.del{background:transparent;color:#ff9b9b;border:1px solid #7a2626;margin:0;padding:6px 12px;font-size:12px}button.del:hover{background:#2a0f0f}.err{color:#ff9b9b}select{background:#0c1626;color:#e8eef5;border:1px solid #24354f;border-radius:999px;padding:9px 14px;font:inherit}.bar{height:10px;border-radius:6px;background:linear-gradient(90deg,#2fa4ff,#36cfc9)}td.n{text-align:right;font-variant-numeric:tabular-nums}
 </style></head><body><div class="w"><h1>Website owner page</h1><p class="m">Which apps visitors look at, who downloaded which software, who asked for the free guide, and what customers wrote, all from syonautomation.com. Developed by Syon Automation LLC.</p>
-<p><input id="k" type="password" placeholder="Owner key" autocomplete="current-password"><button id="go">Show</button><button id="csv" style="display:none">Save as CSV</button> <span id="msg" class="err"></span></p>
+<p><input id="k" type="password" placeholder="Owner key or License console password" autocomplete="current-password"><button id="go">Show</button><button id="csv" style="display:none">Save as CSV</button> <span id="msg" class="err"></span></p>
 <div id="ai" style="display:none"><h2 style="margin:24px 0 6px">What visitors look at</h2><p class="m">Which apps people open, preview and click on syonautomation.com. <b>Page views</b>: the app's own page was opened. <b>Previews</b>: the description box was open on an app card for at least 0.8 s. <b>Clicks</b>: a link to the app's page was clicked from another page. <b>Buy clicks</b>: a Buy, Buy now or Add to cart button for that app. <b>Downloads</b>: free-trial downloads in the same period. Each is counted once per app per visit. Your own browser is not counted once you sign in here.</p>
 <p><select id="days"><option value="1">Last 24 hours</option><option value="7">Last 7 days</option><option value="30" selected>Last 30 days</option><option value="90">Last 90 days</option><option value="365">Last 12 months</option></select> <button id="ecsv" style="font-size:12px;padding:6px 12px">Save activity as CSV</button> <span id="emsg" class="m"></span></p>
 <div class="tw"><table><thead><tr><th>App</th><th>Page views</th><th>Previews</th><th>Clicks</th><th>Buy clicks</th><th>Downloads</th><th style="width:34%">Interest <span class="m" style="font-weight:400">(buy clicks and downloads count 3 times)</span></th></tr></thead><tbody id="eb"></tbody></table></div>
@@ -159,7 +173,7 @@ td.cm{max-width:320px;white-space:pre-wrap}button.del{background:transparent;col
 const E=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));let D=null;
 try{const s=sessionStorage.getItem('dlk');if(s)document.getElementById('k').value=s}catch(e){}
 async function load(){const k=document.getElementById('k').value.trim();if(!k)return;const r=await fetch('/api/downloads?limit=1000',{headers:{'X-Admin-Key':k}});const j=await r.json();
-if(!j.ok){document.getElementById('msg').textContent='That key is not right.';return}try{sessionStorage.setItem('dlk',k)}catch(e){}document.getElementById('msg').textContent='';D=j;
+if(!j.ok){document.getElementById('msg').textContent='That key is not right. Use your License console password or this page\\'s owner key.';return}try{sessionStorage.setItem('dlk',k)}catch(e){}document.getElementById('msg').textContent='';D=j;
 document.getElementById('cards').innerHTML='<div class="c">All downloads<b>'+j.total+'</b></div>'+j.counts.map(c=>'<div class="c">'+E(c.product)+'<b>'+c.count+'</b></div>').join('');
 document.getElementById('tb').innerHTML=j.rows.map(r=>'<tr><td>'+E(new Date(r.at).toLocaleString())+'</td><td>'+E(r.product)+'<div class="m">'+E(r.file)+'</div></td><td>'+E(r.name)+'</td><td><a style="color:#2fa4ff" href="mailto:'+E(r.email)+'">'+E(r.email)+'</a></td><td>'+E(r.address)+'</td><td class="cm">'+E(r.comment)+'</td><td>'+E([r.city,r.region,r.postal,r.country].filter(Boolean).join(', '))+'</td><td>'+E(r.org)+'</td><td>'+E(r.ip)+'</td><td class="m">'+E(r.ua)+'</td><td><button class="del" data-id="'+E(r.id)+'" title="Delete this entry">Delete</button></td></tr>').join('')||'<tr><td colspan="11" class="m">No downloads yet.</td></tr>';
 document.getElementById('tw').style.display='';document.getElementById('csv').style.display='';
