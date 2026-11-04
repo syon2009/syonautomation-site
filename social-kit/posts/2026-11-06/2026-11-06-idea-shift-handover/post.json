@@ -1,0 +1,85 @@
+{
+ "slug": "2026-11-06-idea-shift-handover",
+ "scenes": [
+  {
+   "id": "s1",
+   "say": "Shift change. The night crew knows the filler has been tripping all night. Does the day crew?",
+   "html": "<div class=\"kick\">Shift change</div><div class=\"hl\" style=\"font-size:110px;color:#f5f7fa\">Night shift knows.<br>Does day shift?</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s2",
+   "say": "Too often the warning lives on a whiteboard, a sticky note, or in one person's head, and it doesn't make it across the change.",
+   "html": "<div class=\"kick\">Where the warning lives</div><div class=\"hl\" style=\"font-size:90px;color:#f5f7fa\">A whiteboard.<br>A sticky note.<br>One person's head.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s3",
+   "say": "Then the same problem gets rediscovered, the same parts get pulled, and the same hour gets lost again.",
+   "html": "<div class=\"kick\">The cost</div><div class=\"hl\" style=\"font-size:100px;color:#ff6b5a\">Same problem.<br>Same hour lost.<br>Again.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s4",
+   "say": "A good handover takes two minutes. A missed one can cost the whole next shift.",
+   "html": "<div class=\"kick\">Two minutes</div><div class=\"hl\" style=\"font-size:104px;color:#4fd39a\">A good handover:<br>two minutes.</div><div class=\"lbl\" style=\"font-size:60px;color:#ff6b5a\">A missed one: the next shift.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s5",
+   "say": "An idea for our next app: a shift handover log.",
+   "html": "<div class=\"kick\">Software idea</div><div class=\"hl\" style=\"font-size:128px;color:#36cfc9\">A shift<br>handover log</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s6",
+   "say": "One. Each shift logs open issues by machine, in about a minute, from a phone or the line PC.",
+   "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">1</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Log open issues by machine, from a phone or the line PC.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s7",
+   "say": "Two. Anything not closed carries over to the next shift automatically, so nothing falls through the gap.",
+   "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">2</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Open items carry over automatically.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s8",
+   "say": "Three. The incoming lead reads it and signs off, so you know the message landed.",
+   "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">3</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">The incoming lead signs off: message received.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s9",
+   "say": "Four. Attach photos and the active alarm list, so the next crew sees what you saw.",
+   "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">4</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Photos and the active alarm list attached.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s10",
+   "say": "Five. Safety items go at the top, in red, every time.",
+   "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">5</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Safety items on top, in red, every time.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s11",
+   "say": "Six. A searchable history, so repeat problems on the same machine stand out.",
+   "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">6</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Searchable history: repeat problems stand out.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s12",
+   "say": "Seven. A handover summary that prints or e-mails itself at the end of every shift, for the supervisor and maintenance.",
+   "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">7</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">A shift summary that prints or e-mails itself.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s13",
+   "say": "Operators, maintenance technicians and shift leads would all use the same log, on every shift, at every line.",
+   "html": "<div class=\"kick\">Who uses it</div><div class=\"hl\" style=\"font-size:96px;color:#f5f7fa\">Operators \u00b7 Maintenance<br>Shift leads</div><div class=\"sub\" style=\"color:#b8c2cc\">One log, every shift, every line</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s14",
+   "say": "And it would run on your own plant network, with no monthly subscription.",
+   "html": "<div class=\"kick\">The idea</div><div class=\"hl\" style=\"font-size:104px;color:#36cfc9\">Your network.<br>No subscription.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s15",
+   "say": "Would your plant use it? Tell us in the comments. The best ideas become the next Sigh-yawn Automation app.",
+   "html": "<div class=\"kick\">Your turn</div><div class=\"hl\" style=\"font-size:116px;color:#f5f7fa\">Would your plant<br>use it?</div><div class=\"lbl\" style=\"font-size:58px;color:#36cfc9\">Tell us in the comments.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s16",
+   "say": "Sigh-yawn Automation, at sigh-yawn automation dot com.",
+   "html": "<div id=\"wmslot\" style=\"width:720px;height:240px\"></div><div class=\"hl\" style=\"font-size:80px;color:#f5f7fa\">Built from real plant-floor problems.</div><div class=\"sub\" style=\"color:#2fa4ff;font-weight:700;margin-top:40px\">syonautomation.com</div><div class=\"foot\">Developed by Syon Automation LLC</div>"
+  }
+ ]
+}

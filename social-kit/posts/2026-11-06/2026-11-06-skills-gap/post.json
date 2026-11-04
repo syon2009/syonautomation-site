@@ -1,0 +1,80 @@
+{
+ "slug": "2026-11-06-skills-gap",
+ "scenes": [
+  {
+   "id": "s1",
+   "say": "Manufacturers could need as many as 3.8 million new employees between 2024 and 2033.",
+   "html": "<div class=\"kick\">The skills gap</div><div class=\"big\" style=\"color:#2fa4ff\">3.8M</div><div class=\"lbl\" style=\"font-size:62px;color:#f5f7fa\">new manufacturing employees could be needed, 2024 to 2033</div><div class=\"src\">Source: Deloitte and The Manufacturing Institute (April 2024)</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s2",
+   "say": "And if the skills and applicant gaps aren't closed, 1.9 million of those jobs could go unfilled.",
+   "html": "<div class=\"kick\">The gap</div><div class=\"big\" style=\"color:#ffc53d\">1.9M</div><div class=\"lbl\" style=\"font-size:62px;color:#f5f7fa\">jobs could remain unfilled</div><div class=\"src\">Source: Deloitte and The Manufacturing Institute (April 2024)</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s3",
+   "say": "That's from a 2024 study by Deloitte and the Manufacturing Institute.",
+   "html": "<div class=\"kick\">Who said it</div><div class=\"hl\" style=\"font-size:92px;color:#f5f7fa\">Deloitte +<br>The Manufacturing Institute</div><div class=\"sub\" style=\"color:#b8c2cc\">Study released April 2024</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s4",
+   "say": "In the National Association of Manufacturers' first-quarter 2024 survey, 65 percent named attracting and retaining talent as their primary business challenge.",
+   "html": "<div class=\"kick\">The top problem</div><div class=\"big\" style=\"color:#ff6b5a\">65%</div><div class=\"lbl\" style=\"font-size:62px;color:#f5f7fa\">named attracting and retaining talent their primary business challenge</div><div class=\"src\">Source: The Manufacturing Institute, citing the NAM Q1 2024 Manufacturers\u2019 Outlook Survey</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s5",
+   "say": "On the plant floor, that means fewer experienced technicians, longer work-order lists, and newer people covering equipment they've never worked on.",
+   "html": "<div class=\"kick\">On the plant floor</div><div class=\"hl\" style=\"font-size:86px;color:#f5f7fa\">Fewer experienced techs.<br>Longer work-order lists.</div><div class=\"lbl\" style=\"font-size:56px;color:#ffc53d\">Newer people on unfamiliar equipment.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s6",
+   "say": "The jobs are there. The open question is who will keep the machines running, and how fast they can get good at it.",
+   "html": "<div class=\"kick\">The real question</div><div class=\"hl\" style=\"font-size:110px;color:#f5f7fa\">Who keeps the<br>machines running?</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s7",
+   "say": "Here's the useful part. Deloitte's research found employees who feel they can gain important future skills are 2.7 times less likely to leave within twelve months.",
+   "html": "<div class=\"kick\">The useful part</div><div class=\"big\" style=\"color:#4fd39a\">2.7\u00d7</div><div class=\"lbl\" style=\"font-size:62px;color:#f5f7fa\">less likely to leave within 12 months when they feel they can gain important future skills</div><div class=\"src\">Source: Deloitte and The Manufacturing Institute (April 2024)</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s8",
+   "say": "So training isn't only a cost. It's how you keep the people you worked so hard to hire.",
+   "html": "<div class=\"kick\">Training is retention</div><div class=\"hl\" style=\"font-size:120px;color:#36cfc9\">Train them.<br>Keep them.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s9",
+   "say": "Three moves that help. One: put new hires on real equipment early, with an experienced mentor beside them.",
+   "html": "<div class=\"kick\">Move 1</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">1</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Real equipment early, with a mentor beside them.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s10",
+   "say": "Two: give every technician a clear path, from safety basics to troubleshooting to process control.",
+   "html": "<div class=\"kick\">Move 2</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">2</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">A clear path: safety, troubleshooting, process control.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s11",
+   "say": "Three: track progress, so people can see they're growing, and so can their supervisor.",
+   "html": "<div class=\"kick\">Move 3</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">3</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Track progress, so everyone can see the growth.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s12",
+   "say": "Start small. One technician, one module a week, adds up to a much stronger crew by this time next year.",
+   "html": "<div class=\"kick\">Start small</div><div class=\"hl\" style=\"font-size:108px;color:#36cfc9\">One tech.<br>One module a week.</div><div class=\"sub\" style=\"color:#b8c2cc\">It adds up by this time next year.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s13",
+   "say": "RungWise PLC Academy teaches ladder logic from the first contact to live PID, with live simulations, auto-graded labs and a quiz at the end of every module.",
+   "html": "<div class=\"kick\">Ladder logic, hands-on</div><img class=\"shot\" style=\"width:900px\" src=\"{IMG}/rw/sealin.webp\"><div class=\"lbl\" style=\"font-size:60px;color:#2fa4ff\">RungWise PLC Academy</div><div class=\"sub\" style=\"color:#b8c2cc\">Live simulations \u00b7 graded labs \u00b7 a quiz every module</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s14",
+   "say": "TechProof gives a plant forty-eight courses, from electrical safety to PID control and running a maintenance department, with one license for the whole facility.",
+   "html": "<div class=\"kick\">A full technician program</div><img class=\"shot\" style=\"width:900px\" src=\"{IMG}/tp/catalog.webp\"><div class=\"lbl\" style=\"font-size:58px;color:#36cfc9\">TechProof: 48 plant-floor courses</div><div class=\"sub\" style=\"color:#b8c2cc\">One license covers the whole facility</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s15",
+   "say": "Sigh-yawn Automation. Grow the team you have, at sigh-yawn automation dot com.",
+   "html": "<div id=\"wmslot\" style=\"width:720px;height:240px\"></div><div class=\"hl\" style=\"font-size:80px;color:#f5f7fa\">Grow the team you have.</div><div class=\"sub\" style=\"color:#2fa4ff;font-weight:700;margin-top:40px\">syonautomation.com</div><div class=\"foot\">Developed by Syon Automation LLC</div>"
+  }
+ ]
+}

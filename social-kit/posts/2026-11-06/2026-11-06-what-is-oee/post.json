@@ -1,0 +1,85 @@
+{
+ "slug": "2026-11-06-what-is-oee",
+ "scenes": [
+  {
+   "id": "s1",
+   "say": "What is OEE, and why do so many plants track it?",
+   "html": "<div class=\"kick\">Explainer</div><div class=\"hl\" style=\"font-size:140px;color:#f5f7fa\">What is OEE?</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s2",
+   "say": "OEE stands for Overall Equipment Effectiveness. It shows how much of your planned production time is truly productive.",
+   "html": "<div class=\"kick\">Overall Equipment Effectiveness</div><div class=\"hl\" style=\"font-size:96px;color:#36cfc9\">How much planned time<br>is truly productive</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s3",
+   "say": "It multiplies three numbers: availability, times performance, times quality.",
+   "html": "<div class=\"kick\">The formula</div><div class=\"hl\" style=\"font-size:120px;color:#2fa4ff\">OEE = A \u00d7 P \u00d7 Q</div><div class=\"sub\" style=\"color:#b8c2cc\">Availability \u00d7 Performance \u00d7 Quality</div><div class=\"src\">OEE = Availability \u00d7 Performance \u00d7 Quality (standard definition)</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s4",
+   "say": "Availability is run time divided by planned production time. Breakdowns, changeovers and waiting pull it down.",
+   "html": "<div class=\"kick\">Availability</div><div class=\"hl\" style=\"font-size:104px;color:#f5f7fa\">Run time \u00f7<br>planned time</div><div class=\"sub\" style=\"color:#b8c2cc\">Breakdowns, changeovers and waiting pull it down</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s5",
+   "say": "Performance compares how fast you actually ran to the ideal speed. Slow cycles and small stops pull it down.",
+   "html": "<div class=\"kick\">Performance</div><div class=\"hl\" style=\"font-size:104px;color:#f5f7fa\">Actual speed \u00f7<br>ideal speed</div><div class=\"sub\" style=\"color:#b8c2cc\">Slow cycles and small stops pull it down</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s6",
+   "say": "Quality is good parts divided by total parts. Scrap and rework pull it down.",
+   "html": "<div class=\"kick\">Quality</div><div class=\"hl\" style=\"font-size:104px;color:#f5f7fa\">Good parts \u00f7<br>total parts</div><div class=\"sub\" style=\"color:#b8c2cc\">Scrap and rework pull it down</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s7",
+   "say": "Each of the three hides a different kind of loss, so OEE tells you not only how much you're losing, but where.",
+   "html": "<div class=\"kick\">Why three numbers</div><div class=\"hl\" style=\"font-size:112px;color:#36cfc9\">Not just how much.<br>Where.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s8",
+   "say": "Example. A line is available ninety percent of the time, runs at ninety-five percent of ideal speed, and ninety-eight percent of its parts are good.",
+   "html": "<div class=\"kick\">Example</div><div style=\"display:flex;align-items:center;gap:24px;width:900px;margin:16px auto\"><div style=\"width:300px;text-align:right;font-weight:700;font-size:44px\">Availability</div><div style=\"flex:1;height:54px;border-radius:12px;background:#0d1a26;border:2px solid #22303f;overflow:hidden\"><div style=\"width:90%;height:100%;background:#2fa4ff\"></div></div><div style=\"width:150px;font-weight:800;font-size:48px;color:#2fa4ff\">90%</div></div><div style=\"display:flex;align-items:center;gap:24px;width:900px;margin:16px auto\"><div style=\"width:300px;text-align:right;font-weight:700;font-size:44px\">Performance</div><div style=\"flex:1;height:54px;border-radius:12px;background:#0d1a26;border:2px solid #22303f;overflow:hidden\"><div style=\"width:95%;height:100%;background:#36cfc9\"></div></div><div style=\"width:150px;font-weight:800;font-size:48px;color:#36cfc9\">95%</div></div><div style=\"display:flex;align-items:center;gap:24px;width:900px;margin:16px auto\"><div style=\"width:300px;text-align:right;font-weight:700;font-size:44px\">Quality</div><div style=\"flex:1;height:54px;border-radius:12px;background:#0d1a26;border:2px solid #22303f;overflow:hidden\"><div style=\"width:98%;height:100%;background:#4fd39a\"></div></div><div style=\"width:150px;font-weight:800;font-size:48px;color:#4fd39a\">98%</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s9",
+   "say": "Ninety percent, times ninety-five percent, times ninety-eight percent, is about eighty-three point eight percent OEE.",
+   "html": "<div class=\"kick\">Multiply them</div><div class=\"hl\" style=\"font-size:96px;color:#f5f7fa\">0.90 \u00d7 0.95 \u00d7 0.98</div><div class=\"big\" style=\"color:#ffc53d;font-size:200px\">83.8%</div><div class=\"lbl\" style=\"font-size:70px;color:#f5f7fa\">OEE</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s10",
+   "say": "Three numbers that each look fine still add up to losing about one sixth of your planned time.",
+   "html": "<div class=\"kick\">The surprise</div><div class=\"hl\" style=\"font-size:92px;color:#ff6b5a\">Each looks fine.<br>Together: about 1/6 lost.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s11",
+   "say": "The real value is in the why. Tag every stop with a reason, and a Pareto chart shows which few causes cost you the most.",
+   "html": "<div class=\"kick\">Find the why</div><div class=\"hl\" style=\"font-size:100px;color:#36cfc9\">Tag every stop.<br>Pareto the reasons.</div><div class=\"sub\" style=\"color:#b8c2cc\">A few causes usually cost the most</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s12",
+   "say": "Measure it the same way every shift, straight from the PLC, not from memory, or the numbers won't be comparable.",
+   "html": "<div class=\"kick\">Measure it right</div><div class=\"hl\" style=\"font-size:104px;color:#f5f7fa\">From the PLC,<br>not from memory</div><div class=\"sub\" style=\"color:#b8c2cc\">Same method every shift, or the numbers won't compare</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s13",
+   "say": "And start with one line. Get the stop reasons right there first, then roll it out.",
+   "html": "<div class=\"kick\">Where to start</div><div class=\"hl\" style=\"font-size:120px;color:#ffc53d\">One line first</div><div class=\"sub\" style=\"color:#b8c2cc\">Get the stop reasons right, then roll it out.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s14",
+   "say": "PlantProof tracks OEE per line, with a downtime Pareto and stop reasons, straight from your PLC data.",
+   "html": "<div class=\"kick\">PlantProof</div><img class=\"shot\" style=\"width:900px\" src=\"{IMG}/pp/runtime.webp\"><div class=\"lbl\" style=\"font-size:50px;color:#2fa4ff\">OEE per line \u00b7 downtime Pareto \u00b7 stop reasons</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s15",
+   "say": "It also brings SCADA screens, a historian, alarms and maintenance into one install, from nine hundred ninety-five dollars one-time, with a free thirty-day evaluation.",
+   "html": "<div class=\"kick\">One install</div><div class=\"hl\" style=\"font-size:96px;color:#f5f7fa\">SCADA \u00b7 Historian<br>Alarms \u00b7 Maintenance</div><div class=\"lbl\" style=\"font-size:50px;color:#36cfc9\">From $995 one-time \u00b7 free 30-day evaluation</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s16",
+   "say": "PlantProof from Sigh-yawn Automation, at sigh-yawn automation dot com.",
+   "html": "<div id=\"wmslot\" style=\"width:720px;height:240px\"></div><div class=\"hl\" style=\"font-size:80px;color:#f5f7fa\">Run it. Prove it.</div><div class=\"sub\" style=\"color:#2fa4ff;font-weight:700;margin-top:40px\">syonautomation.com/plantproof</div><div class=\"foot\">Developed by Syon Automation LLC</div>"
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "slug": "2026-11-06-controldraft-tip",
+ "scenes": [
+  {
+   "id": "s1",
+   "say": "Planning a new control panel? Here's how ControlDraft goes from a few words to a panel you can build.",
+   "html": "<div class=\"kick\">ControlDraft tip</div><div class=\"hl\" style=\"font-size:96px;color:#f5f7fa\">From a few words<br>to a panel you can build</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s2",
+   "say": "Start by describing the process in plain words, or import a spreadsheet you already have.",
+   "html": "<div class=\"kick\">Step 1</div><div class=\"hl\" style=\"font-size:110px;color:#f5f7fa\">Describe it.<br>Or import it.</div><div class=\"sub\" style=\"color:#b8c2cc\">Plain words or a spreadsheet</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s3",
+   "say": "ControlDraft drafts the I O list, picks the hardware for your platform, and assigns every rack, slot, channel and PLC address.",
+   "html": "<div class=\"kick\">The I/O list</div><img class=\"shot\" style=\"width:960px\" src=\"{IMG}/cd/io.webp\"><div class=\"lbl\" style=\"font-size:54px;color:#2fa4ff\">Every rack, slot, channel and address</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s4",
+   "say": "Platforms include CompactLogix and ControlLogix, Siemens S7-1200 and 1500, AutomationDirect CLICK, BRX and Productivity, and DCS in PlantPAx and DeltaV style.",
+   "html": "<div class=\"kick\">Your platform</div><div class=\"hl\" style=\"font-size:74px;color:#f5f7fa\">CompactLogix \u00b7 ControlLogix<br>S7-1200 / 1500<br>CLICK \u00b7 BRX \u00b7 Productivity</div><div class=\"sub\" style=\"color:#b8c2cc\">plus DCS, PlantPAx and DeltaV style</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s5",
+   "say": "The enclosure, back panel, DIN rails and wire duct are sized from the real parts, then laid out to scale with a build grid and dimensions for the shop.",
+   "html": "<div class=\"kick\">Laid out to scale</div><img class=\"shot\" style=\"width:960px\" src=\"{IMG}/cd/panel.webp\"><div class=\"lbl\" style=\"font-size:56px;color:#36cfc9\">Sized from the real parts</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s6",
+   "say": "It checks heat load, duct fill, and UL 508A short-circuit current ratings, and fits the HMI against the door cutout and depth.",
+   "html": "<div class=\"kick\">Checked as you go</div><div class=\"hl\" style=\"font-size:92px;color:#ffc53d\">Heat load \u00b7 Duct fill<br>UL 508A SCCR</div><div class=\"sub\" style=\"color:#b8c2cc\">HMI checked against the door cutout and depth</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s7",
+   "say": "Every wire is numbered at both ends, every terminal is shown, and the wire list gives the from and to of every wire.",
+   "html": "<div class=\"kick\">Wiring, numbered end to end</div><img class=\"shot\" style=\"width:960px\" src=\"{IMG}/cd/wiring.webp\"><div class=\"lbl\" style=\"font-size:56px;color:#2fa4ff\">Both ends of every wire</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s8",
+   "say": "The drawing set includes power distribution, an I O wiring sheet per module, the panel build layout and the Ethernet routing sheet.",
+   "html": "<div class=\"kick\">The drawing set</div><img class=\"shot\" style=\"width:960px\" src=\"{IMG}/cd/drawings.webp\"><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s9",
+   "say": "Open Items flags what still needs a decision, like a silo with no high-level switch, before you finalize the design.",
+   "html": "<div class=\"kick\">Nothing slips through</div><img class=\"shot\" style=\"width:960px\" src=\"{IMG}/cd/items.webp\"><div class=\"lbl\" style=\"font-size:56px;color:#ff6b5a\">Open Items, before you finalize</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s10",
+   "say": "Already have the panel? Scan the PLC printout. The free built-in OCR reads the addresses, comments and rungs, with no internet needed.",
+   "html": "<div class=\"kick\">Existing panels</div><div class=\"hl\" style=\"font-size:110px;color:#36cfc9\">Scan the printout</div><div class=\"sub\" style=\"color:#b8c2cc\">Free built-in OCR. No internet needed.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s11",
+   "say": "Then search your approved vendors, compare prices and stock, and get a priced bill of material, labor hours and the quote.",
+   "html": "<div class=\"kick\">Priced and quoted</div><div class=\"hl\" style=\"font-size:104px;color:#2fa4ff\">BOM \u00b7 Labor \u00b7 Quote</div><div class=\"sub\" style=\"color:#b8c2cc\">From your own approved vendors</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s12",
+   "say": "It's a planning tool. A qualified person still checks every design against the codes that apply, like NEC, NFPA 79 and UL 508A.",
+   "html": "<div class=\"kick\">Good practice</div><div class=\"hl\" style=\"font-size:108px;color:#f5f7fa\">Plan faster.<br>Still check it.</div><div class=\"sub\" style=\"color:#b8c2cc\">NEC \u00b7 NFPA 79 \u00b7 UL 508A \u00b7 local rules</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s13",
+   "say": "One-time price from four hundred ninety-five dollars, with a free fourteen-day trial.",
+   "html": "<div class=\"kick\">Yours to keep</div><div class=\"big\" style=\"color:#2fa4ff;font-size:220px\">$495</div><div class=\"lbl\" style=\"font-size:62px;color:#f5f7fa\">one-time price \u00b7 free 14-day trial</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s14",
+   "say": "ControlDraft from Sigh-yawn Automation, at sigh-yawn automation dot com.",
+   "html": "<div id=\"wmslot\" style=\"width:720px;height:240px\"></div><div class=\"hl\" style=\"font-size:80px;color:#f5f7fa\">Plan the whole system first.</div><div class=\"sub\" style=\"color:#2fa4ff;font-weight:700;margin-top:40px\">syonautomation.com/controldraft</div><div class=\"foot\">Developed by Syon Automation LLC</div>"
+  }
+ ]
+}
