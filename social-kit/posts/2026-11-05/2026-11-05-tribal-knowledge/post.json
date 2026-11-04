@@ -73,8 +73,8 @@
   },
   {
    "id": "s15",
-   "say": "Datumline keeps a time-stamped journal for every machine, with photos. TechProof trains technicians with forty-eight courses, forms and checkoffs.",
-   "html": "<div class=\"kick\">Tools for all four</div><img class=\"shot\" style=\"width:900px\" src=\"{IMG}/tp/catalog.webp\"><div class=\"lbl\" style=\"font-size:52px;color:#2fa4ff\">Datumline: a journal for every machine</div><div class=\"lbl\" style=\"font-size:52px;color:#36cfc9\">TechProof: 48 courses, forms and checkoffs</div><div class=\"foot\">Syon Automation LLC</div>"
+   "say": "Datumline keeps a time-stamped journal for every machine, with photos. TechProof trains technicians with forty-eight plant-floor courses, with one license for the whole plant.",
+   "html": "<div class=\"kick\">Tools for all four</div><img class=\"shot\" style=\"width:900px\" src=\"{IMG}/tp/catalog.webp\"><div class=\"lbl\" style=\"font-size:52px;color:#2fa4ff\">Datumline: a journal for every machine</div><div class=\"lbl\" style=\"font-size:52px;color:#36cfc9\">TechProof: 48 plant-floor courses, one plant license</div><div class=\"foot\">Syon Automation LLC</div>"
   },
   {
    "id": "s16",

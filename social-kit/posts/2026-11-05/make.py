@@ -43,8 +43,8 @@ P['2026-11-05-tribal-knowledge'] = [
   kick('Pillar 4') + num(4, 'Check that it moved: a sign-off or checkoff.') + F),
  ("Where to start? Your ten most frequent breakdowns. That's where captured knowledge pays back first.",
   kick('Where to start') + '<div class="big" style="color:#36cfc9">10</div>' + lbl('most frequent breakdowns') + sub('That\'s where captured knowledge pays back first.') + F),
- ("Datumline keeps a time-stamped journal for every machine, with photos. TechProof trains technicians with forty-eight courses, forms and checkoffs.",
-  kick('Tools for all four') + shot('tp/catalog.webp', 900) + lbl('Datumline: a journal for every machine', 52, '#2fa4ff') + lbl('TechProof: 48 courses, forms and checkoffs', 52, '#36cfc9') + F),
+ ("Datumline keeps a time-stamped journal for every machine, with photos. TechProof trains technicians with forty-eight plant-floor courses, with one license for the whole plant.",
+  kick('Tools for all four') + shot('tp/catalog.webp', 900) + lbl('Datumline: a journal for every machine', 52, '#2fa4ff') + lbl('TechProof: 48 plant-floor courses, one plant license', 52, '#36cfc9') + F),
  ("Sigh-yawn Automation. Keep what your plant knows, at sigh-yawn automation dot com.",
   end('Keep what your plant knows.', 'syonautomation.com')),
 ]
