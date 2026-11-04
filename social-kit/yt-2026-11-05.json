@@ -1,0 +1,26 @@
+[
+ {
+  "time": "8:07 AM",
+  "file": "/mnt/user-data/uploads/nov5/2026-11-05-tribal-knowledge.mp4",
+  "title": "42% of workplace knowledge lives in one person's head #shorts",
+  "description": "42% of workplace knowledge is unique to the individual. When that person retires, changes shifts or goes on vacation, nearly half of what they know walks out the door.\n\nFour pillars keep it in the building:\n1. Write the fix down at the machine, with photos\n2. Pair people up and let the newer tech hold the meter\n3. Teach the why, not just the steps\n4. Check that it moved, with a sign-off\n\nStart with your ten most frequent breakdowns.\n\nDatumline keeps a time-stamped journal for every machine, with photos. TechProof gives technicians 48 plant-floor courses, with one license for the whole plant. Both from Syon Automation LLC: https://syonautomation.com\n\nSource: Panopto with YouGov, Workplace Knowledge and Productivity Report (2018), 1,001 U.S. workers.\n\n#TribalKnowledge #Maintenance #KnowledgeTransfer #Manufacturing #SkilledTrades #Workforce"
+ },
+ {
+  "time": "11:52 AM",
+  "file": "/mnt/user-data/uploads/nov5/2026-11-05-datumlab-loop-tip.mp4",
+  "title": "Is that control loop really tuned? | DatumLab tip #shorts",
+  "description": "Is that control loop really tuned, or does it just look fine on the HMI?\n\nDatumLab connects to any OPC UA server (Kepware, FactoryTalk Linx Gateway, Ignition, Siemens S7-1500, Beckhoff) and scores the loop on live data:\n- IAE, ISE, ITAE and time in band\n- Flags oscillation, output saturation and valve reversals\n- FOPDT step metrics with a SIMC PI tuning starting point\n- Cross-correlation for lag and dead time\n- FFT and SPC with Cp/Cpk on the same data\n\nStart with your worst loop, the one operators keep putting in manual.\n\nOne-time price from $495. Free 14-day trial: https://syonautomation.com/datumlab.html\n\n#ProcessControl #PIDTuning #OPCUA #ControlLoops #IndustrialAutomation #DatumLab"
+ },
+ {
+  "time": "3:37 PM",
+  "file": "/mnt/user-data/uploads/nov5/2026-11-05-why-4-20ma.mp4",
+  "title": "Why does 4-20 mA start at 4? #shorts",
+  "description": "Why does a 4-20 mA signal start at 4 and not 0? Because zero has to mean something is wrong.\n\n- A live zero: a broken wire falls toward 0 mA, so the PLC knows it's a fault, not a reading\n- 4 mA can power a 2-wire transmitter on the same pair as the signal\n- Current is the same everywhere in a series loop, so long runs don't change the reading\n- NAMUR NE 43: 3.8 to 20.5 mA is measurement; 3.6 mA or less, or 21 mA or more, signals a failure\n- Scaling: % = (mA - 4) / 16 x 100, so 12 mA = 50%\n\nTechProof course TP-202, 4-20 mA Loop Calibrator, walks technicians through it. https://syonautomation.com/techproof.html\n\nSource: NAMUR NE 43 signal levels.\n\n#Instrumentation #4to20mA #PLC #Maintenance #ProcessControl #TechProof"
+ },
+ {
+  "time": "7:22 PM",
+  "file": "/mnt/user-data/uploads/nov5/2026-11-05-idea-lube-route.mp4",
+  "title": "A lube route in your pocket | App idea #shorts",
+  "description": "SKF says poor lubrication accounts for over 36% of premature bearing failures.\n\nAn idea for our next app: a lube route in your pocket.\n- Every grease point on a plant map: grease type, amount and interval\n- A route in walking order\n- Scan the QR tag at the point, log it, and the next due date sets itself\n- Missed points turn red and the supervisor gets the list\n- A photo at every point and a history for every bearing\n- Audit report: what was greased, when, by whom, and how much\n- Runs on your own network, no subscription\n\nWould your plant use it? Tell us in the comments. The best ideas become the next Syon Automation LLC app.\n\nSource: SKF, Lubricants technical data (2022).\n\n#Lubrication #Bearings #Maintenance #Reliability #Manufacturing #SoftwareIdeas"
+ }
+]
