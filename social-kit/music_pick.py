@@ -18,10 +18,10 @@ TYPE_MOODS = {
 
 def chain(total, track):
     """ffmpeg filter for the bed: cut the decoded track to its exact sample count (AAC pads the file end to a whole
-    frame, which would leave a short gap at every loop), loop it in memory, cut to the video length, bed level 0.35,
+    frame, which would leave a short gap at every loop), loop it in memory, start at section A, cut to the video length, bed level 0.35,
     0.6 s fade-in, 2 s fade-out. Use the track as a plain input (no -stream_loop)."""
-    n = track['samples']
-    return (f"atrim=end_sample={n},aloop=loop=-1:size={n},asetpts=N/SR/TB,aresample=48000,atrim=0:{total:.3f},"
+    n = track['samples']; s0 = track.get('startSample', 0)     # start at section A (the intro is heard when the loop wraps)
+    return (f"atrim=end_sample={n},aloop=loop=-1:size={n},asetpts=N/SR/TB,atrim=start_sample={s0},asetpts=PTS-STARTPTS,aresample=48000,atrim=0:{total:.3f},"
             f"asetpts=PTS-STARTPTS,volume=0.35,afade=t=in:st=0:d=0.6,afade=t=out:st={max(0.0, total - 2):.3f}:d=2")
 
 

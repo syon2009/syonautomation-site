@@ -24,7 +24,9 @@
       "truePeak": -1.5,
       "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
       "samples": 6458034,
-      "sampleRate": 44100
+      "sampleRate": 44100,
+      "startSample": 717559,
+      "startSeconds": 16.271
     },
     {
       "id": "02-lofi-hiphop",
@@ -45,7 +47,9 @@
       "truePeak": -1.7,
       "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
       "samples": 6972988,
-      "sampleRate": 44100
+      "sampleRate": 44100,
+      "startSample": 996141,
+      "startSeconds": 22.588
     },
     {
       "id": "03-ambient-tech",
@@ -66,7 +70,9 @@
       "truePeak": -4.0,
       "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
       "samples": 6585600,
-      "sampleRate": 44100
+      "sampleRate": 44100,
+      "startSample": 940800,
+      "startSeconds": 21.333
     },
     {
       "id": "04-synthwave-drive",
@@ -87,7 +93,9 @@
       "truePeak": -1.6,
       "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
       "samples": 6927709,
-      "sampleRate": 44100
+      "sampleRate": 44100,
+      "startSample": 769745,
+      "startSeconds": 17.455
     },
     {
       "id": "05-minimal-deep-house",
@@ -108,7 +116,9 @@
       "truePeak": -1.6,
       "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
       "samples": 6940328,
-      "sampleRate": 44100
+      "sampleRate": 44100,
+      "startSample": 694033,
+      "startSeconds": 15.738
     },
     {
       "id": "06-bright-pluck-pop",
@@ -130,7 +140,9 @@
       "truePeak": -1.2,
       "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
       "samples": 6828387,
-      "sampleRate": 44100
+      "sampleRate": 44100,
+      "startSample": 682839,
+      "startSeconds": 15.484
     },
     {
       "id": "07-cinematic-pulse",
@@ -151,7 +163,9 @@
       "truePeak": -1.6,
       "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
       "samples": 6773760,
-      "sampleRate": 44100
+      "sampleRate": 44100,
+      "startSample": 846720,
+      "startSeconds": 19.2
     },
     {
       "id": "08-chill-trap",
@@ -172,7 +186,9 @@
       "truePeak": -1.7,
       "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
       "samples": 6652800,
-      "sampleRate": 44100
+      "sampleRate": 44100,
+      "startSample": 604800,
+      "startSeconds": 13.714
     },
     {
       "id": "09-funk-groove",
@@ -193,7 +209,9 @@
       "truePeak": -3.1,
       "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
       "samples": 6513231,
-      "sampleRate": 44100
+      "sampleRate": 44100,
+      "startSample": 814154,
+      "startSeconds": 18.462
     },
     {
       "id": "10-industrial-techno",
@@ -214,7 +232,9 @@
       "truePeak": -1.1,
       "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
       "samples": 6720000,
-      "sampleRate": 44100
+      "sampleRate": 44100,
+      "startSample": 672000,
+      "startSeconds": 15.238
     },
     {
       "id": "11-soft-piano",
@@ -236,7 +256,9 @@
       "truePeak": -1.7,
       "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
       "samples": 6773760,
-      "sampleRate": 44100
+      "sampleRate": 44100,
+      "startSample": 1128960,
+      "startSeconds": 25.6
     },
     {
       "id": "12-liquid-dnb",
@@ -257,7 +279,9 @@
       "truePeak": -2.6,
       "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
       "samples": 6399628,
-      "sampleRate": 44100
+      "sampleRate": 44100,
+      "startSample": 492279,
+      "startSeconds": 11.163
     },
     {
       "id": "13-acoustic-folk",
@@ -279,7 +303,9 @@
       "truePeak": -1.4,
       "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
       "samples": 7056000,
-      "sampleRate": 44100
+      "sampleRate": 44100,
+      "startSample": 882000,
+      "startSeconds": 20.0
     },
     {
       "id": "14-factory-percussion",
@@ -301,7 +327,9 @@
       "truePeak": -2.0,
       "license": "Original composition, © 2026 Syon Automation LLC. All rights reserved.",
       "samples": 6804000,
-      "sampleRate": 44100
+      "sampleRate": 44100,
+      "startSample": 756000,
+      "startSeconds": 17.143
     }
   ]
 }

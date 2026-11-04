@@ -46,7 +46,7 @@ Optional in post.json: `"type": "product" | "statistic" | "explainer" | "idea"` 
 slug when missing: `…-idea-…` → idea, otherwise product) and `"music": "auto" | "none" | "<track id>"` (for example
 `"04-synthwave-drive"`). Automatic music (`music_pick.py`, same rules as PostProof): product tip → upbeat, statistic →
 cinematic/ambient, explainer → lo-fi/ambient, app idea → bright/pluck/funk, and never one of the last 8 tracks used
-(remembered in `music/.recent.json`, local only). The bed is looped gap-free, cut to the video length with a 0.6 s
+(remembered in `music/.recent.json`, local only). The bed starts at the track's section A (bar 8), is looped gap-free, cut to the video length with a 0.6 s
 fade-in and 2 s fade-out, and ducked under the voice. gen.py / genstory.py print which track they used.
 Card classes come from base.css: `kick` (teal eyebrow), `big` (huge number), `lbl`, `sub`, `hl` (headline),
 `src` (source line), `foot` ("Syon Automation LLC"), `shot` (app screenshot; use `{IMG}/…` for
