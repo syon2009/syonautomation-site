@@ -84,6 +84,16 @@ def framed(img, credit, w=960):
     return (f'<img src="photos/{img}" style="width:{w}px;border-radius:22px;border:2px solid #1f2a36;box-shadow:0 20px 80px rgba(47,164,255,.25);display:block">'
             f'<div style="font-size:24px;color:#9aa6b2;margin-top:18px">{credit}</div>')
 PX = ' / Pexels'
+def vid(top, bottom, credit='Video: Pexels'):
+    """Text over a live video clip (genstory puts the clip underneath): dark fades top and bottom keep the text readable."""
+    return ('<div style="position:absolute;inset:0;background:linear-gradient(#04070bee 0%,#04070b55 26%,#04070b00 45%,#04070b00 58%,#04070bcc 76%,#04070bf5 100%)"></div>'
+            f'<div style="position:absolute;top:330px;left:70px;right:70px;text-align:center">{top}</div>'
+            f'<div style="position:absolute;bottom:250px;left:70px;right:70px;text-align:center">{bottom}</div>'
+            f'<div style="position:absolute;bottom:190px;left:0;right:0;text-align:center;font-size:24px;color:#9aa6b2">{credit}</div>')
+VIDEO = {  # live stock clips (Pexels, free licence), stored in clips/ (not in the public repo)
+ 's1': ('clips/story-work-machinery-35206231.mp4', 0), 's7': ('clips/story-study-laptop-5483083.mp4', 0),
+ 's12': ('clips/story-fly-window-ocean-13912637.mp4', 2), 's13': ('clips/story-beach-palms-shore-12332218.mp4', 0),
+ 's14': ('clips/story-beach-man-walk-17017324.mp4', 0), 's15': ('clips/story-beach-palms-sway-30022430.mp4', 0)}
 
 def shot(f, w=960): return f'<img class="shot" style="width:{w}px" src="{{IMG}}/rw/{f}">'
 
@@ -152,7 +162,7 @@ beach = svg(f'''
 
 scenes = [
  ("s1", "For thirty years, David was the guy who fixed things when they broke. A senior maintenance tech in Georgia, he knew every relay, valve, and air line in the plant.",
-  photo('rw-story-panel.jpg', kick('The Late-Bloom Automation Architect'), cap('30 years of relays, valves and air lines', s=58) + '<div style="font-size:26px;color:#c3cbd3;margin-top:22px">A dramatized story. David is a fictional character.</div>', 'Photo: Bulat843'+PX)),
+  vid(kick('The Late-Bloom Automation Architect'), cap('30 years of relays, valves and air lines', s=58) + '<div style="font-size:26px;color:#c3cbd3;margin-top:22px">A dramatized story. David is a fictional character.</div>')),
  ("s2", "But the machines were moving behind digital walls. When a line went down on a software fault, David had to wait for an outside contractor with a laptop.",
   kick('The digital wall') + locked + cap('A software fault meant waiting', s=58) + F),
  ("s3", "They'd plug in, click a few buttons, bill thousands for an hour, and leave.",
@@ -164,7 +174,7 @@ scenes = [
  ("s6", "No computer science theory. Every rung of ladder logic was tied to a real device, so a bit in the program meant a cylinder moving on a real conveyor.",
   kick('Ladder logic, tied to real devices') + ladder_cyl + cap('One bit. One cylinder. One conveyor.', s=56) + F),
  ("s7", "In the evenings he worked through it: controller organization, mapping inputs and outputs, Studio five thousand, and Siemens T I A Portal.",
-  photo('rw-story-study.jpg', kick('Evenings, one module at a time'), shot('sealin.webp', 900) + '<div class="sub" style="color:#f5f7fa;font-weight:700;margin-top:30px">Controller organization · I/O mapping<br>Studio 5000 · Siemens TIA Portal</div>', 'Photo: Czapp Árpád'+PX)),
+  vid(kick('Evenings, one module at a time'), '<div class="sub" style="color:#f5f7fa;font-weight:700;margin-top:30px">Controller organization · I/O mapping<br>Studio 5000 · Siemens TIA Portal</div>')),
  ("s8", "The wall of code turned into a map he could read. His thirty years of troubleshooting finally had a keyboard.",
   kick('From wall of code to a map') + shot('pid.webp') + cap('30 years of troubleshooting, now with a keyboard', s=54) + F),
  ("s9", "Then he went out on his own, and opened his own consulting firm.",
@@ -174,16 +184,16 @@ scenes = [
  ("s11", "Word of mouth did the rest: logic for high-speed packaging lines, secure remote monitoring, and plants that keep running.",
   kick('Client by client') + clients + cap('Packaging lines · remote monitoring', s=56) + F),
  ("s12", "With secure remote access, his office goes where he goes. Some days it's a seat over the Pacific, reviewing a ladder routine on the way to a client in Guam.",
-  photo('rw-story-plane.jpg', kick('The office, at 35,000 feet'), cap('Reviewing ladder logic on the way to Guam', s=56), 'Photo: Rahul Pandit'+PX)),
- ("s13", "Other days it's a beach in Boracay, palm trees past the screen, while his code keeps a plant running half a world away.",
-  kick('Or a beach in Boracay') + framed('bora_palms.jpg', 'White Beach, Boracay. Photo: Tuderna, CC BY 3.0, via Wikimedia Commons') + cap('His code keeps a plant running, half a world away', s=52) + F),
+  vid(kick('The office, at 35,000 feet'), cap('Reviewing ladder logic on the way to Guam', s=56))),
+ ("s13", "Other days it's a beach in Boor-rah-kye, palm trees swaying past the screen, while his code keeps a plant running half a world away.",
+  vid(kick('Or a beach in Boracay'), cap('His code keeps a plant running, half a world away', s=56))),
  ("s14", "At sixty, David didn't just change jobs. He re-engineered his life.",
-  photo('rw-story-beach.jpg', '', '<div class="big" style="color:#2fa4ff">60</div><div class="hl" style="font-size:96px;margin-top:30px">He re-engineered his life.</div>', 'Photo: Kraken Media'+PX, 'center 30%')),
+  vid('<div class="big" style="color:#2fa4ff">60</div><div class="hl" style="font-size:96px;margin-top:30px">He re-engineered his life.</div>', '')),
  ("s15", "You don't need a computer science degree, and you're never too late to start. You need the right system.",
-  photo('bora_sunset.jpg', kick('Re-engineer your own future'), '<div class="hl" style="font-size:92px">No degree needed.<br><span style="color:#36cfc9">Never too late.</span></div><div class="sub" style="font-size:50px;color:#f5f7fa;font-weight:700">You need the right system.</div>', 'Paraw sailboats, Boracay. Photo: Sam Villaroman, CC BY 2.0, via Wikimedia Commons')),
+  vid(kick('Re-engineer your own future'), '<div class="hl" style="font-size:92px">No degree needed.<br><span style="color:#36cfc9">Never too late.</span></div><div class="sub" style="font-size:50px;color:#f5f7fa;font-weight:700">You need the right system.</div>')),
  ("s16", "RungWise PLC Academy, from Sigh-yawn Automation. Start your free fourteen-day trial at sigh-yawn automation dot com.",
   '<div id="wmslot" style="width:720px;height:240px"></div><div class="hl" style="font-size:84px;margin-top:60px">RungWise PLC Academy</div><div class="sub" style="color:#2fa4ff;font-weight:700">Free 14-day trial · syonautomation.com</div><div class="src" style="bottom:240px;text-align:center">Dramatized story. Individual results vary.</div><div class="foot">Developed by Syon Automation LLC</div>'),
 ]
-post = {"slug": "2026-11-03-late-bloom-automation", "scenes": [{"id": i, "say": s, "html": h} for i, s, h in scenes]}
+post = {"slug": "2026-11-03-late-bloom-automation", "scenes": [dict({"id": i, "say": s, "html": h}, **({"video": VIDEO[i][0], "vstart": VIDEO[i][1]} if i in VIDEO else {})) for i, s, h in scenes]}
 json.dump(post, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'post.json'), 'w'), indent=1)
 print(sum(len(s.split()) for _, s, _ in scenes), 'words')

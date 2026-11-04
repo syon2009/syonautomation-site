@@ -26,8 +26,9 @@ open('cards.html', 'w').write(f'<!doctype html><html><head><meta charset="utf-8"
 ids = [s['id'] for s in sc]
 js = """const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1080,height:1920}});
 await p.goto('file://'+process.cwd()+'/cards.html');await p.waitForTimeout(600);
-for(const id of %s){await p.evaluate(i=>{document.querySelectorAll('.c').forEach(c=>c.classList.toggle('on',c.id==i))},id);await p.waitForTimeout(200);await p.screenshot({path:`card_${id}.png`});}
-await b.close();})();""" % json.dumps(ids)
+const V=%s;
+for(const id of %s){const tr=V.includes(id);await p.evaluate(([i,tr])=>{document.querySelectorAll('.c').forEach(c=>c.classList.toggle('on',c.id==i));const bg=tr?'transparent':'';document.documentElement.style.background=bg;document.body.style.background=bg;document.getElementById(i).style.background=tr?'transparent':''},[id,tr]);await p.waitForTimeout(200);await p.screenshot({path:`card_${id}.png`,omitBackground:tr});}
+await b.close();})();""" % (json.dumps([s['id'] for s in sc if s.get('video')]), json.dumps(ids))
 open('rcards.js', 'w').write(js)
 subprocess.run(['node', 'rcards.js'], check=True, env={**os.environ, 'NODE_PATH': os.environ.get('NODE_PATH', '/usr/lib/node_modules:/usr/local/lib/node_modules')})
 # 3 video
@@ -37,8 +38,17 @@ starts = []; t = 0
 for x in dur: starts.append(t); t += x - X
 total = starts[-1] + dur[-1]
 cmd = ['ffmpeg', '-v', 'error', '-y']
+VID = {s['id']: s for s in sc if s.get('video')}
 for i, x in zip(ids, dur):
     nf = int(round(x * FPS))
+    if i in VID:   # live stock clip under a transparent text overlay; the clip's own motion, no added zoom
+        v = VID[i]; src = os.path.abspath(os.path.join(P, v['video'])); vs = float(v.get('vstart', 0))
+        ln = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', src], capture_output=True, text=True).stdout)
+        slow = max(1.0, x / max(0.5, ln - vs - 0.1))   # gently slow a short clip instead of looping it (no visible jump)
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', f'{vs:.2f}', '-i', src, '-loop', '1', '-i', f'card_{i}.png', '-filter_complex',
+            f"[0:v]setpts={slow:.4f}*(PTS-STARTPTS),scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,crop=1080:1920,fps={FPS},setsar=1[bg];[bg][1:v]overlay=0:0:format=auto,format=yuv420p[v]",
+            '-map', '[v]', '-frames:v', str(nf), '-an', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '16', '-pix_fmt', 'yuv420p', f'clip_{i}.mp4'], check=True)
+        cmd += ['-i', f'clip_{i}.mp4']; continue
     import cv2
     img = cv2.imread(f'card_{i}.png', cv2.IMREAD_COLOR)
     h, w = img.shape[:2]

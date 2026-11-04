@@ -4,7 +4,9 @@
   {
    "id": "s1",
    "say": "For thirty years, David was the guy who fixed things when they broke. A senior maintenance tech in Georgia, he knew every relay, valve, and air line in the plant.",
-   "html": "<div style=\"position:absolute;inset:0;background:url(photos/rw-story-panel.jpg) center/cover\"></div><div style=\"position:absolute;inset:0;background:linear-gradient(#04070bee 0%,#04070b55 26%,#04070b00 45%,#04070b00 58%,#04070bcc 76%,#04070bf5 100%)\"></div><div style=\"position:absolute;top:150px;left:70px;right:70px;text-align:center\"><div class=\"kick\">The Late-Bloom Automation Architect</div></div><div style=\"position:absolute;bottom:250px;left:70px;right:70px;text-align:center\"><div class=\"lbl\" style=\"font-size:58px;color:#f5f7fa\">30 years of relays, valves and air lines</div><div style=\"font-size:26px;color:#c3cbd3;margin-top:22px\">A dramatized story. David is a fictional character.</div></div><div style=\"position:absolute;bottom:190px;left:0;right:0;text-align:center;font-size:24px;color:#9aa6b2\">Photo: Bulat843 / Pexels</div>"
+   "html": "<div style=\"position:absolute;inset:0;background:linear-gradient(#04070bee 0%,#04070b55 26%,#04070b00 45%,#04070b00 58%,#04070bcc 76%,#04070bf5 100%)\"></div><div style=\"position:absolute;top:330px;left:70px;right:70px;text-align:center\"><div class=\"kick\">The Late-Bloom Automation Architect</div></div><div style=\"position:absolute;bottom:250px;left:70px;right:70px;text-align:center\"><div class=\"lbl\" style=\"font-size:58px;color:#f5f7fa\">30 years of relays, valves and air lines</div><div style=\"font-size:26px;color:#c3cbd3;margin-top:22px\">A dramatized story. David is a fictional character.</div></div><div style=\"position:absolute;bottom:190px;left:0;right:0;text-align:center;font-size:24px;color:#9aa6b2\">Video: Pexels</div>",
+   "video": "clips/story-work-machinery-35206231.mp4",
+   "vstart": 0
   },
   {
    "id": "s2",
@@ -34,7 +36,9 @@
   {
    "id": "s7",
    "say": "In the evenings he worked through it: controller organization, mapping inputs and outputs, Studio five thousand, and Siemens T I A Portal.",
-   "html": "<div style=\"position:absolute;inset:0;background:url(photos/rw-story-study.jpg) center/cover\"></div><div style=\"position:absolute;inset:0;background:linear-gradient(#04070bee 0%,#04070b55 26%,#04070b00 45%,#04070b00 58%,#04070bcc 76%,#04070bf5 100%)\"></div><div style=\"position:absolute;top:150px;left:70px;right:70px;text-align:center\"><div class=\"kick\">Evenings, one module at a time</div></div><div style=\"position:absolute;bottom:250px;left:70px;right:70px;text-align:center\"><img class=\"shot\" style=\"width:900px\" src=\"{IMG}/rw/sealin.webp\"><div class=\"sub\" style=\"color:#f5f7fa;font-weight:700;margin-top:30px\">Controller organization \u00b7 I/O mapping<br>Studio 5000 \u00b7 Siemens TIA Portal</div></div><div style=\"position:absolute;bottom:190px;left:0;right:0;text-align:center;font-size:24px;color:#9aa6b2\">Photo: Czapp \u00c1rp\u00e1d / Pexels</div>"
+   "html": "<div style=\"position:absolute;inset:0;background:linear-gradient(#04070bee 0%,#04070b55 26%,#04070b00 45%,#04070b00 58%,#04070bcc 76%,#04070bf5 100%)\"></div><div style=\"position:absolute;top:330px;left:70px;right:70px;text-align:center\"><div class=\"kick\">Evenings, one module at a time</div></div><div style=\"position:absolute;bottom:250px;left:70px;right:70px;text-align:center\"><div class=\"sub\" style=\"color:#f5f7fa;font-weight:700;margin-top:30px\">Controller organization \u00b7 I/O mapping<br>Studio 5000 \u00b7 Siemens TIA Portal</div></div><div style=\"position:absolute;bottom:190px;left:0;right:0;text-align:center;font-size:24px;color:#9aa6b2\">Video: Pexels</div>",
+   "video": "clips/story-study-laptop-5483083.mp4",
+   "vstart": 0
   },
   {
    "id": "s8",
@@ -59,22 +63,30 @@
   {
    "id": "s12",
    "say": "With secure remote access, his office goes where he goes. Some days it's a seat over the Pacific, reviewing a ladder routine on the way to a client in Guam.",
-   "html": "<div style=\"position:absolute;inset:0;background:url(photos/rw-story-plane.jpg) center/cover\"></div><div style=\"position:absolute;inset:0;background:linear-gradient(#04070bee 0%,#04070b55 26%,#04070b00 45%,#04070b00 58%,#04070bcc 76%,#04070bf5 100%)\"></div><div style=\"position:absolute;top:150px;left:70px;right:70px;text-align:center\"><div class=\"kick\">The office, at 35,000 feet</div></div><div style=\"position:absolute;bottom:250px;left:70px;right:70px;text-align:center\"><div class=\"lbl\" style=\"font-size:56px;color:#f5f7fa\">Reviewing ladder logic on the way to Guam</div></div><div style=\"position:absolute;bottom:190px;left:0;right:0;text-align:center;font-size:24px;color:#9aa6b2\">Photo: Rahul Pandit / Pexels</div>"
+   "html": "<div style=\"position:absolute;inset:0;background:linear-gradient(#04070bee 0%,#04070b55 26%,#04070b00 45%,#04070b00 58%,#04070bcc 76%,#04070bf5 100%)\"></div><div style=\"position:absolute;top:330px;left:70px;right:70px;text-align:center\"><div class=\"kick\">The office, at 35,000 feet</div></div><div style=\"position:absolute;bottom:250px;left:70px;right:70px;text-align:center\"><div class=\"lbl\" style=\"font-size:56px;color:#f5f7fa\">Reviewing ladder logic on the way to Guam</div></div><div style=\"position:absolute;bottom:190px;left:0;right:0;text-align:center;font-size:24px;color:#9aa6b2\">Video: Pexels</div>",
+   "video": "clips/story-fly-window-ocean-13912637.mp4",
+   "vstart": 2
   },
   {
    "id": "s13",
-   "say": "Other days it's a beach in Boracay, palm trees past the screen, while his code keeps a plant running half a world away.",
-   "html": "<div class=\"kick\">Or a beach in Boracay</div><img src=\"photos/bora_palms.jpg\" style=\"width:960px;border-radius:22px;border:2px solid #1f2a36;box-shadow:0 20px 80px rgba(47,164,255,.25);display:block\"><div style=\"font-size:24px;color:#9aa6b2;margin-top:18px\">White Beach, Boracay. Photo: Tuderna, CC BY 3.0, via Wikimedia Commons</div><div class=\"lbl\" style=\"font-size:52px;color:#f5f7fa\">His code keeps a plant running, half a world away</div><div class=\"foot\">Syon Automation LLC</div>"
+   "say": "Other days it's a beach in Boor-rah-kye, palm trees swaying past the screen, while his code keeps a plant running half a world away.",
+   "html": "<div style=\"position:absolute;inset:0;background:linear-gradient(#04070bee 0%,#04070b55 26%,#04070b00 45%,#04070b00 58%,#04070bcc 76%,#04070bf5 100%)\"></div><div style=\"position:absolute;top:330px;left:70px;right:70px;text-align:center\"><div class=\"kick\">Or a beach in Boracay</div></div><div style=\"position:absolute;bottom:250px;left:70px;right:70px;text-align:center\"><div class=\"lbl\" style=\"font-size:56px;color:#f5f7fa\">His code keeps a plant running, half a world away</div></div><div style=\"position:absolute;bottom:190px;left:0;right:0;text-align:center;font-size:24px;color:#9aa6b2\">Video: Pexels</div>",
+   "video": "clips/story-beach-palms-shore-12332218.mp4",
+   "vstart": 0
   },
   {
    "id": "s14",
    "say": "At sixty, David didn't just change jobs. He re-engineered his life.",
-   "html": "<div style=\"position:absolute;inset:0;background:url(photos/rw-story-beach.jpg) center 30%/cover\"></div><div style=\"position:absolute;inset:0;background:linear-gradient(#04070bee 0%,#04070b55 26%,#04070b00 45%,#04070b00 58%,#04070bcc 76%,#04070bf5 100%)\"></div><div style=\"position:absolute;top:150px;left:70px;right:70px;text-align:center\"></div><div style=\"position:absolute;bottom:250px;left:70px;right:70px;text-align:center\"><div class=\"big\" style=\"color:#2fa4ff\">60</div><div class=\"hl\" style=\"font-size:96px;margin-top:30px\">He re-engineered his life.</div></div><div style=\"position:absolute;bottom:190px;left:0;right:0;text-align:center;font-size:24px;color:#9aa6b2\">Photo: Kraken Media / Pexels</div>"
+   "html": "<div style=\"position:absolute;inset:0;background:linear-gradient(#04070bee 0%,#04070b55 26%,#04070b00 45%,#04070b00 58%,#04070bcc 76%,#04070bf5 100%)\"></div><div style=\"position:absolute;top:330px;left:70px;right:70px;text-align:center\"><div class=\"big\" style=\"color:#2fa4ff\">60</div><div class=\"hl\" style=\"font-size:96px;margin-top:30px\">He re-engineered his life.</div></div><div style=\"position:absolute;bottom:250px;left:70px;right:70px;text-align:center\"></div><div style=\"position:absolute;bottom:190px;left:0;right:0;text-align:center;font-size:24px;color:#9aa6b2\">Video: Pexels</div>",
+   "video": "clips/story-beach-man-walk-17017324.mp4",
+   "vstart": 0
   },
   {
    "id": "s15",
    "say": "You don't need a computer science degree, and you're never too late to start. You need the right system.",
-   "html": "<div style=\"position:absolute;inset:0;background:url(photos/bora_sunset.jpg) center/cover\"></div><div style=\"position:absolute;inset:0;background:linear-gradient(#04070bee 0%,#04070b55 26%,#04070b00 45%,#04070b00 58%,#04070bcc 76%,#04070bf5 100%)\"></div><div style=\"position:absolute;top:150px;left:70px;right:70px;text-align:center\"><div class=\"kick\">Re-engineer your own future</div></div><div style=\"position:absolute;bottom:250px;left:70px;right:70px;text-align:center\"><div class=\"hl\" style=\"font-size:92px\">No degree needed.<br><span style=\"color:#36cfc9\">Never too late.</span></div><div class=\"sub\" style=\"font-size:50px;color:#f5f7fa;font-weight:700\">You need the right system.</div></div><div style=\"position:absolute;bottom:190px;left:0;right:0;text-align:center;font-size:24px;color:#9aa6b2\">Paraw sailboats, Boracay. Photo: Sam Villaroman, CC BY 2.0, via Wikimedia Commons</div>"
+   "html": "<div style=\"position:absolute;inset:0;background:linear-gradient(#04070bee 0%,#04070b55 26%,#04070b00 45%,#04070b00 58%,#04070bcc 76%,#04070bf5 100%)\"></div><div style=\"position:absolute;top:330px;left:70px;right:70px;text-align:center\"><div class=\"kick\">Re-engineer your own future</div></div><div style=\"position:absolute;bottom:250px;left:70px;right:70px;text-align:center\"><div class=\"hl\" style=\"font-size:92px\">No degree needed.<br><span style=\"color:#36cfc9\">Never too late.</span></div><div class=\"sub\" style=\"font-size:50px;color:#f5f7fa;font-weight:700\">You need the right system.</div></div><div style=\"position:absolute;bottom:190px;left:0;right:0;text-align:center;font-size:24px;color:#9aa6b2\">Video: Pexels</div>",
+   "video": "clips/story-beach-palms-sway-30022430.mp4",
+   "vstart": 0
   },
   {
    "id": "s16",

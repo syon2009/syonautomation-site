@@ -12,5 +12,6 @@ social-kit/posts/**/rcards.js
 social-kit/posts/**/durs.json
 social-kit/posts/**/vo/
 social-kit/posts/**/photos/
+social-kit/posts/**/clips/
 social-kit/music/.recent.json
 social-kit/__pycache__/
