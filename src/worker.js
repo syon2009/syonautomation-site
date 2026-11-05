@@ -14,9 +14,15 @@ const json = (o, s = 200) => new Response(JSON.stringify(o), { status: s, header
 const sha256 = async (t) => [...new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(t)))].map((b) => b.toString(16).padStart(2, "0")).join("");
 const clip = (v, n) => String(v == null ? "" : v).replace(/[\u0000-\u001f]/g, " ").trim().slice(0, n);
 
+import { handleRD } from "./rd.js";
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.pathname === "/rd" || url.pathname.startsWith("/rd/") || url.pathname.startsWith("/api/rd/")) {
+      const r = await handleRD(request, env, url, isOwner);
+      if (r) return r;
+    }
     if (url.pathname === "/api/download" && request.method === "POST") return record(request, env);
     if (url.pathname === "/api/lead" && request.method === "POST") return lead(request, env);
     if (url.pathname === "/api/review" && request.method === "POST") return review(request, env);

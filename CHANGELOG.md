@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-05 · R&D confidential area (src/rd.js, worker-gated): new /rd page, locked by a server-side master password (owner only, set in-browser via the console password) OR a single-use guest password the owner generates on demand (works once, opens a 30-minute view session, then re-locks). View-only (no right-click/drag/download, blob images, Range-streamed video, viewer watermark). Content + media (the Corrosentry monitoring, QC/QA station and LoRaWAN lines) served only from a private Cloudflare R2 bucket behind the session cookie; nothing confidential in this public repo. noindex + robots Disallow for /rd, /api/rd/, /downloads-admin. Phase 1: auth/page live; R2 media added next.
+
 - 2026-11-01 · v50 imported as the first commit: Product Spotlight theme, 15-minute rotating home spotlight (js/spotlight.js), self-hosted product videos with the new logo (media/*.mp4), "Have a project in mind?" tab and scoping form (js/project.js), Services page scope-of-work section (#scope), ERP-to-ERP migration section, custom test fixtures, AOI Foundry page. Earlier history lives in the syonautomation-upload-vNN.zip files.
 - 2026-11-01 · Cloudflare Workers Builds connected; this line is the first automatic deploy test.
 - 2026-11-01 · Added public/social/ (hosting for daily social-media short videos; not linked from site pages). First: 2026-11-02-workforce-gap.mp4

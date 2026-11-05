@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /rd
+Disallow: /api/rd/
+Disallow: /downloads-admin
 
 Sitemap: https://syonautomation.com/sitemap.xml
