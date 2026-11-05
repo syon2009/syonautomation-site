@@ -105,13 +105,22 @@ export async function handleRD(request, env, url, isOwner) {
     if (!(await owner(request, env, isOwner))) return jx({ ok: false, error: 'auth' }, 403);
     await env.DL.delete('rd:otp'); return jx({ ok: true });
   }
-  // upload media to R2 (owner-only). Keyed path, type + title + which line, via query. Body is the raw file.
-  if (p === '/api/rd/upload' && request.method === 'PUT') {
+  // Owner generates a short-lived UPLOAD TOKEN (while signed in as master) so media can be loaded in without the
+  // console password ever leaving the owner's hands. The token lasts 3 hours and only authorizes /api/rd/upload.
+  if (p === '/api/rd/gen-upload' && request.method === 'POST') {
     if (!(await owner(request, env, isOwner))) return jx({ ok: false, error: 'auth' }, 403);
-    if (!env.RD) return jx({ ok: false, error: 'no_bucket' }, 500);
-    const key = url.searchParams.get('key'); if (!key) return jx({ ok: false, error: 'key' }, 400);
-    await env.RD.put(key, request.body, { httpMetadata: { contentType: url.searchParams.get('ct') || 'application/octet-stream' } });
-    return jx({ ok: true, key });
+    const t = b64url(crypto.getRandomValues(new Uint8Array(18)));
+    await env.DL.put('rd:upt', JSON.stringify({ hash: await sha256hex(t), exp: Date.now() + 3 * 3600 * 1000 }));
+    return jx({ ok: true, token: t, expiresInMin: 180 });
+  }
+  // upload one media file (owner session or a valid upload token). Stored in KV under 'rdm:<key>' (<=25 MB each).
+  if (p === '/api/rd/upload' && request.method === 'PUT') {
+    if (!(await uploadAuthed(request, env, isOwner))) return jx({ ok: false, error: 'auth' }, 403);
+    const key = url.searchParams.get('key'); if (!key || !/^[a-z0-9/_.\-]+$/i.test(key)) return jx({ ok: false, error: 'key' }, 400);
+    const buf = await request.arrayBuffer();
+    if (buf.byteLength > 25 * 1024 * 1024) return jx({ ok: false, error: 'too_big', bytes: buf.byteLength }, 413);
+    await env.DL.put('rdm:' + key, buf, { metadata: { ct: url.searchParams.get('ct') || 'application/octet-stream' } });
+    return jx({ ok: true, key, bytes: buf.byteLength });
   }
   if (p === '/api/rd/manifest' && request.method === 'PUT') {
     if (!(await owner(request, env, isOwner))) return jx({ ok: false, error: 'auth' }, 403);
@@ -130,22 +139,30 @@ export async function handleRD(request, env, url, isOwner) {
   }
   if (p === '/api/rd/media' && request.method === 'GET') {
     if (!sess) return new Response('locked', { status: 401 });
-    if (!env.RD) return new Response('no bucket', { status: 503 });
     const it = await findItem(env, url.searchParams.get('id') || ''); if (!it) return new Response('not found', { status: 404 });
+    const r = await env.DL.getWithMetadata('rdm:' + it.key, { type: 'arrayBuffer' });
+    if (!r || !r.value) return new Response('gone', { status: 404 });
+    const full = r.value; const total = full.byteLength;
+    const ct = (r.metadata && r.metadata.ct) || (it.type === 'video' ? 'video/mp4' : 'image/jpeg');
+    const base = { 'cache-control': 'no-store, private', 'x-robots-tag': 'noindex', 'content-disposition': 'inline', 'content-type': ct, 'accept-ranges': 'bytes' };
     const range = request.headers.get('range');
-    const base = { 'cache-control': 'no-store, private', 'x-robots-tag': 'noindex', 'content-disposition': 'inline', 'content-type': it.type === 'video' ? 'video/mp4' : (it.ct || 'image/jpeg'), 'accept-ranges': 'bytes' };
     if (range) {
       const m2 = /bytes=(\d+)-(\d*)/.exec(range) || [];
-      const start = +m2[1] || 0; const obj0 = await env.RD.head(it.key); if (!obj0) return new Response('gone', { status: 404 });
-      const end = m2[2] ? Math.min(+m2[2], obj0.size - 1) : obj0.size - 1;
-      const obj = await env.RD.get(it.key, { range: { offset: start, length: end - start + 1 } });
-      if (!obj) return new Response('gone', { status: 404 });
-      return new Response(obj.body, { status: 206, headers: { ...base, 'content-range': `bytes ${start}-${end}/${obj0.size}`, 'content-length': String(end - start + 1) } });
+      const start = +m2[1] || 0; const end = m2[2] ? Math.min(+m2[2], total - 1) : total - 1;
+      return new Response(full.slice(start, end + 1), { status: 206, headers: { ...base, 'content-range': `bytes ${start}-${end}/${total}`, 'content-length': String(end - start + 1) } });
     }
-    const obj = await env.RD.get(it.key); if (!obj) return new Response('gone', { status: 404 });
-    return new Response(obj.body, { headers: { ...base, 'content-length': String(obj.size) } });
+    return new Response(full, { headers: { ...base, 'content-length': String(total) } });
   }
   return null; // not an RD route
+}
+
+// upload is allowed for the master session OR a valid, unexpired upload token (X-Upload-Token)
+async function uploadAuthed(request, env, isOwner) {
+  if (await owner(request, env, isOwner)) return true;
+  const t = request.headers.get('x-upload-token'); if (!t) return false;
+  const rec = JSON.parse((await env.DL.get('rd:upt')) || 'null');
+  if (!rec || Date.now() > rec.exp) return false;
+  return (await sha256hex(t)) === rec.hash;
 }
 
 // jx variant that also sets the session cookie
@@ -201,10 +218,12 @@ input[type=password],input[type=text]{width:100%;background:var(--panel2);border
   <div class="ownerbar" id="obar">
     <div class="grow"><b>Owner controls</b> <span class="countdown" id="cd"></span></div>
     <button class="btn" id="genBtn">Generate guest password</button>
+    <button class="btn" id="uptBtn" title="Short-lived token to load media into this page">Upload token</button>
     <button class="btn" id="chgBtn">Change master</button>
     <button class="btn" id="out">Lock</button>
   </div>
   <div id="genout" class="ownerbar hidden"><div class="grow">Give this one-time password to the viewer. It works once, for 30 minutes, then the page re-locks.<br><span class="pwout" id="pwv"></span></div><button class="btn" id="copy">Copy</button></div>
+  <div id="uptout" class="ownerbar hidden"><div class="grow">Upload token (valid 3 hours) &mdash; used only to load media into this page:<br><span class="pwout" id="uptv"></span></div><button class="btn" id="uptcopy">Copy</button></div>
   <div id="guestbar" class="ownerbar hidden"><div class="grow">Viewing as guest. <span class="countdown" id="cd2"></span> View only — downloading is disabled.</div><button class="btn" id="out2">Leave</button></div>
   <div id="content"></div>
   <div class="foot">Syon Automation LLC — confidential R&amp;D. Developed by Syon Automation.</div>
@@ -234,6 +253,8 @@ $('#pw').addEventListener('keydown',e=>{if(e.key==='Enter')$('#go').click();});
 $('#setBtn')&&($('#setBtn').onclick=async()=>{const ck=$('#ck').value.trim(),nm=$('#nm').value;if(nm.length<8){$('#m').textContent='Master password must be at least 8 characters.';return;}const r=await fetch('/api/rd/set-master',{method:'POST',credentials:'same-origin',headers:{'content-type':'application/json','x-admin-key':ck},body:JSON.stringify({password:nm})}).then(x=>x.json()).catch(()=>({ok:false}));if(r.ok){$('#m').style.color='var(--green)';$('#m').textContent='Master password set. Enter it above to unlock.';$('#setup').classList.add('hidden');}else{$('#m').textContent=r.error==='auth'?'Owner console password was not accepted.':'Could not set it ('+(r.error||'error')+').';}});
 $('#genBtn')&&($('#genBtn').onclick=async()=>{const r=await api('/api/rd/gen',{method:'POST'});if(r.ok){$('#genout').classList.remove('hidden');$('#pwv').textContent=r.password;}});
 $('#copy')&&($('#copy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText($('#pwv').textContent);$('#copy').textContent='Copied';setTimeout(()=>$('#copy').textContent='Copy',1500);});
+$('#uptBtn')&&($('#uptBtn').onclick=async()=>{const r=await api('/api/rd/gen-upload',{method:'POST'});if(r.ok){$('#uptout').classList.remove('hidden');$('#uptv').textContent=r.token;}});
+$('#uptcopy')&&($('#uptcopy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText($('#uptv').textContent);$('#uptcopy').textContent='Copied';setTimeout(()=>$('#uptcopy').textContent='Copy',1500);});
 $('#chgBtn')&&($('#chgBtn').onclick=()=>{const np=prompt('New master password (8+ characters):');if(np&&np.length>=8){fetch('/api/rd/set-master',{method:'POST',credentials:'same-origin',headers:{'content-type':'application/json'},body:JSON.stringify({password:np})}).then(x=>x.json()).then(r=>alert(r.ok?'Master password changed.':'Failed.'));}else if(np){alert('Too short.');}});
 const lock=async()=>{await api('/api/rd/logout',{method:'POST'});location.reload();};
 $('#out')&&($('#out').onclick=lock);$('#out2')&&($('#out2').onclick=lock);
