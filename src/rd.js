@@ -122,6 +122,23 @@ export async function handleRD(request, env, url, isOwner) {
     await env.DL.put('rdm:' + key, buf, { metadata: { ct: url.searchParams.get('ct') || 'application/octet-stream' } });
     return jx({ ok: true, key, bytes: buf.byteLength });
   }
+  // owner: add or update ONE item in ONE section without touching the rest of the manifest
+  // body { line:{ id, name?, note? }, item:{ id, type:'image'|'video', title, key } }
+  if (p === '/api/rd/add-item' && request.method === 'POST') {
+    if (!(await owner(request, env, isOwner))) return jx({ ok: false, error: 'auth' }, 403);
+    let b; try { b = await request.json(); } catch (e) { return jx({ ok: false, error: 'bad' }, 400); }
+    const L = b && b.line, I = b && b.item, idRe = /^[a-z0-9_\-]{1,64}$/i;
+    if (!L || !I || !idRe.test(L.id || '') || !idRe.test(I.id || '') || !/^(image|video)$/.test(I.type || '') || !/^[a-z0-9/_.\-]+$/i.test(I.key || '')) return jx({ ok: false, error: 'bad' }, 400);
+    if (!(await env.DL.get('rdm:' + I.key, { type: 'stream' }))) return jx({ ok: false, error: 'no_media' }, 400);
+    const m = await manifest(env);
+    let line = m.lines.find((x) => x.id === L.id);
+    if (!line) { line = { id: L.id, name: String(L.name || L.id).slice(0, 120), note: String(L.note || '').slice(0, 600), items: [] }; m.lines.push(line); }
+    else { if (L.name) line.name = String(L.name).slice(0, 120); if (L.note != null && L.note !== '') line.note = String(L.note).slice(0, 600); line.items = line.items || []; }
+    const it = { id: I.id, type: I.type, title: String(I.title || '').slice(0, 160), key: I.key };
+    const i = line.items.findIndex((x) => x.id === I.id); if (i >= 0) line.items[i] = it; else line.items.push(it);
+    await env.DL.put('rd:manifest', JSON.stringify(m));
+    return jx({ ok: true, line: line.id, items: line.items.length });
+  }
   if (p === '/api/rd/manifest' && request.method === 'PUT') {
     if (!(await owner(request, env, isOwner))) return jx({ ok: false, error: 'auth' }, 403);
     let b; try { b = await request.json(); } catch (e) { return jx({ ok: false, error: 'bad' }, 400); }
@@ -219,11 +236,21 @@ input[type=password],input[type=text]{width:100%;background:var(--panel2);border
     <div class="grow"><b>Owner controls</b> <span class="countdown" id="cd"></span></div>
     <button class="btn" id="genBtn">Generate guest password</button>
     <button class="btn" id="uptBtn" title="Short-lived token to load media into this page">Upload token</button>
+    <button class="btn" id="addBtn">Add item</button>
     <button class="btn" id="chgBtn">Change master</button>
     <button class="btn" id="out">Lock</button>
   </div>
   <div id="genout" class="ownerbar hidden"><div class="grow">Give this one-time password to the viewer. It works once, for 30 minutes, then the page re-locks.<br><span class="pwout" id="pwv"></span></div><button class="btn" id="copy">Copy</button></div>
   <div id="uptout" class="ownerbar hidden"><div class="grow">Upload token (valid 3 hours) &mdash; used only to load media into this page:<br><span class="pwout" id="uptv"></span></div><button class="btn" id="uptcopy">Copy</button></div>
+  <div id="addform" class="ownerbar hidden" style="display:block">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+      <input id="aSec" type="text" placeholder="Section name (e.g. ER-7 power backup options)">
+      <input id="aTitle" type="text" placeholder="Item title">
+    </div>
+    <input id="aNote" type="text" placeholder="Section note (optional)" style="margin-bottom:8px">
+    <input id="aFile" type="file" accept="image/*,video/mp4">
+    <button class="btn primary" id="aGo">Upload and add</button> <span class="countdown" id="aMsg"></span>
+  </div>
   <div id="guestbar" class="ownerbar hidden"><div class="grow">Viewing as guest. <span class="countdown" id="cd2"></span> View only — downloading is disabled.</div><button class="btn" id="out2">Leave</button></div>
   <div id="content"></div>
   <div class="foot">Syon Automation LLC — confidential R&amp;D. Developed by Syon Automation.</div>
@@ -256,6 +283,17 @@ $('#copy')&&($('#copy').onclick=()=>{navigator.clipboard&&navigator.clipboard.wr
 $('#uptBtn')&&($('#uptBtn').onclick=async()=>{const r=await api('/api/rd/gen-upload',{method:'POST'});if(r.ok){$('#uptout').classList.remove('hidden');$('#uptv').textContent=r.token;}});
 $('#uptcopy')&&($('#uptcopy').onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText($('#uptv').textContent);$('#uptcopy').textContent='Copied';setTimeout(()=>$('#uptcopy').textContent='Copy',1500);});
 $('#chgBtn')&&($('#chgBtn').onclick=()=>{const np=prompt('New master password (8+ characters):');if(np&&np.length>=8){fetch('/api/rd/set-master',{method:'POST',credentials:'same-origin',headers:{'content-type':'application/json'},body:JSON.stringify({password:np})}).then(x=>x.json()).then(r=>alert(r.ok?'Master password changed.':'Failed.'));}else if(np){alert('Too short.');}});
+const slug=t=>String(t||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,60)||'item';
+$('#addBtn')&&($('#addBtn').onclick=()=>$('#addform').classList.toggle('hidden'));
+$('#aGo')&&($('#aGo').onclick=async()=>{const f=$('#aFile').files[0],sec=$('#aSec').value.trim(),ti=$('#aTitle').value.trim(),msg=$('#aMsg');
+  if(!f||!sec||!ti){msg.textContent='Section, title and file are all needed.';return;}
+  if(f.size>25*1024*1024){msg.textContent='File is over 25 MB.';return;}
+  const type=f.type.indexOf('video')===0?'video':'image';const lid=slug(sec),iid=slug(ti);const key=lid+'/'+iid+'.'+(f.name.split('.').pop()||'bin').toLowerCase();
+  msg.textContent='Uploading '+Math.round(f.size/1024)+' KB...';
+  const up=await fetch('/api/rd/upload?key='+encodeURIComponent(key)+'&ct='+encodeURIComponent(f.type||'application/octet-stream'),{method:'PUT',credentials:'same-origin',body:f}).then(r=>r.json()).catch(()=>({ok:false}));
+  if(!up.ok){msg.textContent='Upload failed ('+(up.error||'error')+').';return;}
+  const r=await api('/api/rd/add-item',{method:'POST',body:JSON.stringify({line:{id:lid,name:sec,note:$('#aNote').value.trim()},item:{id:iid,type:type,title:ti,key:key}})});
+  if(r.ok){msg.textContent='Added to "'+sec+'" ('+r.items+' items).';$('#aFile').value='';$('#aTitle').value='';show();}else{msg.textContent='Could not add ('+(r.error||'error')+').';}});
 const lock=async()=>{await api('/api/rd/logout',{method:'POST'});location.reload();};
 $('#out')&&($('#out').onclick=lock);$('#out2')&&($('#out2').onclick=lock);
 boot();
