@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-06 · SiteWatch 3.10.0: download/SiteWatch-Setup-3.10.0.exe replaced with the code-signed build (Azure Artifact Signing, Stephen Yon, Microsoft time stamp; same file name, links unchanged).
+
 - 2026-11-06 · SiteWatch 3.10.0 (sitewatch.html, videos.html, support.html, lab.html, index.html, industrial.html): every SiteWatch download link now points to the self-hosted download/SiteWatch-Setup-3.10.0.exe (Standard build, unsigned; replaces GitHub v3.1.1). New proof-of-concept video media/sitewatch.mp4?v=310 (1:53, the owner's real garage sensor) and poster img/video/sitewatch.webp?v=310; sitewatch.html gets a "New in 3.10" section (#new: gateway signal, distance to the gateway, range rings, phone app), updated requirements (built-in network server, Program Files/ProgramData, Chrome) and a range FAQ; support.html version 3.10.0; Lab timeline entry. No CSS/JS changes.
 
 - 2026-11-06 · R&D area: owner can add content without rewriting the manifest. New owner-only POST /api/rd/add-item (adds or updates ONE item in ONE section, creates the section if new, leaves every other section and item untouched; refuses if the media key was not uploaded). Owner bar gains an "Add item" form (section, title, optional note, file picker) that uploads to KV via /api/rd/upload then calls add-item. Still gated/noindex; nothing confidential in this repo. Used first for the "ER-7 power backup options" section.
