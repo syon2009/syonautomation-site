@@ -48,6 +48,14 @@
     <div class="scard"><h3>Roll back if it fails</h3><p class="muted">A dry run goes into a test company first. Each live load writes a ledger of every record it created or changed, with a snapshot taken before it starts, so a failed load can be undone record by record. Posted accounting entries can't be deleted in any ERP, so those are reversed with matching entries instead, and moved as opening balances where possible.</p></div>
     <div class="scard"><h3>No admin rights? Still possible</h3><p class="muted">Data is read the way a normal user can: reports, saved searches, Excel and CSV exports, or read-only ODBC. Loading uses the target's own import templates. Where a step truly needs an administrator, such as a one-time API user in the new system, you get one file and one instruction to hand them.</p></div>
   </div>
+  <h3 style="margin-top:24px">What to expect</h3>
+  <div class="stats" style="padding-top:4px"><div class="sgrid">
+    <div class="stat"><b>95&ndash;99%</b><span>of records load clean on the first full pass; the rest are flagged, fixed and reloaded</span></div>
+    <div class="stat"><b>2&ndash;8 wks</b><span>typical timeline; a single-company master-data move runs about 1&ndash;2 weeks</span></div>
+    <div class="stat"><b>Medium</b><span>your input: access, mapping and scope up front, then review and sign-off on the dry run &mdash; a few short sessions</span></div>
+    <div class="stat"><b>Medium</b><span>difficulty: lower for master data only, higher for multi-company, heavy customization or full GL history</span></div>
+  </div></div>
+  <p class="muted small" style="margin-top:10px">Typical figures for planning, not guarantees &mdash; confirmed after we see your data.</p>
   <div class="btns" style="margin-top:22px"><a class="btn primary" href="services.html?topic=Data+migration+and+connector+scripts&amp;about=ERP+to+ERP+migration#inquire">Ask about an ERP migration</a></div>
 </div></section>
 <section id="plc-migration" class="band"><div class="wrap">
@@ -68,6 +76,22 @@
     <tr><td>Any brand</td><td>Any brand &mdash; your combination</td><td>Assisted re-engineering</td><td>By size &amp; complexity</td></tr>
   </tbody></table></div>
   <p class="muted small" style="margin-top:10px">Your combination isn't listed? If we can read the source program (file or PDF), we can scope it. Ask.</p>
+  <h3 style="margin-top:24px">What to expect</h3>
+  <p class="muted" style="margin:4px 0 8px"><b>Same-family</b> &mdash; RSLogix 500 / PLC-5 &rarr; Studio 5000:</p>
+  <div class="stats" style="padding-top:0"><div class="sgrid">
+    <div class="stat"><b>85&ndash;98%</b><span>of rungs auto-converted; we hand-finish and validate the rest</span></div>
+    <div class="stat"><b>2d&ndash;2wk</b><span>typical timeline, by program size</span></div>
+    <div class="stat"><b>Low</b><span>your input: the program file, an I/O list and one review</span></div>
+    <div class="stat"><b>Low</b><span>difficulty (low to medium)</span></div>
+  </div></div>
+  <p class="muted" style="margin:16px 0 8px"><b>Cross-brand</b> &mdash; re-engineered to a new maker:</p>
+  <div class="stats" style="padding-top:0"><div class="sgrid">
+    <div class="stat"><b>Rebuild</b><span>re-implemented to match your logic and validated to the spec &mdash; it works when delivered, not an auto-convert</span></div>
+    <div class="stat"><b>2&ndash;6wk+</b><span>typical timeline, by size and complexity</span></div>
+    <div class="stat"><b>Medium</b><span>your input: intent walkthroughs, then factory and site acceptance tests with you</span></div>
+    <div class="stat"><b>High</b><span>difficulty (medium to high)</span></div>
+  </div></div>
+  <p class="muted small" style="margin-top:10px">Typical figures for planning, not guarantees &mdash; confirmed after we review the program.</p>
   <h3 class="ptitle" style="margin-top:26px">Suggested pricing, by program size</h3>
   <p class="muted pnote">Cross-brand cost tracks program size and complexity, not the brand pair, so we price by size. Same-family (Rockwell legacy &rarr; Logix) is converter-assisted and runs at the low end. Final price is confirmed after we review the program file.</p>
   <div class="prices">
