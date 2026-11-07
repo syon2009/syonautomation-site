@@ -65,6 +65,48 @@
     <tr><td>Epicor Kinetic &rarr; Dynamics 365 Business Central</td><td><b>Very large</b> &middot; 176,700 records</td><td>95.9% &rarr; 99.8%</td><td>7,182</td><td>5&ndash;9 wks</td><td>~53 hrs</td></tr>
   </tbody></table></div>
   <p class="muted small" style="margin-top:8px">Simulated on representative data sets from <b>small to very large</b> &mdash; a prediction, not a guarantee. The four sizes above are reference points only; your real counts, rates and timeline depend on your own systems. &ldquo;Flagged to review&rdquo; records are corrected and reloaded, which is what carries the first-pass figure up to the final.</p>
+  <div class="scard" id="erpsim" style="margin-top:22px">
+    <h3 style="margin-top:0">Try your own: migration predictor</h3>
+    <p class="muted" style="margin-top:4px">Pick your current ERP, where you're headed and a rough data size, and we'll predict the shape of the migration. It's a model estimate &mdash; your real numbers depend on your own data and customization.</p>
+    <div class="f2" style="margin-top:12px"><label>Current ERP<select id="esFrom"></select></label><label>Intended ERP<select id="esTo"></select></label></div>
+    <label style="margin-top:12px;display:block">Rough data size<select id="esSize"><option value="s">Small &mdash; about 15,000 records</option><option value="m" selected>Medium &mdash; about 75,000 records</option><option value="l">Large &mdash; about 105,000 records</option><option value="xl">Very large &mdash; about 175,000 records</option></select></label>
+    <div class="btns" style="margin-top:14px"><button class="btn primary" type="button" id="esRun">Run the prediction</button></div>
+    <div id="esOut" hidden style="margin-top:16px"></div>
+  </div>
+  <script>
+  /* ERP migration predictor (client-side, deterministic per combination). Developed by Syon Automation LLC. */
+  (function(){
+    var ERPS=["QuickBooks (Online / Desktop)","Sage 100","Sage 300","Sage Intacct","Sage X3","Microsoft Dynamics 365 Business Central","Microsoft Dynamics 365 Finance & Operations","Microsoft Dynamics GP / NAV / SL","Acumatica","NetSuite","SAP Business One","Epicor Kinetic","Infor CloudSuite / SyteLine","Odoo","Exact Macola (ES / 10)","Exact Macola Progression","Oracle Agile PLM","Arena PLM","Excel / Access / SQL"];
+    var CX={"QuickBooks (Online / Desktop)":0.12,"Sage 100":0.30,"Sage 300":0.35,"Sage Intacct":0.30,"Sage X3":0.45,"Microsoft Dynamics 365 Business Central":0.30,"Microsoft Dynamics 365 Finance & Operations":0.50,"Microsoft Dynamics GP / NAV / SL":0.32,"Acumatica":0.30,"NetSuite":0.40,"SAP Business One":0.45,"Epicor Kinetic":0.50,"Infor CloudSuite / SyteLine":0.50,"Odoo":0.30,"Exact Macola (ES / 10)":0.40,"Exact Macola Progression":0.50,"Oracle Agile PLM":0.42,"Arena PLM":0.38,"Excel / Access / SQL":0.20};
+    var SIZE={s:15000,m:75000,l:105000,xl:177000}, SLBL={s:"Small",m:"Medium",l:"Large",xl:"Very large"};
+    var from=document.getElementById("esFrom"), to=document.getElementById("esTo"); if(!from||!to) return;
+    ERPS.forEach(function(e){ var o=document.createElement("option"); o.value=e; o.textContent=e; from.appendChild(o); to.appendChild(o.cloneNode(true)); });
+    from.value="Exact Macola (ES / 10)"; to.value="Microsoft Dynamics 365 Business Central";
+    function hash(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
+    function mb(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+    function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
+    function run(){
+      var f=from.value,t=to.value,sz=document.getElementById("esSize").value,recs=SIZE[sz];
+      var cust=Math.min(0.75,(CX[f]+CX[t])/2); var r=mb(hash(f+">"+t+"|"+sz));
+      var fp=98.5-cust*5-(recs/177000)*0.8-r()*0.3; if(fp<94)fp=94; if(fp>98.6)fp=98.6;
+      var flagged=Math.round(recs*(1-fp/100));
+      var resolve=0.90+r()*0.085, fn=fp+(100-fp)*resolve; if(fn>99.95)fn=99.95;
+      var weeks=1+recs/45000+cust*2.2+0.8, wlo=Math.max(1,Math.round(weeks*0.82)), whi=Math.max(wlo+1,Math.round(weeks*1.25));
+      var ih=Math.round(26+cust*18+recs/60000*6);
+      var out=document.getElementById("esOut"); out.hidden=false;
+      out.innerHTML='<p class="muted" style="margin:0 0 8px"><b>Predicted:</b> '+esc(f)+' &rarr; '+esc(t)+' &middot; '+SLBL[sz]+' (~'+recs.toLocaleString()+' records)</p>'+
+        '<div class="stats" style="padding-top:0"><div class="sgrid">'+
+        '<div class="stat"><b>'+fp.toFixed(1)+'%</b><span>clean on the first full pass</span></div>'+
+        '<div class="stat"><b>'+fn.toFixed(1)+'%</b><span>loaded after fix &amp; reload</span></div>'+
+        '<div class="stat"><b>'+wlo+'&ndash;'+whi+' wks</b><span>typical timeline</span></div>'+
+        '<div class="stat"><b>~'+ih+' hrs</b><span>your team’s time</span></div>'+
+        '</div></div>'+
+        '<p class="muted small" style="margin-top:8px">About '+flagged.toLocaleString()+' records would be flagged for review, corrected and reloaded. A model prediction, not a guarantee &mdash; your real numbers vary with data quality and customization. <a href="services.html?topic=Data+migration+and+connector+scripts&amp;about=ERP+to+ERP+migration#inquire">Get a real scoped quote</a>.</p>';
+      out.scrollIntoView({block:"nearest"});
+    }
+    document.getElementById("esRun").addEventListener("click",run);
+  })();
+  </script>
   <div class="btns" style="margin-top:22px"><a class="btn primary" href="services.html?topic=Data+migration+and+connector+scripts&amp;about=ERP+to+ERP+migration#inquire">Ask about an ERP migration</a></div>
 </div></section>
 <section id="plc-migration" class="band"><div class="wrap">
