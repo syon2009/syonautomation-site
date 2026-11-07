@@ -23,12 +23,14 @@
 (function(){
   var f = document.getElementById("inqForm"); if (!f) return;
   var m = location.search.match(/[?&]topic=([^&]+)/);
-  if (m) { var t = decodeURIComponent(m[1].replace(/\+/g, " ")), map = { "PLC programming": "PLC programming", "Custom applications": "Custom application", "ERP connectors": "ERP connector", "Data migration and connector scripts": "Data migration" };
+  if (m) { var t = decodeURIComponent(m[1].replace(/\+/g, " ")), map = { "PLC programming": "PLC programming", "Custom applications": "Custom application or test fixture", "ERP connectors": "ERP connector", "Data migration and connector scripts": "Data migration" };
     var v = map[t] || t; Array.prototype.forEach.call(f.type.options, function(o){ if (o.text === v) o.selected = true; }); }
   var ab = location.search.match(/[?&]about=([^&]+)/);
   if (ab && !f.message.value) { var name = decodeURIComponent(ab[1].replace(/\+/g, " "));
     f.message.value = /Notify/.test(f.type.value) ? "Please e-mail me when " + name + " is available." : "I have a question about " + name + ": "; }
   var msg = document.getElementById("inqMsg");
+  var tn = document.getElementById("trainNote");
+  if (tn && f.type) { var updTn = function(){ if (/training/i.test(f.type.value)) { tn.hidden = false; tn.textContent = "For training software we only need 2 files from your machine (we'll tell you which ones) — and it's delivered in about 1 week."; } else { tn.hidden = true; } }; f.type.addEventListener("change", updTn); updTn(); }
   f.addEventListener("submit", function(ev){
     ev.preventDefault();
     var d = {}; Array.prototype.forEach.call(f.elements, function(e){ if (e.name) d[e.name] = e.value; }); d.page = location.href;
