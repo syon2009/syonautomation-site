@@ -549,49 +549,12 @@ footer .credit{font:500 12.5px var(--mono);letter-spacing:.12em;color:var(--stee
 @media (max-width:980px){.top .wrap{flex-wrap:wrap}.top nav{flex-wrap:wrap}}
 @media (max-width:760px){.top .wrap{padding-left:20px;padding-right:20px}.brand svg{width:210px;height:70px}}
 
-/* v32: after-hours emergency banner (PLC / VFD). Alarm-strip look: dark red band, pulsing beacon, tap-to-call. */
-.erbar{background:linear-gradient(90deg,#3a0d0b,#2a0c0a 55%,#1d0f0c);border-bottom:1px solid #7a2418;color:#ffe9e2;font:14px/1.35 var(--body);position:relative;z-index:21}
-.erbar .wrap{max-width:none;padding-left:36px;padding-right:36px;display:flex;align-items:center;gap:14px;min-height:44px;flex-wrap:wrap;padding-block:6px}
-.erbar .beacon{width:12px;height:12px;border-radius:50%;background:#ff4b2b;box-shadow:0 0 0 0 rgba(255,75,43,.7);animation:erping 1.6s ease-out infinite;flex:none}
-@keyframes erping{0%{box-shadow:0 0 0 0 rgba(255,75,43,.75)}70%{box-shadow:0 0 0 12px rgba(255,75,43,0)}100%{box-shadow:0 0 0 0 rgba(255,75,43,0)}}
-.erbar .ertxt b{font:700 15px var(--display);letter-spacing:.06em;text-transform:uppercase;color:#fff}
-.erbar .ersub{color:#ffcbbd}
-.erbar .erstat{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid #f2c14e;color:#f2c14e;white-space:nowrap}
-.erbar .erstat.open{border-color:#4fd39a;color:#4fd39a}
-.erbar .ercall{margin-left:auto;display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:7px;background:linear-gradient(180deg,#ff6a45,#d9361c);color:#fff;font:700 14px var(--body);text-decoration:none;border:1px solid #ff8a6a;white-space:nowrap}
-.erbar .ercall svg{width:16px;height:16px}
-.erbar .ercall:hover{filter:brightness(1.1)}
-.erbar .ermore{color:#ffcbbd;font-weight:600;font-size:13px;white-space:nowrap}
-.erbar a:focus-visible{outline:2px solid #fff;outline-offset:2px}
-@media (max-width:980px){.erbar .wrap{padding-left:20px;padding-right:20px}.erbar .ersub{display:none}}
-@media (max-width:560px){.erbar .wrap{gap:10px}.erbar .ertxt b{font-size:13px}.erbar .erstat{display:none}.erbar .ercall{margin-left:0;flex:1;justify-content:center}.erbar .ermore{display:none}}
-@media (prefers-reduced-motion:reduce){.erbar .beacon{animation:none}}
-/* services: emergency section */
-.emerg{border:1px solid #7a2418;border-radius:16px;background:radial-gradient(700px 260px at 100% 0%,rgba(255,75,43,.16),transparent 70%),var(--panel);padding:30px;scroll-margin-top:170px}
-.emerg .eyebrow{color:#ff8a6a}
-.emerg h2{margin:6px 0 8px}
-.emerg .egrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:18px}
-.emerg .egrid>div{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:rgba(11,17,24,.55)}
-.emerg h3{font-size:18px;margin:0 0 6px}
-.emerg .btns{margin-top:20px}
-.emerg .btn.call{background:linear-gradient(180deg,#ff6a45,#d9361c);border-color:#ff8a6a;color:#fff}
-@media (max-width:860px){.emerg .egrid{grid-template-columns:1fr}.emerg{padding:22px}}
-/* v32: emergency page */
-.emform{max-width:980px;margin:0 auto}
-.emform h3{margin:10px 0 0;font-size:17px;color:#ff8a6a;font-family:var(--display);letter-spacing:.04em;text-transform:uppercase}
-.emform .chk{flex-direction:row;align-items:flex-start;gap:10px;font-weight:400}
-.emform .chk input{width:auto;margin-top:4px}
-.btn.call{background:linear-gradient(180deg,#ff6a45,#d9361c);border-color:#ff8a6a;color:#fff}
 .ratecard{max-width:980px;margin:0 auto}
 .rtable{overflow-x:auto;margin-top:10px}
 .rtable table{width:100%;border-collapse:collapse;font-size:15px}
 .rtable th,.rtable td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
 .rtable th{color:var(--steel);font-weight:600;width:42%}
 .steps2{margin-top:16px}
-.emok{border:1px solid var(--ok);border-radius:12px;padding:16px 18px;background:rgba(79,211,154,.08)}
-.emok b{font-family:var(--mono);font-size:18px;color:var(--ok)}
-nav a.navem{color:#ff8a6a}
-nav a.navem[aria-current],nav a.navem:hover{color:#fff;background:#3a0d0b}
 @media (max-width:760px){.rtable th{width:auto}.rtable tr{display:block;padding:6px 0}.rtable th,.rtable td{display:block;border:0;padding:4px 0}.rtable tr{border-bottom:1px solid var(--line)}}
 
 .legal .ptable{overflow-x:auto;margin-inline:-4px;padding-inline:4px}
@@ -621,7 +584,6 @@ h2{letter-spacing:-.03em}
 .btn.primary:hover,.price .btn:hover{background:#56b6ff;filter:none}
 .btn.ghost{background:transparent;border-color:transparent;color:#2fa4ff}
 .band{background:#08090b;border-color:#15181c}
-.card,.pcard,.price,.scard,.pdet,.ctabox,.emerg{border-radius:20px}
 .card,.pcard,.price{background:#0e1013;border-color:#1d2126}
 .price.best{border-color:#2fa4ff;box-shadow:0 0 0 1px #2fa4ff inset,0 30px 80px rgba(47,164,255,.12)}
 .ptag{color:#36cfc9}
