@@ -50,7 +50,7 @@
     var n = load().length;
     if (!link) {
       var wrap = document.querySelector('header.top .wrap'); if (!wrap) return;
-      link = el('a', 'cartlink'); link.href = 'cart.html';
+      link = el('a', 'cartlink'); link.href = 'cart';
       link.innerHTML = CART_SVG + '<span>Cart</span><b class="cartn"></b>';
       var soc = wrap.querySelector('.socials'); wrap.insertBefore(link, soc || null);
       if (/\/cart(\.html)?$/.test(location.pathname)) link.setAttribute('aria-current', 'page');
@@ -68,7 +68,7 @@
     }
     toastEl.innerHTML = '';
     toastEl.appendChild(el('span', '', name ? name + ' is in your cart.' : 'Added to your cart.'));
-    var v = el('a', 'btn primary sm', 'View cart & check out'); v.href = 'cart.html';
+    var v = el('a', 'btn primary sm', 'View cart & check out'); v.href = 'cart';
     var k = el('button', 'btn sm', 'Keep shopping'); k.type = 'button'; k.onclick = function () { toastEl.classList.remove('on'); };
     toastEl.appendChild(v); toastEl.appendChild(k);
     toastEl.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(function () { toastEl.classList.remove('on'); }, 9000);
@@ -85,7 +85,7 @@
     var refresh = function () { var id = getId(); btn.disabled = !id; if (id) label(btn, id, small); };
     btn.addEventListener('click', function () {
       var id = getId(); if (!id) return;
-      if (has(id)) { location.href = 'cart.html'; return; }
+      if (has(id)) { location.href = 'cart'; return; }
       if (!add(id)) { alert('Your cart is full (' + MAX + ' items). Check out first, then add more.'); return; }
       refresh(); document.querySelectorAll('.cartadd').forEach(function (b) { if (b._r) b._r(); });
       toast(btn.dataset.name || '');
@@ -133,7 +133,7 @@
     if (!ids.length) {
       root.innerHTML = '<div class="card cartempty">' + (testPaid ? '<p><b>Test checkout finished.</b> Nothing was charged.</p>' : '') +
         '<h2>Your cart is empty</h2><p class="muted">Add apps from their pricing sections with the <b>Add to cart</b> button, then check out once for all of them.</p>' +
-        '<div class="btns"><a class="btn primary" href="industrial.html">Industrial software</a><a class="btn" href="index.html#bundles">Bundles</a><a class="btn" href="depthforge.html">Maker software</a></div></div>';
+        '<div class="btns"><a class="btn primary" href="industrial">Industrial software</a><a class="btn" href="/#bundles">Bundles</a><a class="btn" href="depthforge">Maker software</a></div></div>';
       return;
     }
     root.innerHTML = '<div class="card"><p class="muted">Loading your cart…</p></div>';
@@ -151,7 +151,7 @@
         '<div class="card cartsum"><h2>Order total</h2><div class="ctot">' + money(j.total) + '</div><p class="muted">US dollars. Sales tax, if any, is worked out at checkout.</p>' +
         '<a class="btn primary" id="cartgo" href="#">Check out securely</a>' +
         '<p class="muted cfine">Stripe processes the payment. At checkout, type the name or company the licenses are for.</p>' +
-        '<a class="btn" href="industrial.html">Keep shopping</a></div></div>';
+        '<a class="btn" href="industrial">Keep shopping</a></div></div>';
       root.innerHTML = h;
       var lis = root.querySelectorAll('.cartlist li');
       j.items.forEach(function (it, i) {

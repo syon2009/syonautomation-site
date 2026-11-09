@@ -33,7 +33,7 @@
       <label for="dlg-c">Comments</label><textarea id="dlg-c" name="comment" placeholder="Your experience, what you'll use it for, or a question (optional)"></textarea>
       <div class="err" id="dlg-err" aria-live="polite"></div>
       <div class="row"><button type="button" class="no">Cancel</button><button type="submit" class="go">Continue to download</button></div>
-      <p class="fine">Syon Automation LLC also records the download, the file, the time and the approximate location of your internet connection. See our <a href="privacy.html" target="_blank" rel="noopener">privacy policy</a>.</p>
+      <p class="fine">Syon Automation LLC also records the download, the file, the time and the approximate location of your internet connection. See our <a href="privacy" target="_blank" rel="noopener">privacy policy</a>.</p>
     </form>`;
     document.body.appendChild(back); const f = back.querySelector('form'); const prev = document.activeElement;
     const close = () => { back.remove(); document.removeEventListener('keydown', onKey); if (prev && prev.focus) prev.focus(); };
