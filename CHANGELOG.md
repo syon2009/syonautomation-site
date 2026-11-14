@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-14 · SiteWatch 3.10.4 (all pages with SiteWatch downloads, support.html): code-signed download/SiteWatch-Setup-3.10.4.exe replaces the rolled-back 3.10.2. 3.10.4 = 3.10.3 (Radar, devices that aren't yours) with the main-page fix for connected gateways.
+
 - 2026-11-14 · SiteWatch download rolled back to the signed 3.10.2 (all pages): 3.10.3 had a main-page bug when a gateway is connected; 3.10.4 will replace it.
 
 - 2026-11-14 · SiteWatch 3.10.3 (sitewatch.html, support.html, index.html, industrial.html, lab.html): code-signed download/SiteWatch-Setup-3.10.3.exe replaces 3.10.2. sitewatch.html: "New in 3.10" card now covers the Radar view; new FAQ "Why does the gateway list devices that aren't mine?". No CSS/JS changes.
