@@ -1,0 +1,51 @@
+{
+ "slug": "2026-11-14-wo-mailer-proof",
+ "type": "product",
+ "scenes": [
+  {
+   "id": "s1",
+   "say": "Did the supervisor get the work order? With WO Mailer, you don't have to guess.",
+   "html": "<div class=\"kick\">WO Mailer tip</div><div class=\"hl\" style=\"font-size:104px;color:#f5f7fa\">Did the supervisor<br>get the work order?</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s2",
+   "say": "Your HMIs already e-mail screenshots. WO Mailer receives them on the plant network, reads the work order number and time off the screen, and puts them in the subject line.",
+   "html": "<div class=\"kick\">From the panel</div><img class=\"shot\" style=\"width:960px\" src=\"{IMG}/wm/email.webp\"><div class=\"lbl\" style=\"font-size:54px;color:#2fa4ff\">Work Order # and time, in the subject</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s3",
+   "say": "The whole screen goes in the message body, so it opens on a phone or a desk PC with no attachment.",
+   "html": "<div class=\"kick\">The whole screen</div><div class=\"hl\" style=\"font-size:100px;color:#36cfc9\">In the message body.<br>No attachment.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s4",
+   "say": "Then open the send report. It shows when the HMI sent it, when WO Mailer sent it on, who it went to, and through which server.",
+   "html": "<div class=\"kick\">The send report</div><img class=\"shot\" style=\"width:960px\" src=\"{IMG}/wm/report.webp\"><div class=\"lbl\" style=\"font-size:58px;color:#2fa4ff\">Who \u00b7 When \u00b7 Where \u00b7 How</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s5",
+   "say": "With Microsoft 365, it also shows when it landed in each mailbox in your organization, and whether it was read.",
+   "html": "<div class=\"kick\">Microsoft 365</div><div class=\"hl\" style=\"font-size:130px;color:#4fd39a\">Delivered.<br>Read.</div><div class=\"sub\" style=\"color:#b8c2cc\">Pro, Site and Enterprise editions</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s6",
+   "say": "Every record is fingerprinted with SHA-256 in a hash-chained ledger, so the report is tamper-evident. Print it or save it as a PDF.",
+   "html": "<div class=\"kick\">Tamper-evident</div><div class=\"hl\" style=\"font-size:100px;color:#ffc53d\">SHA-256<br>hash-chained ledger</div><div class=\"sub\" style=\"color:#b8c2cc\">Print it or save it as a PDF</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s7",
+   "say": "Setup takes about twenty minutes. Point each panel's mail server at the PC, port twenty-five, and add your sender rules.",
+   "html": "<div class=\"kick\">Running in about 20 minutes</div><div class=\"hl\" style=\"font-size:96px;color:#f5f7fa\">Panel \u2192 PC, port 25.<br>Add sender rules.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s8",
+   "say": "One-time price from one hundred forty-nine dollars, with a free fourteen-day trial. No credit card.",
+   "html": "<div class=\"kick\">Yours to keep</div><div class=\"big\" style=\"color:#2fa4ff;font-size:220px\">$149</div><div class=\"lbl\" style=\"font-size:62px;color:#f5f7fa\">one-time price \u00b7 free 14-day trial</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s9",
+   "say": "WO Mailer from Sigh-yawn Automation, at sigh-yawn automation dot com.",
+   "html": "<div id=\"wmslot\" style=\"width:720px;height:240px\"></div><div class=\"hl\" style=\"font-size:80px;color:#f5f7fa\">The work order, in the subject line.</div><div class=\"sub\" style=\"color:#2fa4ff;font-weight:700;margin-top:40px\">syonautomation.com/wo-mailer</div><div class=\"foot\">Developed by Syon Automation LLC</div>"
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "slug": "2026-11-14-trade-schools-rising",
+ "type": "statistic",
+ "scenes": [
+  {
+   "id": "s1",
+   "say": "More young people are choosing the trades. The enrollment numbers show it.",
+   "html": "<div class=\"kick\">The trades are back</div><div class=\"hl\" style=\"font-size:100px;color:#f5f7fa\">More students are<br>choosing the trades</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s2",
+   "say": "In spring 2025, enrollment at trade-focused public two-year colleges grew eleven point seven percent, the third year in a row of strong growth.",
+   "html": "<div class=\"kick\">Spring 2025</div><div class=\"big\" style=\"color:#4fd39a\">+11.7%</div><div class=\"lbl\" style=\"font-size:62px;color:#f5f7fa\">enrollment at trade-focused public two-year colleges</div><div class=\"sub\" style=\"color:#b8c2cc\">Third year in a row of strong growth</div><div class=\"src\">Source: National Student Clearinghouse Research Center, May 22 2025</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s3",
+   "say": "That's about eight hundred seventy-one thousand students, almost twenty percent more than in spring 2020.",
+   "html": "<div class=\"kick\">Since 2020</div><div class=\"big\" style=\"color:#2fa4ff\">871,000</div><div class=\"lbl\" style=\"font-size:62px;color:#f5f7fa\">students, almost 20% more than in spring 2020</div><div class=\"src\">Source: National Student Clearinghouse Research Center, May 22 2025</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s4",
+   "say": "And in spring 2026, undergraduate certificate programs grew ten point two percent, adding eighty-six thousand students.",
+   "html": "<div class=\"kick\">Spring 2026</div><div class=\"big\" style=\"color:#ffc53d\">+10.2%</div><div class=\"lbl\" style=\"font-size:62px;color:#f5f7fa\">certificate program enrollment, +86,000 students</div><div class=\"src\">Source: National Student Clearinghouse, Spring 2026 Enrollment Trends (June 4 2026)</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s5",
+   "say": "The blue-collar pipeline is growing. The question for every plant is how fast a new hire becomes a technician you can trust on the floor.",
+   "html": "<div class=\"kick\">For your plant</div><div class=\"hl\" style=\"font-size:96px;color:#36cfc9\">New hire \u2192<br>trusted technician.<br>How fast?</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s6",
+   "say": "Three ways to speed it up. One: pair every new hire with an experienced tech on real equipment.",
+   "html": "<div class=\"kick\">Tip 1</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">1</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Pair new hires with an experienced tech, on real equipment.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s7",
+   "say": "Two: give them a clear course path, from safety basics to troubleshooting.",
+   "html": "<div class=\"kick\">Tip 2</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">2</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">A clear path: safety basics to troubleshooting.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s8",
+   "say": "Three: let them practice on simulations, where a mistake costs nothing.",
+   "html": "<div class=\"kick\">Tip 3</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">3</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Practice on simulations, where a mistake costs nothing.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s9",
+   "say": "TechProof gives a plant sixty-three maintenance courses, from electrical safety to running a maintenance department, with one license for the whole facility.",
+   "html": "<div class=\"kick\">TechProof</div><img class=\"shot\" style=\"width:900px\" src=\"{IMG}/tp/catalog.webp\"><div class=\"lbl\" style=\"font-size:54px;color:#36cfc9\">63 plant-floor courses \u00b7 one plant license</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s10",
+   "say": "Sigh-yawn Automation. Train the people you hire, at sigh-yawn automation dot com.",
+   "html": "<div id=\"wmslot\" style=\"width:720px;height:240px\"></div><div class=\"hl\" style=\"font-size:80px;color:#f5f7fa\">Train the people you hire.</div><div class=\"sub\" style=\"color:#2fa4ff;font-weight:700;margin-top:40px\">syonautomation.com/techproof</div><div class=\"foot\">Developed by Syon Automation LLC</div>"
+  }
+ ]
+}

@@ -1,0 +1,66 @@
+{
+ "slug": "2026-11-14-idea-panel-qr",
+ "type": "idea",
+ "scenes": [
+  {
+   "id": "s1",
+   "say": "Two in the morning. A line is down, and the tech is standing at the panel. Where are the drawings?",
+   "html": "<div class=\"kick\">2 AM, line down</div><div class=\"hl\" style=\"font-size:124px;color:#f5f7fa\">Where are<br>the drawings?</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s2",
+   "say": "In a binder in the office. On someone's laptop. Or the copy in the panel is three revisions old.",
+   "html": "<div class=\"kick\">Where they usually are</div><div class=\"hl\" style=\"font-size:96px;color:#f5f7fa\">A binder.<br>A laptop.<br>Three revisions old.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s3",
+   "say": "Every minute spent looking for the right print is a minute the line stays down.",
+   "html": "<div class=\"kick\">The cost</div><div class=\"hl\" style=\"font-size:96px;color:#ff6b5a\">Every minute searching<br>is a minute down.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s4",
+   "say": "An idea for our next app: scan the panel, get the prints.",
+   "html": "<div class=\"kick\">Software idea</div><div class=\"hl\" style=\"font-size:116px;color:#36cfc9\">Scan the panel.<br>Get the prints.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s5",
+   "say": "One. A QR tag on every cabinet door.",
+   "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">1</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">A QR tag on every cabinet door.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s6",
+   "say": "Two. Scan it with a phone, and the latest approved drawings, I O list and manuals open right there.",
+   "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">2</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Scan it: latest drawings, I/O list and manuals open.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s7",
+   "say": "Three. Only the current revision shows. Old ones are archived, so nobody works from an outdated print.",
+   "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">3</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Only the current revision. Old ones archived.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s8",
+   "say": "Four. Mark up a field change with a photo and a note, and engineering gets it to approve.",
+   "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">4</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">Field changes: photo + note, sent for approval.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s9",
+   "say": "Five. A history for every panel: what changed, when, and who changed it.",
+   "html": "<div class=\"kick\">The idea</div><div style=\"display:flex;gap:34px;align-items:center;text-align:left;max-width:920px\"><div style=\"flex:none;width:130px;height:130px;border-radius:50%;border:5px solid #36cfc9;color:#36cfc9;font-weight:800;font-size:72px;display:grid;place-items:center\">5</div><div style=\"font-weight:700;font-size:58px;line-height:1.15\">A history for every panel: what, when, who.</div></div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s10",
+   "say": "And it would run on your own plant network, with no monthly subscription.",
+   "html": "<div class=\"kick\">The idea</div><div class=\"hl\" style=\"font-size:104px;color:#36cfc9\">Your network.<br>No subscription.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s11",
+   "say": "Would your plant use it? Tell us in the comments. The best ideas become the next Sigh-yawn Automation app.",
+   "html": "<div class=\"kick\">Your turn</div><div class=\"hl\" style=\"font-size:116px;color:#f5f7fa\">Would your plant<br>use it?</div><div class=\"lbl\" style=\"font-size:58px;color:#36cfc9\">Tell us in the comments.</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s12",
+   "say": "Sigh-yawn Automation, at sigh-yawn automation dot com.",
+   "html": "<div id=\"wmslot\" style=\"width:720px;height:240px\"></div><div class=\"hl\" style=\"font-size:80px;color:#f5f7fa\">Built from real plant-floor problems.</div><div class=\"sub\" style=\"color:#2fa4ff;font-weight:700;margin-top:40px\">syonautomation.com</div><div class=\"foot\">Developed by Syon Automation LLC</div>"
+  }
+ ]
+}

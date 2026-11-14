@@ -1,0 +1,61 @@
+{
+ "slug": "2026-11-14-mtbf-mttr-explained",
+ "type": "explainer",
+ "scenes": [
+  {
+   "id": "s1",
+   "say": "MTBF and MTTR. Two numbers every maintenance team hears about. Here's what they mean.",
+   "html": "<div class=\"kick\">Explainer</div><div class=\"hl\" style=\"font-size:140px;color:#f5f7fa\">MTBF &amp; MTTR</div><div class=\"sub\" style=\"color:#b8c2cc\">What they mean, in one minute</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s2",
+   "say": "MTBF is mean time between failures: total running time, divided by the number of failures.",
+   "html": "<div class=\"kick\">MTBF \u00b7 Mean Time Between Failures</div><div class=\"hl\" style=\"font-size:100px;color:#2fa4ff\">Running time \u00f7<br>number of failures</div><div class=\"sub\" style=\"color:#b8c2cc\">Higher is better</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s3",
+   "say": "MTTR is mean time to repair: total repair time, divided by the number of repairs.",
+   "html": "<div class=\"kick\">MTTR \u00b7 Mean Time To Repair</div><div class=\"hl\" style=\"font-size:100px;color:#ffc53d\">Repair time \u00f7<br>number of repairs</div><div class=\"sub\" style=\"color:#b8c2cc\">Lower is better</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s4",
+   "say": "Example. A machine runs six hundred hours and fails four times. Six hundred divided by four is an MTBF of one hundred fifty hours.",
+   "html": "<div class=\"kick\">Example: MTBF</div><div class=\"hl\" style=\"font-size:100px;color:#f5f7fa\">600 h \u00f7 4 failures</div><div class=\"big\" style=\"color:#2fa4ff;font-size:200px\">150 h</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s5",
+   "say": "The four repairs took six hours in total. Six divided by four is an MTTR of one and a half hours.",
+   "html": "<div class=\"kick\">Example: MTTR</div><div class=\"hl\" style=\"font-size:100px;color:#f5f7fa\">6 h \u00f7 4 repairs</div><div class=\"big\" style=\"color:#ffc53d;font-size:200px\">1.5 h</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s6",
+   "say": "Put them together and you get availability: MTBF divided by MTBF plus MTTR. Here that's about ninety-nine percent.",
+   "html": "<div class=\"kick\">Availability</div><div class=\"hl\" style=\"font-size:76px;color:#f5f7fa\"><span style=\"white-space:nowrap\">MTBF \u00f7 (MTBF + MTTR)</span></div><div class=\"big\" style=\"color:#4fd39a;font-size:200px\">\u2248 99%</div><div class=\"lbl\" style=\"font-size:58px;color:#f5f7fa\">150 \u00f7 151.5 = 0.990</div><div class=\"src\">Standard reliability definitions</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s7",
+   "say": "To improve MTBF, fix root causes, and keep up with lubrication and preventive maintenance, so failures happen less often.",
+   "html": "<div class=\"kick\">Raise MTBF</div><div class=\"hl\" style=\"font-size:104px;color:#2fa4ff\">Fix root causes.<br>Keep up the PMs.</div><div class=\"sub\" style=\"color:#b8c2cc\">Fail less often</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s8",
+   "say": "To improve MTTR, have the parts, the drawings and the know-how ready, so each repair is faster. Repair time includes finding the fault and waiting for parts.",
+   "html": "<div class=\"kick\">Lower MTTR</div><div class=\"hl\" style=\"font-size:104px;color:#ffc53d\">Parts. Drawings.<br>Know-how.</div><div class=\"sub\" style=\"color:#b8c2cc\">Repair time includes diagnosis and waiting for parts</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s9",
+   "say": "One tip: count failures the same way every time, or the numbers won't compare from month to month.",
+   "html": "<div class=\"kick\">Tip</div><div class=\"hl\" style=\"font-size:96px;color:#36cfc9\">Count failures<br>the same way, every time</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s10",
+   "say": "TechProof course TP-407, Maintenance KPIs and Metrics, covers MTBF, MTTR, OEE and the numbers that prove performance.",
+   "html": "<div class=\"kick\">TechProof \u00b7 TP-407</div><div class=\"hl\" style=\"font-size:104px;color:#36cfc9\">Maintenance KPIs<br>and Metrics</div><div class=\"sub\" style=\"color:#b8c2cc\">MTBF \u00b7 MTTR \u00b7 OEE</div><div class=\"foot\">Syon Automation LLC</div>"
+  },
+  {
+   "id": "s11",
+   "say": "Sigh-yawn Automation, at sigh-yawn automation dot com.",
+   "html": "<div id=\"wmslot\" style=\"width:720px;height:240px\"></div><div class=\"hl\" style=\"font-size:80px;color:#f5f7fa\">Measure it. Then improve it.</div><div class=\"sub\" style=\"color:#2fa4ff;font-weight:700;margin-top:40px\">syonautomation.com/techproof</div><div class=\"foot\">Developed by Syon Automation LLC</div>"
+  }
+ ]
+}
