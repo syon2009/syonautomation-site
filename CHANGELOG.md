@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-14 · SiteWatch download rolled back to the signed 3.10.2 (all pages): 3.10.3 had a main-page bug when a gateway is connected; 3.10.4 will replace it.
+
 - 2026-11-14 · SiteWatch 3.10.3 (sitewatch.html, support.html, index.html, industrial.html, lab.html): code-signed download/SiteWatch-Setup-3.10.3.exe replaces 3.10.2. sitewatch.html: "New in 3.10" card now covers the Radar view; new FAQ "Why does the gateway list devices that aren't mine?". No CSS/JS changes.
 
 - 2026-11-14 · social-kit/posts/2026-11-14 (NOT deployed): post scripts for the Sat Nov 14 shorts (wo-mailer-proof, trade-schools-rising [National Student Clearinghouse], mtbf-mttr-explained, idea-panel-qr). Videos awaiting the owner's approval; nothing added to public/social yet.
