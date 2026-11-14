@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-14 · SiteWatch 3.10.3 (sitewatch.html, support.html, index.html, industrial.html, lab.html): code-signed download/SiteWatch-Setup-3.10.3.exe replaces 3.10.2. sitewatch.html: "New in 3.10" card now covers the Radar view; new FAQ "Why does the gateway list devices that aren't mine?". No CSS/JS changes.
+
 - 2026-11-14 · social-kit/posts/2026-11-14 (NOT deployed): post scripts for the Sat Nov 14 shorts (wo-mailer-proof, trade-schools-rising [National Student Clearinghouse], mtbf-mttr-explained, idea-panel-qr). Videos awaiting the owner's approval; nothing added to public/social yet.
 
 - 2026-11-13 · SiteWatch 3.10.2 (sitewatch.html, support.html, index.html, industrial.html, lab.html): code-signed download/SiteWatch-Setup-3.10.2.exe replaces 3.10.1. Free trial is now 14 days on up to 2 live sensors (page text and pricing card). Pricing adds +10 sensor packs (Starter $299 to 50, Plant $249 to 250, Site $129 to 1,000) and tier upgrades for the difference, with an "Add sensors, upgrade or renew" button to licenses.syonautomation.com/sitewatch-more (license service v41). New dashboard screenshot (v=3102). No CSS/JS changes.
