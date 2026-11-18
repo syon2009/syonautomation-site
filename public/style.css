@@ -813,3 +813,114 @@ h2{letter-spacing:-.03em}
 .apppop .apf{font-weight:700;color:#2fa4ff;font-size:13.5px}
 .apppop .apn{margin-top:6px;font-size:12.5px;color:#8a9bb0}
 @media (prefers-reduced-motion:reduce){.apppop{transition:none;transform:none}}
+
+/* ===== v60 "Aurora" theme (Nov 18 2026) — bright, clinical, futuristic: white and shades of white,
+   soft blue-teal glow in heroes, glassy white cards, blue-teal accents. Syon Automation LLC. ===== */
+:root{
+  --bg:#ffffff; --band:#f3f8fd; --panel:#ffffff; --line:#e6edf5; --fg:#0d1a2d; --muted:#5a6b80; --steel:#36485d;
+  --copper:#0a84ff; --copper2:#17b8ac; --ok:#0f9d6e;
+  color-scheme:light;
+}
+body{background:#ffffff;color:var(--fg);-webkit-font-smoothing:antialiased}
+body::before,body::after{display:none!important;content:none!important}
+a{color:#0a6fd0}
+::selection{background:#0a84ff;color:#fff}
+/* header */
+.top{background:rgba(255,255,255,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{color:var(--fg)}
+nav a{color:#5a6b80}
+nav a:hover,nav a[aria-current]{background:#eef3f9;color:#0d1a2d}
+/* type / accents */
+.eyebrow{color:#0e9e94}
+.lead,.muted{color:#5a6b80}
+.spec td:first-child,.card .k,.pcat{color:#5a6b80}
+/* buttons */
+.btn{background:#ffffff;border:1px solid #d9e2ec;color:#0d1a2d}
+.btn:hover{background:#f3f7fb;filter:none}
+.btn.primary,.price .btn,.renew .btn,.filters button[aria-pressed="true"]{background:#0a84ff;border-color:#0a84ff;color:#ffffff}
+.btn.primary:hover,.price .btn:hover,.renew .btn:hover{background:#0a74e0}
+.btn.ghost{background:transparent;border-color:transparent;color:#0a74e0}
+.filters button{background:#f3f7fb;border-color:#d9e2ec;color:#5a6b80}
+/* sections / bands */
+.band{background:#f3f8fd;border-color:#e6edf5}
+section{border-top:0}
+/* generic light surfaces */
+.card,.pcard,.price,.product,.pdet,.path,.smini,.scard,.steps li,.ctabox,.mosaic,.stats .sgrid,.inq,
+.scopelist li,.apppop,.why .wi,.pk-out a.pk,.proof .pn,.bcard,.roi,.roi .res,.carttoast{
+  background:#ffffff;border:1px solid #e6edf5;box-shadow:0 2px 14px rgba(16,60,120,.06);
+  backdrop-filter:none;-webkit-backdrop-filter:none;color:var(--fg)}
+.pcard:hover,.path:hover,.smini:hover,.pk-out a.pk:hover{border-color:#0a84ff;box-shadow:0 10px 30px rgba(16,60,120,.10)}
+.price.best,.pdet:target,.scard:target,.ctabox{border-color:#0a84ff;box-shadow:0 0 0 1px #0a84ff inset}
+.shot{border:1px solid #e6edf5;box-shadow:0 10px 40px rgba(16,60,120,.10)}
+.stats .sgrid{overflow:hidden}.stat{border-color:#e6edf5}
+/* heroes: white with a soft blue-teal glow */
+.hero{background:radial-gradient(60% 120% at 82% 0%,rgba(23,184,172,.12),transparent 60%),radial-gradient(55% 120% at 10% 0%,rgba(10,132,255,.12),transparent 55%),#ffffff}
+.spot{background:#ffffff}
+.hero .grid>.shot,.hero .grid>.cards{box-shadow:0 -8px 80px rgba(10,132,255,.14);border-color:#e6edf5}
+.spot .pic img{border:1px solid #e6edf5;box-shadow:0 12px 60px rgba(10,132,255,.14)}
+.spot .new{color:#0e9e94}.spot .from{color:#5a6b80}
+.lineup{background:#f3f8fd;border-color:#e6edf5}.lineup a{color:#5a6b80}.lineup a:hover,.lineup b{color:#0d1a2d}
+/* why strip */
+.why .wi{background:#ffffff}.why b{color:#0d1a2d}.why span{color:#5a6b80}.why svg{color:#0e9e94}
+/* problem picker */
+.picker .sub{color:#5a6b80}
+.pk-chips button{color:#0d1a2d;background:#f3f7fb;border:1px solid #d9e2ec}
+.pk-chips button[aria-pressed="true"]{background:#0a84ff;border-color:#0a84ff;color:#ffffff}
+.pk-out a.pk{color:#0d1a2d}.pk-out b{color:#0d1a2d}.pk-out span{color:#5a6b80}
+/* proof / bundles / guide */
+.proof .pn b{color:#0f9d6e}.proof .pn span{color:#4a5a6e}
+.bcard .who{color:#5a6b80}.bcard li{color:#36485d;border-color:#eef2f6}.bcard li span:last-child{color:#5a6b80}
+.bcard .bp s{color:#8a97a8}.bcard .bp b{color:#0f9d6e}.bcard .bp em{color:#0e9e94;border-color:rgba(23,184,172,.5)}
+.guide .gbox{background:#ffffff;border:1px solid rgba(10,132,255,.3);box-shadow:0 2px 14px rgba(16,60,120,.06)}
+.gmsg{color:#5a6b80}.gmsg a{color:#0a6fd0}.bnote,.pnote{color:#5a6b80}
+/* ROI calculator */
+.roi label{color:#36485d}.roi label small{color:#738496}
+.roi .res{background:#f7fafd}.roi .line{color:#4a5a6e;border-color:#eef2f6}.roi .line b{color:#0d1a2d}
+.roi .big{color:#0f9d6e}.roi .big.neg{color:#c8781f}.roi .bl,.roi .fine{color:#5a6b80}
+/* inputs */
+.inq input,.inq select,.inq textarea,.roi input,.roi select,.gform input,.payform input{
+  background:#ffffff;color:#0d1a2d;border:1px solid #d9e2ec}
+.roi input:focus,.roi select:focus,.gform input:focus{border-color:#0a84ff;box-shadow:0 0 0 3px rgba(10,132,255,.15)}
+/* migration + rate + pricing tables */
+.mig th{background:#eef4fb;color:#0a6fd0;border-color:#e6edf5}.mig td{color:#4a5a6e;border-color:#eef2f6}
+.mig td:first-child,.mig td:nth-child(2){color:#0d1a2d}
+.ptab thead th{background:#f1f5fa;color:#36485d}.migwrap,.tscroll{border-color:#e6edf5}
+/* scope list / spotlight controls */
+.scopelist li{background:#ffffff}.scopelist b{color:#0d1a2d}.scopelist span{color:#4a5a6e}
+.scopelist li::before{background:rgba(10,132,255,.12);color:#0a84ff}
+.sarrow{background:#ffffff;border:1px solid #d9e2ec;color:#36485d}.sarrow:hover{background:#eef3f9;color:#0d1a2d}
+.sdots button::after{background:#c4cfdb}.sdots button[aria-current="true"]::after{background:#0a84ff}
+/* badges / tags */
+.badge.soon{background:rgba(10,132,255,.1);color:#0a6fd0;border:1px solid rgba(10,132,255,.3)}
+.badge.live{background:rgba(15,157,110,.12);color:#0f9d6e;border:1px solid rgba(15,157,110,.35)}
+.tag{background:#eef4fb;color:#0a6fd0;border:1px solid #dbe6f2}
+/* project panel */
+.projtab{background:#0a84ff;color:#ffffff;box-shadow:0 10px 40px rgba(10,132,255,.3)}
+.projpanel .pbox{background:#ffffff;border-right:1px solid #e6edf5}
+.projpanel .pclose{background:#f3f7fb;border:1px solid #d9e2ec;color:#36485d}
+.projpanel .pk{color:#0e9e94}
+/* cart */
+.cartlink{color:#0a74e0;border-color:#0a84ff}
+.cartlink:hover,.cartlink[aria-current]{background:#e9f3fe}
+.cartlink .cartn{background:#0a84ff;color:#ffffff}
+.btn.cartadd,.price .btn.cartadd{background:transparent;border-color:#0a84ff;color:#0a74e0}
+.btn.cartadd:hover,.price .btn.cartadd:hover{background:#e9f3fe;color:#0d1a2d}
+.btn.cartadd.in{border-color:#17b8ac;color:#0e9e94}
+.carttoast{background:#ffffff;border-color:#0a84ff;box-shadow:0 20px 60px rgba(16,60,120,.18)}
+.carttoast>span{color:#0d1a2d}
+.cartlist li{border-color:#e6edf5}.cartlist .ci a{color:#0d1a2d}.cartlist .ci .muted{color:#5a6b80}
+.cartlist .cp s{color:#8a97a8}.cartlist .cp b{color:#0d1a2d}.cartsum .ctot{color:#0d1a2d}
+.cartrm{background:#ffffff;border:1px solid #d9e2ec;color:#5a6b80}.cartrm:hover{border-color:#e0574a;color:#e0574a}
+/* app hover preview */
+.apppop{border-color:#d4e2f1;box-shadow:0 22px 60px rgba(16,60,120,.18);color:#0d1a2d}
+.apppop .aph b{color:#0d1a2d}.apppop p{color:#4a5a6e}.apppop .apn{color:#5a6b80}
+.apppop .apk{color:#0e9e94}.apppop .apb{color:#0f9d6e}.apppop .apf{color:#0a74e0}
+/* social + counter + support */
+.soc{border:1px solid #d9e2ec;color:#36485d}.soc:hover{background:#0d1a2d;color:#ffffff}
+.visits{color:#5a6b80}.odo{color:#0d1a2d;border:1px solid #d9e2ec;background:#f3f7fb}
+.suppjump .tag:hover{border-color:#0a84ff;color:#0d1a2d}
+/* footer: plain light, no drafting title-block */
+footer{background:#f3f8fd;padding-block:40px;border-top:1px solid #e6edf5}
+footer .wrap{border:0;padding:0;background:transparent}
+footer,footer a,footer .credit{color:#5a6b80}
+footer a:hover{color:#0d1a2d}.fine{color:#7a8799}

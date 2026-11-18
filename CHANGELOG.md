@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-18 · v60 "Aurora" theme (site-wide, style.css?v=60): switched the whole site from the dark Spotlight theme to a bright white, clinical/futuristic look — white surfaces, soft blue-teal hero glow, glassy white cards, blue-teal accents. Re-surfaced every previously dark-hardcoded component (heroes, cards, why strip, problem picker, ROI calculator, bundles, cart, project panel, tables, footer). Product screenshots/videos unchanged; logo and brand colors unchanged.
+
 - 2026-11-14 · SiteWatch 3.10.4 (all pages with SiteWatch downloads, support.html): code-signed download/SiteWatch-Setup-3.10.4.exe replaces the rolled-back 3.10.2. 3.10.4 = 3.10.3 (Radar, devices that aren't yours) with the main-page fix for connected gateways.
 
 - 2026-11-14 · SiteWatch download rolled back to the signed 3.10.2 (all pages): 3.10.3 had a main-page bug when a gateway is connected; 3.10.4 will replace it.
